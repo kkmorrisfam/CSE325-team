@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\CSE325-team\\CSE325-team.csproj": {}
+    "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\CSE325-team\\CSE325-team.csproj": {
+    "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\CSE325-team\\CSE325-team.csproj",
+        "projectUniqueName": "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj",
         "projectName": "CSE325-team",
-        "projectPath": "C:\\Projects\\CSE325-team\\CSE325-team.csproj",
-        "packagesPath": "C:\\Users\\Mitchel\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\CSE325-team\\obj\\",
+        "projectPath": "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj",
+        "packagesPath": "C:\\Users\\Kerri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mitchel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kerri\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -79,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
