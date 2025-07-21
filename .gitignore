@@ -1,3 +1,6 @@
-# Ignore build artifacts
+# create or update .gitignore
+cat <<EOF > .gitignore
 /bin/
 /obj/
+EOF
+
