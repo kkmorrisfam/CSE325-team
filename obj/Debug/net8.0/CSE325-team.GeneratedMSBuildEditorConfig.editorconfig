@@ -9,205 +9,209 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSE325-team
 build_property.RootNamespace = CSE325-team
-build_property.ProjectDir = /Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/
+build_property.ProjectDir = C:\Users\MSI\Desktop\Estudios\TECH\CSE325\CSE325_team\CSE325-team\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team
+build_property.MSBuildProjectDirectory = C:\Users\MSI\Desktop\Estudios\TECH\CSE325\CSE325_team\CSE325-team
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/AccessDenied.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0FjY2Vzc0RlbmllZC5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/AccessDenied.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEFjY2Vzc0RlbmllZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ConfirmEmail.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0NvbmZpcm1FbWFpbC5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ConfirmEmail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXENvbmZpcm1FbWFpbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ConfirmEmailChange.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0NvbmZpcm1FbWFpbENoYW5nZS5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ConfirmEmailChange.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXENvbmZpcm1FbWFpbENoYW5nZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ExternalLogin.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0V4dGVybmFsTG9naW4ucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ExternalLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEV4dGVybmFsTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ForgotPassword.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0ZvcmdvdFBhc3N3b3JkLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ForgotPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEZvcmdvdFBhc3N3b3JkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ForgotPasswordConfirmation.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0ZvcmdvdFBhc3N3b3JkQ29uZmlybWF0aW9uLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ForgotPasswordConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEZvcmdvdFBhc3N3b3JkQ29uZmlybWF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/InvalidPasswordReset.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0ludmFsaWRQYXNzd29yZFJlc2V0LnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/InvalidPasswordReset.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEludmFsaWRQYXNzd29yZFJlc2V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/InvalidUser.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0ludmFsaWRVc2VyLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/InvalidUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEludmFsaWRVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Lockout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0xvY2tvdXQucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Lockout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvY2tvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0xvZ2luLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/LoginWith2fa.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0xvZ2luV2l0aDJmYS5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/LoginWith2fa.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvZ2luV2l0aDJmYS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/LoginWithRecoveryCode.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL0xvZ2luV2l0aFJlY292ZXJ5Q29kZS5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/LoginWithRecoveryCode.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvZ2luV2l0aFJlY292ZXJ5Q29kZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/ChangePassword.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9DaGFuZ2VQYXNzd29yZC5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/ChangePassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxDaGFuZ2VQYXNzd29yZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/DeletePersonalData.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9EZWxldGVQZXJzb25hbERhdGEucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/DeletePersonalData.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxEZWxldGVQZXJzb25hbERhdGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/Disable2fa.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9EaXNhYmxlMmZhLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/Disable2fa.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxEaXNhYmxlMmZhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/Email.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9FbWFpbC5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/Email.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxFbWFpbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/EnableAuthenticator.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9FbmFibGVBdXRoZW50aWNhdG9yLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/EnableAuthenticator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxFbmFibGVBdXRoZW50aWNhdG9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/ExternalLogins.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9FeHRlcm5hbExvZ2lucy5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/ExternalLogins.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxFeHRlcm5hbExvZ2lucy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/GenerateRecoveryCodes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9HZW5lcmF0ZVJlY292ZXJ5Q29kZXMucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/GenerateRecoveryCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxHZW5lcmF0ZVJlY292ZXJ5Q29kZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9JbmRleC5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/PersonalData.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9QZXJzb25hbERhdGEucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/PersonalData.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxQZXJzb25hbERhdGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/ResetAuthenticator.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9SZXNldEF1dGhlbnRpY2F0b3IucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/ResetAuthenticator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxSZXNldEF1dGhlbnRpY2F0b3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/SetPassword.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9TZXRQYXNzd29yZC5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/SetPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxTZXRQYXNzd29yZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/TwoFactorAuthentication.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9Ud29GYWN0b3JBdXRoZW50aWNhdGlvbi5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/TwoFactorAuthentication.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxUd29GYWN0b3JBdXRoZW50aWNhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Manage/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL01hbmFnZS9fSW1wb3J0cy5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Manage/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL1JlZ2lzdGVyLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlZ2lzdGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/RegisterConfirmation.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL1JlZ2lzdGVyQ29uZmlybWF0aW9uLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/RegisterConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlZ2lzdGVyQ29uZmlybWF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ResendEmailConfirmation.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL1Jlc2VuZEVtYWlsQ29uZmlybWF0aW9uLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ResendEmailConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlc2VuZEVtYWlsQ29uZmlybWF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ResetPassword.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL1Jlc2V0UGFzc3dvcmQucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ResetPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlc2V0UGFzc3dvcmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/ResetPasswordConfirmation.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL1Jlc2V0UGFzc3dvcmRDb25maXJtYXRpb24ucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/ResetPasswordConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlc2V0UGFzc3dvcmRDb25maXJtYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Pages/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1BhZ2VzL19JbXBvcnRzLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Pages/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXF9JbXBvcnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/AccountLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9BY2NvdW50TGF5b3V0LnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/AccountLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxBY2NvdW50TGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/ExternalLoginPicker.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9FeHRlcm5hbExvZ2luUGlja2VyLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/ExternalLoginPicker.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxFeHRlcm5hbExvZ2luUGlja2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/ManageLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9NYW5hZ2VMYXlvdXQucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/ManageLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxNYW5hZ2VMYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/ManageNavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9NYW5hZ2VOYXZNZW51LnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/ManageNavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxNYW5hZ2VOYXZNZW51LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/RedirectToLogin.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9SZWRpcmVjdFRvTG9naW4ucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxSZWRpcmVjdFRvTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/ShowRecoveryCodes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9TaG93UmVjb3ZlcnlDb2Rlcy5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/ShowRecoveryCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxTaG93UmVjb3ZlcnlDb2Rlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Account/Shared/StatusMessage.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BY2NvdW50L1NoYXJlZC9TdGF0dXNNZXNzYWdlLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Account/Shared/StatusMessage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxTdGF0dXNNZXNzYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/App.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Pages/Auth.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BdXRoLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Auth.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Routes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-amvvbrwma3
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Layout/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-pyb1usaswl
 
-[/Users/erikburton/Desktop/BYU-I 2025/T425/CSE325/W07/team08/CSE325-team/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-p3tdy95ald
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jpldptv8hb
+
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ho8g9sj9f4

@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj": {}
+    "C:\\Users\\MSI\\Desktop\\Estudios\\TECH\\CSE325\\CSE325_team\\CSE325-team\\CSE325-team.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj": {
+    "C:\\Users\\MSI\\Desktop\\Estudios\\TECH\\CSE325\\CSE325_team\\CSE325-team\\CSE325-team.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj",
+        "projectUniqueName": "C:\\Users\\MSI\\Desktop\\Estudios\\TECH\\CSE325\\CSE325_team\\CSE325-team\\CSE325-team.csproj",
         "projectName": "CSE325-team",
-        "projectPath": "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\CSE325-team.csproj",
-        "packagesPath": "C:\\Users\\Kerri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kerri\\Documents\\BYU CSE325\\CSE325Team\\CSE325-team\\obj\\",
+        "projectPath": "C:\\Users\\MSI\\Desktop\\Estudios\\TECH\\CSE325\\CSE325_team\\CSE325-team\\CSE325-team.csproj",
+        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MSI\\Desktop\\Estudios\\TECH\\CSE325\\CSE325_team\\CSE325-team\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Kerri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
