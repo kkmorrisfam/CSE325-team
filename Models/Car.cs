@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace YourApp.Models
+namespace CSE325_team.Models
 {    
     /// Represents a car available for rent.
     
@@ -14,16 +14,16 @@ namespace YourApp.Models
 
         // The manufacturer or brand name ("Toyota", "Ford").
         [Required]
-        public string Brand { get; set; }
+        public required string Brand { get; set; }
 
         // The classification of the car ("SUV", "Compact").
         // Named CarClass to avoid using the C# keyword 'class'.
         [Required]
-        public string CarClass { get; set; }
+        public required string CarClass { get; set; }
 
         // The model name of the car ("Camry", "Mustang").
         [Required]
-        public string Model { get; set; }
+        public required string Model { get; set; }
 
         // Seating or cargo capacity (number of people or units).
         // Must be at least 1.
@@ -31,7 +31,7 @@ namespace YourApp.Models
         public int Capacity { get; set; }
 
         // Exterior color description ("Red", "Midnight Blue").
-        public string Color { get; set; }
+        public required string Color { get; set; }
 
         // Rental price per day.
         // Stored as decimal(18,2) in the database to preserve currency precision.
