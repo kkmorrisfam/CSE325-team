@@ -3,6 +3,7 @@ using System;
 using CSE325_team.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,16 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250723003402_AddCarModel")]
+    partial class AddCarModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-<<<<<<< HEAD
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
-=======
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
->>>>>>> 570786d953bc38121f3022d672ee205d07aa1cc4
 
             modelBuilder.Entity("CSE325_team.Data.ApplicationUser", b =>
                 {
@@ -39,14 +38,6 @@ namespace CSE325_team.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LincenseNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("INTEGER");

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CSE325_team.Data;
-using CSE325_team.Model;
+using CSE325_team.Models;
 
 namespace CSE325_team.Controllers
 {
@@ -17,7 +17,12 @@ namespace CSE325_team.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Bookings.ToListAsync());
+            var bookings = await _context.Bookings
+                .Include(b => b.Car)            // Solo si Booking tiene propiedad de navegación Car
+                .Include(b => b.User)           // Solo si Booking tiene propiedad de navegación User (ApplicationUser)
+                .ToListAsync();
+
+            return View(bookings);
         }
 
         // GET: Bookings/Details/5
@@ -25,7 +30,11 @@ namespace CSE325_team.Controllers
         {
             if (id == null) return NotFound();
 
-            var booking = await _context.Bookings.FirstOrDefaultAsync(m => m.Id == id);
+            var booking = await _context.Bookings
+                .Include(b => b.Car)
+                .Include(b => b.User)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (booking == null) return NotFound();
 
             return View(booking);
@@ -40,7 +49,7 @@ namespace CSE325_team.Controllers
         // POST: Bookings/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClientName,StartDate,EndDate,TotalPrice")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,ClientName,StartDate,EndDate,TotalPrice,CarId,UserId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +74,7 @@ namespace CSE325_team.Controllers
         // POST: Bookings/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ClientName,StartDate,EndDate,TotalPrice")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ClientName,StartDate,EndDate,TotalPrice,CarId,UserId")] Booking booking)
         {
             if (id != booking.Id) return NotFound();
 
@@ -78,8 +87,10 @@ namespace CSE325_team.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.Bookings.Any(e => e.Id == id)) return NotFound();
-                    else throw;
+                    if (!_context.Bookings.Any(e => e.Id == id))
+                        return NotFound();
+                    else
+                        throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -91,7 +102,11 @@ namespace CSE325_team.Controllers
         {
             if (id == null) return NotFound();
 
-            var booking = await _context.Bookings.FirstOrDefaultAsync(m => m.Id == id);
+            var booking = await _context.Bookings
+                .Include(b => b.Car)
+                .Include(b => b.User)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (booking == null) return NotFound();
 
             return View(booking);
@@ -103,8 +118,11 @@ namespace CSE325_team.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var booking = await _context.Bookings.FindAsync(id);
-            _context.Bookings.Remove(booking);
-            await _context.SaveChangesAsync();
+            if (booking != null)
+            {
+                _context.Bookings.Remove(booking);
+                await _context.SaveChangesAsync();
+            }
             return RedirectToAction(nameof(Index));
         }
     }
