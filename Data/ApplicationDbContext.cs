@@ -14,6 +14,6 @@ namespace CSE325_team.Data
         }
 
         // This must be *inside* the class body
-        public DbSet<Car> Cars { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
     }
 }
