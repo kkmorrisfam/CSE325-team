@@ -12,6 +12,7 @@ namespace CSE325_team.Data
         }
 
         public DbSet<Booking> Bookings { get; set; }
+
         public DbSet<Car> Cars { get; set; }
     }
 }

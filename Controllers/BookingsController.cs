@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CSE325_team.Data;
-using CSE325_team.Models;
+using CSE325_team.Models ;
 
 namespace CSE325_team.Controllers
 {
