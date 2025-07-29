@@ -87,46 +87,7 @@ namespace CSE325_team.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-<<<<<<< HEAD:Data/Migrations/ApplicationDbContextModelSnapshot.cs
-            modelBuilder.Entity("CSE325_team.Models.Booking", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CarId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ClientName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CarId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Bookings");
-                });
-
-            modelBuilder.Entity("CSE325_team.Models.Car", b =>
-=======
             modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
->>>>>>> d65107c16f61ab46efb028b709ad103e400a1074:Migrations/ApplicationDbContextModelSnapshot.cs
                 {
                     b.Property<int>("VehicleID")
                         .ValueGeneratedOnAdd()
