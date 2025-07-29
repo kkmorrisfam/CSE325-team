@@ -17,21 +17,14 @@ builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
-builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultScheme = IdentityConstants.ApplicationScheme;
-        options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-    })
-    .AddIdentityCookies();
-
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddSignInManager()
+    // .AddSignInManager() //can remove when using AddIdentity
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
@@ -55,8 +48,24 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+// Initialize the database
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    //Seeding Identity roles/users
+    var services = scope.ServiceProvider;
+    await CSE325_team.Data.SeedUser.InitializeAsync(services);
+
+    // Seeding data via ApplicationDbContext
+    var db = services.GetRequiredService<ApplicationDbContext>();
+    // examples - can replace or use
+    // await CSE325_team.Data.SeedCars.InitializeAsync(db);   
+    // await CSE325_team.Data.SeedResources.InitializeAsync(db);
+
+}
+
+    app.MapRazorComponents<App>()
+        .AddInteractiveServerRenderMode();
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();

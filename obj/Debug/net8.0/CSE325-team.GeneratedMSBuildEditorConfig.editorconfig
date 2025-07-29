@@ -15,8 +15,8 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = CSE325-team
-build_property.RootNamespace = CSE325-team
+build_property.RootNamespace = CSE325_team
+build_property.RootNamespace = CSE325_team
 build_property.ProjectDir = C:\Users\MSI\Desktop\Estudios\TECH\CSE325\CSE325_team\CSE325-team\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -202,6 +202,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Test.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/TestName.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0TmFtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Routes.razor]

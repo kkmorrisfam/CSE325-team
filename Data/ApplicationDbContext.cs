@@ -10,9 +10,8 @@ namespace CSE325_team.Data
             : base(options)
         {
         }
-
         public DbSet<Booking> Bookings { get; set; }
-
-        public DbSet<Car> Cars { get; set; }
+        // This must be *inside* the class body
+        public DbSet<Vehicle> Vehicles { get; set; }
     }
 }

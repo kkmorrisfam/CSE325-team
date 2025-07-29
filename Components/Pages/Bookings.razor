@@ -11,12 +11,12 @@
         <!-- Left section: inputs -->
         <div class="col-md-8">
             <div class="mb-3">
-                <label for="carSelect" class="form-label">Select a Car</label>
-                <select id="carSelect" class="form-select" @onchange="OnCarSelected">
-                    <option disabled selected value="">-- Choose a car --</option>
-                    @foreach (var car in AvailableCars)
+                <label for="vehicleSelect" class="form-label">Select a Vehicle</label>
+                <select id="vehicleSelect" class="form-select" @onchange="OnVehicleSelected">
+                    <option disabled selected value="">-- Choose a vehicle --</option>
+                    @foreach (var vehicle in AvailableVehicles)
                     {
-                        <option value="@car.Id">@car.Brand @car.Model (@car.PricePerDay.ToString("C"))</option>
+                        <option value="@vehicle.VehicleID">@vehicle.Make @vehicle.Model (@vehicle.DailyRate.ToString("C"))</option>
                     }
                 </select>
             </div>
@@ -37,11 +37,11 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">Summary</h5>
-                    <p><strong>Car:</strong> @SelectedCar?.Brand @SelectedCar?.Model</p>
+                    <p><strong>Vehicle:</strong> @SelectedVehicle?.Make @SelectedVehicle?.Model</p>
                     <p><strong>Days:</strong> @BookingDays day(s)</p>
-                    <p><strong>Price per Day:</strong> @SelectedCar?.PricePerDay.ToString("C")</p>
+                    <p><strong>Price per Day:</strong> @SelectedVehicle?.DailyRate.ToString("C")</p>
                     <p><strong>Total:</strong> <strong>@TotalPrice.ToString("C")</strong></p>
-                    <button class="btn btn-primary w-100" disabled="@(!IsCarSelected)">Confirm Booking</button>
+                    <button class="btn btn-primary w-100" disabled="@(!IsVehicleSelected)">Confirm Booking</button>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ else
         <thead class="table-dark">
             <tr>
                 <th>Client</th>
-                <th>Car</th>
+                <th>Vehicle</th>
                 <th>Class</th>
                 <th>Color</th>
                 <th>Capacity</th>
@@ -82,11 +82,11 @@ else
             {
                 <tr>
                     <td>@booking.UserId</td>
-                    <td>@booking.Car?.Brand @booking.Car?.Model</td>
-                    <td>@booking.Car?.CarClass</td>
-                    <td>@booking.Car?.Color</td>
-                    <td>@booking.Car?.Capacity</td>
-                    <td>@booking.Car?.PricePerDay.ToString("C")</td>
+                    <td>@booking.Vehicle?.Make @booking.Vehicle?.Model</td>
+                    <td>@booking.Vehicle?.CarClass</td>
+                    <td>@booking.Vehicle?.Color</td>
+                    <td>@booking.Vehicle?.Capacity</td>
+                    <td>@booking.Vehicle?.DailyRate.ToString("C")</td>
                     <td>@booking.StartDate.ToShortDateString()</td>
                     <td>@booking.EndDate.ToShortDateString()</td>
                     <td>@booking.TotalPrice.ToString("C")</td>
@@ -103,20 +103,30 @@ else
 @code {
     private DateTime PickUpDate = DateTime.Today;
     private DateTime DropOffDate = DateTime.Today.AddDays(1);
-    private List<Car> AvailableCars = new();
-    private Car? SelectedCar;
-    private List<Booking> bookings;
+    private List<Vehicle> AvailableVehicles = new();
+    private Vehicle? SelectedVehicle;
+    private List<Booking> bookings = new();
 
-    private bool IsCarSelected => SelectedCar != null;
+    private bool IsVehicleSelected => SelectedVehicle != null;
     private int BookingDays => (DropOffDate - PickUpDate).Days <= 0 ? 1 : (DropOffDate - PickUpDate).Days;
-    private decimal TotalPrice => SelectedCar == null ? 0 : BookingDays * SelectedCar.PricePerDay;
+    private decimal TotalPrice => SelectedVehicle == null ? 0 : BookingDays * SelectedVehicle.DailyRate;
 
     protected override async Task OnInitializedAsync()
     {
-        // Simulated car list (replace with API call)
-        AvailableCars = new List<Car>
+        // Simulated vehicle list (replace with API call)
+        AvailableVehicles = new List<Vehicle>
         {
-            new Car { Id = 1, Brand = "Nissan",CarClass = "SUV", Model = "Versa",Color = "Black", Capacity = 5, PricePerDay = 45.00m },
+            new Vehicle
+            {
+                VehicleID = 1,
+                Make = "Nissan",
+                CarClass = "SUV",
+                Model = "Versa",
+                Color = "Black",
+                Capacity = 5,
+                DailyRate = 45.00m,
+                Status = "available"
+            }
         };
 
         bookings = new List<Booking>
@@ -124,19 +134,19 @@ else
             new Booking
             {
                 UserId = "Client01",
-                Car = AvailableCars[0],
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now.AddDays(3),
-                TotalPrice = 150.00M
+                Vehicle = AvailableVehicles[0],
+                StartDate = DateTime.Today,
+                EndDate = DateTime.Today.AddDays(3),
+                TotalPrice = 135.00m
             }
         };
     }
 
-    private void OnCarSelected(ChangeEventArgs e)
+    private void OnVehicleSelected(ChangeEventArgs e)
     {
-        if (int.TryParse(e.Value?.ToString(), out int selectedCarId))
+        if (int.TryParse(e.Value?.ToString(), out int selectedVehicleId))
         {
-            SelectedCar = AvailableCars.FirstOrDefault(c => c.Id == selectedCarId);
+            SelectedVehicle = AvailableVehicles.FirstOrDefault(v => v.VehicleID == selectedVehicleId);
         }
     }
 }
