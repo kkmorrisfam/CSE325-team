@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-CSE325-team-675ff630-b33f-470b-baa6-29667a272b56</UserSecretsId>
-    <RootNamespace>CSE325-team</RootNamespace>
+    <RootNamespace>CSE325_team</RootNamespace>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
   </PropertyGroup>
 
