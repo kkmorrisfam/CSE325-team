@@ -87,14 +87,10 @@ namespace CSE325_team.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-<<<<<<< HEAD:Data/Migrations/ApplicationDbContextModelSnapshot.cs
             modelBuilder.Entity("CSE325_team.Models.Booking", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CarId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ClientName")
@@ -108,25 +104,25 @@ namespace CSE325_team.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("TotalPrice")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("VehicleID")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CarId");
-
                     b.HasIndex("UserId");
+
+                    b.HasIndex("VehicleID");
 
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("CSE325_team.Models.Car", b =>
-=======
             modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
->>>>>>> d65107c16f61ab46efb028b709ad103e400a1074:Migrations/ApplicationDbContextModelSnapshot.cs
                 {
                     b.Property<int>("VehicleID")
                         .ValueGeneratedOnAdd()
@@ -145,6 +141,9 @@ namespace CSE325_team.Migrations
 
                     b.Property<decimal>("DailyRate")
                         .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("ImageFileName")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LicensePlate")
                         .HasMaxLength(20)
@@ -303,21 +302,21 @@ namespace CSE325_team.Migrations
 
             modelBuilder.Entity("CSE325_team.Models.Booking", b =>
                 {
-                    b.HasOne("CSE325_team.Models.Car", "Car")
-                        .WithMany()
-                        .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("CSE325_team.Data.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Car");
+                    b.HasOne("CSE325_team.Models.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VehicleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
+
+                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

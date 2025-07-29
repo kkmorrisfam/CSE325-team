@@ -101,28 +101,6 @@ h1:focus {
     text-align: center;
 }
 
-.inventory-cards {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.inventory-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 250px;
-}
-
-.inventory-card img {
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-
 /* Getting Started steps */
 .how-it-works {
     background-color: #f9f9fb; /* Light subtle gray */
