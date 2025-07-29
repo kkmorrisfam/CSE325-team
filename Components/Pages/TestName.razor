@@ -1,0 +1,73 @@
+@page "/testname"
+
+@using Microsoft.AspNetCore.Identity
+@using CSE325_team.Data  
+@inject UserManager<ApplicationUser> UserManager
+@inject AuthenticationStateProvider AuthStateProvider
+
+
+<PageTitle>Test Page</PageTitle>
+
+
+<h1>This is a Test Page </h1>
+
+<p>The following section allows any logged in user to access</p>
+<AuthorizeView>
+    <Authorized>
+        @if (firstName != null)
+        {
+            <p>Welcome, @firstName!</p>
+        }
+        else
+        {
+            <p>Welcom, @context.User.Identity?.Name!</p>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <p>Please log in.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+<br>
+<p class="mt-5">The following section allows only admins or agents to view</p>
+<br>
+<AuthorizeView Roles="Admin, Agent">
+    <Authorized>
+        @if (firstName != null && userRole != null)
+        {
+            <p>Welcome, @firstName!. You have @userRole privileges.</p>
+        }
+        else
+        {
+            <p>Welcome, @context.User.Identity?.Name!</p>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <p>You are not authorized.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@* https://learn.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-8.0&tabs=visual-studio-code#authorizeview-component *@
+
+@code {
+    private string? firstName;
+    private string? userRole;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var appUser = await UserManager.GetUserAsync(user);
+            if (appUser != null)
+            {
+                firstName = appUser.FirstName;
+
+                var roles = await UserManager.GetRolesAsync(appUser);
+                userRole = roles.FirstOrDefault();  //if I have  more than one role assigned, I might need to change this
+            }
+        }
+    }
+}

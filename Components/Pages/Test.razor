@@ -1,0 +1,31 @@
+@page "/test"
+
+
+<PageTitle>Test Page</PageTitle>
+
+
+<h1>This is a Test Page </h1>
+
+<p>The following section allows any logged in user to access</p>
+<AuthorizeView>
+    <Authorized>
+        Hello, @context.User.Identity?.Name!
+    </Authorized>
+    <NotAuthorized>
+        <p>Please log in.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+<br>
+<p class="mt-5">The following section allows only admins or agents to view</p>
+<br>
+<AuthorizeView Roles="Admin, Agent">
+    <Authorized>
+        Hello, @context.User.Identity?.Name!
+    </Authorized>
+    <NotAuthorized>
+        <p>You are not authorized.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@* https://learn.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-8.0&tabs=visual-studio-code#authorizeview-component *@
