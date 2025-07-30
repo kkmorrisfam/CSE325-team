@@ -34,7 +34,7 @@ public class TestController : ControllerBase
             booking.TotalPrice,
             User = booking.User?.Email,
             Vehicle = $"{booking.Vehicle?.Make} {booking.Vehicle?.Model}",
-            ImageUrl = booking.Vehicle?.ImageUrl
+            ImageFileName = booking.Vehicle?.ImageFileName
         });
     }
 
@@ -70,7 +70,7 @@ public class TestController : ControllerBase
             b.TotalPrice,
             User = b.User?.Email,
             Vehicle = $"{b.Vehicle?.Make} {b.Vehicle?.Model}",
-            ImageUrl = b.Vehicle?.ImageUrl
+            ImageFileName = b.Vehicle?.ImageFileName
         });
 
         return Ok(result);
@@ -87,10 +87,10 @@ public class TestController : ControllerBase
             v.Make,
             v.Model,
             v.Year,
-            v.VehicleClass,
+            v.VehicleType,
             v.DailyRate,
             v.Status,
-            v.ImageUrl,
+            v.ImageFileName,
             v.Transmission,
             v.Capacity,
             v.Mileage,

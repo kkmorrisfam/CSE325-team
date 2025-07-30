@@ -25,29 +25,32 @@ namespace CSE325_team.Models
         public int? Year { get; set; }
 
         // Unique license plate number
-        [MaxLength(20)]
 
-    // Exterior color
+        // Exterior color
         [Required]
         public required string Color { get; set; }
 
-        public string VehicleType { get; set; }
+        [Required]
+        public required string VehicleType { get; set; }
 
-        public string Transmission { get; set; }
+        [Required]
+        public required string Transmission { get; set; }
+
 
         // Daily rental rate
         [Column(TypeName = "decimal(10,2)")]
         [Range(0.0, double.MaxValue)]
         public decimal DailyRate { get; set; }
 
-        public string? ImageUrl { get; set; }
+        public string? ImageFileName { get; set; }
 
         public string? FuelType { get; set; }
 
         public int? Seats { get; set; }
+        [MaxLength(20)]
         public string? LicensePlate { get; set; }
 
-        // Total mileage of the vehicle
+        
         public int? Mileage { get; set; }
 
         // Vehicle status (available, rented, reserved, maintenance)
@@ -56,23 +59,19 @@ namespace CSE325_team.Models
         public required string Status { get; set; }
 
 
-        // Classification of the vehicle (e.g., SUV, Compact)
-        [Required]
-        public required string VehicleClass { get; set; }
-
         // Seating or cargo capacity
         [Range(1, int.MaxValue)]
         public int Capacity { get; set; }
 
-<<<<<<< HEAD
-       
-=======
-        // Exterior color
-        [Required]
-        public required string Color { get; set; }
 
-        // Image file name for the vehicle
-        public string? ImageFileName { get; set; }
->>>>>>> origin/main
+        public Vehicle()
+        {
+            Make = "";
+            Model = "";
+            Color = "";
+            Status = "available";
+            VehicleType = "";
+            Transmission = "";
+        }
     }
 }

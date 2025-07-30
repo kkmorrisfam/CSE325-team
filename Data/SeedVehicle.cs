@@ -25,11 +25,10 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 49.99m,
         Status = "Available",
-        VehicleClass = "Sport",
         Capacity = 5,
         Mileage = 85000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/coupe1.png"
+        ImageFileName = "coupe1.png"
     },
     new Vehicle
     {
@@ -41,11 +40,10 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 159.99m,
         Status = "Available",
-        VehicleClass = "Luxury",
         Capacity = 4,
         Mileage = 15000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/coupe2.png"
+        ImageFileName = "coupe2.png"
     },
     new Vehicle
     {
@@ -57,11 +55,10 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 64.99m,
         Status = "Available",
-        VehicleClass = "Sport",
         Capacity = 4,
         Mileage = 72000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/coupe3.png"
+        ImageFileName = "coupe3.png"
     },
     new Vehicle
     {
@@ -73,11 +70,10 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 79.99m,
         Status = "Available",
-        VehicleClass = "Performance",
         Capacity = 2,
         Mileage = 52000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/coupe4.png"
+        ImageFileName = "coupe4.png"
     },
 new Vehicle
     {
@@ -89,11 +85,10 @@ new Vehicle
         Transmission = "Automatic",
         DailyRate = 239.99m,
         Status = "Available",
-        VehicleClass = "Exotic",
         Capacity = 2,
         Mileage = 22000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/coupe5.png"
+        ImageFileName = "coupe5.png"
     },
     new Vehicle
     {
@@ -105,11 +100,10 @@ new Vehicle
         Transmission = "Automatic",
         DailyRate = 459.99m,
         Status = "Available",
-        VehicleClass = "Supercar",
         Capacity = 2,
         Mileage = 8000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/luxury1.png"
+        ImageFileName = "luxury1.png"
     },
     new Vehicle
     {
@@ -121,11 +115,10 @@ new Vehicle
         Transmission = "Automatic",
         DailyRate = 399.99m,
         Status = "Available",
-        VehicleClass = "Supercar",
         Capacity = 2,
         Mileage = 12000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/luxury2.png"
+        ImageFileName = "luxury2.png"
     },
     new Vehicle
     {
@@ -137,11 +130,10 @@ new Vehicle
         Transmission = "Manual",
         DailyRate = 289.99m,
         Status = "Available",
-        VehicleClass = "Performance",
         Capacity = 2,
         Mileage = 34000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/luxury3.png"
+        ImageFileName = "luxury3.png"
     },
     new Vehicle
     {
@@ -153,11 +145,10 @@ new Vehicle
         Transmission = "Automatic",
         DailyRate = 299.99m,
         Status = "Available",
-        VehicleClass = "Exotic",
         Capacity = 2,
         Mileage = 48000,
         FuelType = "Gasoline",
-        ImageUrl = "/images/vehicles/luxury4.png"
+        ImageFileName = "luxury4.png"
     },
 
     new Vehicle
@@ -170,11 +161,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 99.99m,
     Status = "Available",
-    VehicleClass = "Sport",
     Capacity = 2,
     Mileage = 12000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle1.png"
+    ImageFileName = "motorcycle1.png"
 },
 new Vehicle
 {
@@ -186,11 +176,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 109.99m,
     Status = "Available",
-    VehicleClass = "Cruiser",
     Capacity = 2,
     Mileage = 26000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle2.png"
+    ImageFileName = "motorcycle2.png"
 },
 new Vehicle
 {
@@ -202,11 +191,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 119.99m,
     Status = "Available",
-    VehicleClass = "Cruiser",
     Capacity = 2,
     Mileage = 18000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle3.png"
+    ImageFileName = "motorcycle3.png"
 },
 new Vehicle
 {
@@ -218,11 +206,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 129.99m,
     Status = "Available",
-    VehicleClass = "Classic",
     Capacity = 2,
     Mileage = 9500,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle4.png"
+    ImageFileName = "motorcycle4.png"
 },
 new Vehicle
 {
@@ -234,11 +221,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 109.99m,
     Status = "Available",
-    VehicleClass = "Sport",
     Capacity = 2,
     Mileage = 14000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle5.png"
+    ImageFileName = "motorcycle5.png"
 },
 
 new Vehicle
@@ -251,11 +237,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 109.99m,
     Status = "Available",
-    VehicleClass = "Sportbike",
     Capacity = 2,
     Mileage = 5500,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle1.png"
+    ImageFileName = "motorcycle1.png"
 },
 new Vehicle
 {
@@ -267,11 +252,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 119.99m,
     Status = "Available",
-    VehicleClass = "Cruiser",
     Capacity = 2,
     Mileage = 8800,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle2.png"
+    ImageFileName = "motorcycle2.png"
 },
 new Vehicle
 {
@@ -283,11 +267,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 139.99m,
     Status = "Available",
-    VehicleClass = "Cruiser",
     Capacity = 2,
     Mileage = 7200,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle3.png"
+    ImageFileName = "motorcycle3.png"
 },
 new Vehicle
 {
@@ -299,11 +282,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 129.99m,
     Status = "Available",
-    VehicleClass = "Classic",
     Capacity = 2,
     Mileage = 4300,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle4.png"
+    ImageFileName = "motorcycle4.png"
 },
 new Vehicle
 {
@@ -315,11 +297,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 124.99m,
     Status = "Available",
-    VehicleClass = "Sportbike",
     Capacity = 2,
     Mileage = 6300,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/motorcycle5.png"
+    ImageFileName = "motorcycle5.png"
 },
 new Vehicle
 {
@@ -331,11 +312,10 @@ new Vehicle
     Transmission = "Automatic",
     DailyRate = 119.99m,
     Status = "Available",
-    VehicleClass = "Off-Road",
     Capacity = 5,
     Mileage = 35000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/truck1.png"
+    ImageFileName = "truck1.png"
 },
 new Vehicle
 {
@@ -347,11 +327,10 @@ new Vehicle
     Transmission = "Manual",
     DailyRate = 109.99m,
     Status = "Available",
-    VehicleClass = "Off-Road",
     Capacity = 4,
     Mileage = 28000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/truck2.png"
+    ImageFileName = "truck2.png"
 },
 new Vehicle
 {
@@ -363,11 +342,10 @@ new Vehicle
     Transmission = "Automatic",
     DailyRate = 89.99m,
     Status = "Available",
-    VehicleClass = "Utility",
     Capacity = 4,
     Mileage = 40000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/truck3.png"
+    ImageFileName = "truck3.png"
 },
 new Vehicle
 {
@@ -379,11 +357,10 @@ new Vehicle
     Transmission = "Automatic",
     DailyRate = 94.99m,
     Status = "Available",
-    VehicleClass = "Utility",
     Capacity = 5,
     Mileage = 37000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/truck4.png"
+    ImageFileName = "truck4.png"
 },
 new Vehicle
 {
@@ -395,11 +372,10 @@ new Vehicle
     Transmission = "Automatic",
     DailyRate = 84.99m,
     Status = "Available",
-    VehicleClass = "Utility",
     Capacity = 4,
     Mileage = 52000,
     FuelType = "Gasoline",
-    ImageUrl = "/images/vehicles/truck5.png"
+    ImageFileName = "truck5.png"
 }
 
 

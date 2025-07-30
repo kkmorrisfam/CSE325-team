@@ -37,18 +37,18 @@ else
         {
             <div class="col">
                 <div class="card h-100 shadow rounded-3 border-0">
-                    <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleID}")">
-                        <img src="/images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
+                    <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleId}")">
+                        <img src="images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
                     </NavLink>
                     <div class="card-body">
                         <h5 class="card-title">@vehicle.Make @vehicle.Model</h5>
-                        <p class="card-text">@vehicle.CarClass • @vehicle.Color</p>
+                        <p class="card-text">@vehicle.VehicleType • @vehicle.Color</p>
                         <p class="card-text fw-bold">$@vehicle.DailyRate/day</p>
                     </div>
                     <div class="card-footer bg-transparent border-0">
                         <div class="d-flex justify-content-between">
                             <NavLink class="btn btn-primary btn-sm" href="/bookings">Book Now</NavLink>
-                            <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{vehicle.VehicleID}")">Details</NavLink>
+                            <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{vehicle.VehicleId}")">Details</NavLink>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        vehicles = await _context.Vehicles.ToListAsync();
+        vehicles = await _context.Vehicle.ToListAsync();
         filteredVehicles = vehicles;
     }
 
@@ -95,7 +95,7 @@ else
 
         if (!string.IsNullOrWhiteSpace(selectedCategory))
         {
-            query = query.Where(v => v.CarClass.Equals(selectedCategory, StringComparison.OrdinalIgnoreCase));
+            query = query.Where(v => v.VehicleType.Equals(selectedCategory, StringComparison.OrdinalIgnoreCase));
         }
 
         if (!string.IsNullOrWhiteSpace(searchQuery))
@@ -104,7 +104,7 @@ else
                 v.Make.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
                 v.Model.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
                 v.Color.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-                v.CarClass.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                v.VehicleType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
                 (v.Year.HasValue && v.Year.Value.ToString().Contains(searchQuery))
             );
         }

@@ -50,7 +50,7 @@ namespace CSE325_team.Controllers
         // POST: Bookings/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClientName,StartDate,EndDate,TotalPrice,VehicleID,UserId")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,ClientName,StartDate,EndDate,TotalPrice,VehicleId,UserId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace CSE325_team.Controllers
         // POST: Bookings/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int BookingId, [Bind("BookingId,ClientName,StartDate,EndDate,TotalPrice,VehicleID,UserId")] Booking booking)
+        public async Task<IActionResult> Edit(int BookingId, [Bind("BookingId,ClientName,StartDate,EndDate,TotalPrice,VehicleId,UserId")] Booking booking)
         {
             if (BookingId != booking.BookingId) return NotFound();
 

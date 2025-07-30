@@ -85,7 +85,7 @@ else
                 <tr>
                     <td>@booking.UserId</td>
                     <td>@booking.Vehicle?.Make @booking.Vehicle?.Model</td>
-                    <td>@booking.Vehicle?.VehicleClass</td>
+                    <td>@booking.Vehicle?.VehicleType</td>
                     <td>@booking.Vehicle?.Color</td>
                     <td>@booking.Vehicle?.Capacity</td>
                     <td>@booking.Vehicle?.DailyRate.ToString("C")</td>
@@ -103,6 +103,8 @@ else
 }
 
 @code {
+
+
     private DateTime PickUpDate = DateTime.Today;
     private DateTime DropOffDate = DateTime.Today.AddDays(1);
     private List<Vehicle> AvailableVehicles = new();
@@ -122,7 +124,6 @@ else
             {
                 VehicleId = 1,
                 Make = "Nissan",
-                VehicleClass = "SUV",
                 Model = "Versa",
                 Color = "Black",
                 Capacity = 5,
