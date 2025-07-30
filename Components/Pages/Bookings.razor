@@ -1,6 +1,8 @@
-﻿@page "/bookings"
+﻿
+@page "/bookings"
 @using CSE325_team.Models
 @inject HttpClient Http
+@using CSE325_team.Data
 
 <PageTitle>Current Reservation</PageTitle>
 
@@ -16,7 +18,7 @@
                     <option disabled selected value="">-- Choose a vehicle --</option>
                     @foreach (var vehicle in AvailableVehicles)
                     {
-                        <option value="@vehicle.VehicleID">@vehicle.Make @vehicle.Model (@vehicle.DailyRate.ToString("C"))</option>
+                        <option value="@vehicle.VehicleId">@vehicle.Make @vehicle.Model (@vehicle.DailyRate.ToString("C"))</option>
                     }
                 </select>
             </div>
@@ -83,7 +85,7 @@ else
                 <tr>
                     <td>@booking.UserId</td>
                     <td>@booking.Vehicle?.Make @booking.Vehicle?.Model</td>
-                    <td>@booking.Vehicle?.CarClass</td>
+                    <td>@booking.Vehicle?.VehicleClass</td>
                     <td>@booking.Vehicle?.Color</td>
                     <td>@booking.Vehicle?.Capacity</td>
                     <td>@booking.Vehicle?.DailyRate.ToString("C")</td>
@@ -118,14 +120,16 @@ else
         {
             new Vehicle
             {
-                VehicleID = 1,
+                VehicleId = 1,
                 Make = "Nissan",
-                CarClass = "SUV",
+                VehicleClass = "SUV",
                 Model = "Versa",
                 Color = "Black",
                 Capacity = 5,
                 DailyRate = 45.00m,
-                Status = "available"
+                Status = "available",
+                VehicleType = "Compact",
+                Transmission = "Automatic"
             }
         };
 
@@ -133,7 +137,9 @@ else
         {
             new Booking
             {
+                BookingId = 1,
                 UserId = "Client01",
+                User = new ApplicationUser { Id = "Client01", Email = "client01@example.com" },
                 Vehicle = AvailableVehicles[0],
                 StartDate = DateTime.Today,
                 EndDate = DateTime.Today.AddDays(3),
@@ -146,7 +152,7 @@ else
     {
         if (int.TryParse(e.Value?.ToString(), out int selectedVehicleId))
         {
-            SelectedVehicle = AvailableVehicles.FirstOrDefault(v => v.VehicleID == selectedVehicleId);
+            SelectedVehicle = AvailableVehicles.FirstOrDefault(v => v.VehicleId == selectedVehicleId);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CSE325_team.Models
     {
         // Primary key, matches SQL schema
         [Key]
-        public int VehicleID { get; set; }
+        public int VehicleId { get; set; }
 
         // Manufacturer or brand (e.g., Toyota, Ford)
         [Required]
@@ -20,11 +20,31 @@ namespace CSE325_team.Models
         [Required]
         public required string Model { get; set; }
 
+
         // Year of manufacture
         public int? Year { get; set; }
 
         // Unique license plate number
         [MaxLength(20)]
+
+    // Exterior color
+        [Required]
+        public required string Color { get; set; }
+
+        public string VehicleType { get; set; }
+
+        public string Transmission { get; set; }
+
+        // Daily rental rate
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(0.0, double.MaxValue)]
+        public decimal DailyRate { get; set; }
+
+        public string? ImageUrl { get; set; }
+
+        public string? FuelType { get; set; }
+
+        public int? Seats { get; set; }
         public string? LicensePlate { get; set; }
 
         // Total mileage of the vehicle
@@ -35,21 +55,15 @@ namespace CSE325_team.Models
         [RegularExpression("available|rented|reserved|maintenance", ErrorMessage = "Invalid status")]
         public required string Status { get; set; }
 
-        // Daily rental rate
-        [Column(TypeName = "decimal(10,2)")]
-        [Range(0.0, double.MaxValue)]
-        public decimal DailyRate { get; set; }
 
-        // Classification of the car (e.g., SUV, Compact)
+        // Classification of the vehicle (e.g., SUV, Compact)
         [Required]
-        public required string CarClass { get; set; }
+        public required string VehicleClass { get; set; }
 
         // Seating or cargo capacity
         [Range(1, int.MaxValue)]
         public int Capacity { get; set; }
 
-        // Exterior color
-        [Required]
-        public required string Color { get; set; }
+       
     }
 }
