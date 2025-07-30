@@ -10,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddControllers();
     
 builder.Services.AddHttpClient();
 builder.Services.AddCascadingAuthenticationState();
@@ -18,6 +20,8 @@ builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -58,13 +62,19 @@ using (var scope = scopeFactory.CreateScope())
 
     // Seeding data via ApplicationDbContext
     var db = services.GetRequiredService<ApplicationDbContext>();
-    // examples - can replace or use
-    await CSE325_team.Data.SeedCars.InitializeAsync(db);   
-    // await CSE325_team.Data.SeedResources.InitializeAsync(db);
+
+    await CSE325_team.Data.SeedVehicle.InitializeAsync(db);   
+    await CSE325_team.Data.SeedBooking.InitializeAsync(db);
+    await CSE325_team.Data.SeedPayment.InitializeAsync(db);
+
+
 
 }
 
-    app.MapRazorComponents<App>()
+
+app.MapControllers();
+
+app.MapRazorComponents<App>()
         .AddInteractiveServerRenderMode();
 
 // Add additional endpoints required by the Identity /Account Razor components.
