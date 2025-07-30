@@ -59,7 +59,7 @@ using (var scope = scopeFactory.CreateScope())
     // Seeding data via ApplicationDbContext
     var db = services.GetRequiredService<ApplicationDbContext>();
     // examples - can replace or use
-    // await CSE325_team.Data.SeedCars.InitializeAsync(db);   
+    await CSE325_team.Data.SeedCars.InitializeAsync(db);   
     // await CSE325_team.Data.SeedResources.InitializeAsync(db);
 
 }
