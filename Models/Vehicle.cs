@@ -51,5 +51,8 @@ namespace CSE325_team.Models
         // Exterior color
         [Required]
         public required string Color { get; set; }
+
+        // Image file name for the vehicle
+        public string? ImageFileName { get; set; }
     }
 }

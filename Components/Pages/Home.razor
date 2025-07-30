@@ -1,4 +1,10 @@
 ﻿@page "/"
+@using CSE325_team.Models
+@using Microsoft.EntityFrameworkCore
+@using CSE325_team.Data
+
+@inject ApplicationDbContext DbContext
+
 <PageTitle>Home</PageTitle>
 
 <!-- Hero Section -->
@@ -38,29 +44,43 @@
     </div>
 </section>
 
-<!-- Featured Inventory Mockup -->
-<section class="featured-inventory">
-    <h2>Featured Vehicles (slideshow? idk)</h2>
-    <div class="inventory-cards">
-        <div class="inventory-card">
-            <img src="images/car1.jpg" alt="Sedan" />
-            <h3>Sleek Sedan</h3>
-            <p>Comfortable and efficient for city drives.</p>
-        </div>
-        <div class="inventory-card">
-            <img src="images/car2.jpg" alt="SUV" />
-            <h3>Reliable SUV</h3>
-            <p>Spacious for road trips and family getaways.</p>
-        </div>
-        <div class="inventory-card">
-            <img src="images/car3.jpg" alt="Convertible" />
-            <h3>Cool Convertible</h3>
-            <p>Top-down freedom for sunny weekends.</p>
-        </div>
-        <div class="inventory-card">
-            <img src="images/car4.jpg" alt="Motorcycle" />
-            <h3>Motorcycle</h3>
-            <p>Top-down freedom for sunny weekends.</p>
+<!-- Featured Inventory -->
+<section class="featured-inventory py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Vehicles</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            @foreach (var vehicle in featuredVehicles)
+            {
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleID}")">
+                            <img src="/images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
+                        </NavLink>
+                        <div class="card-body">
+                            <h5 class="card-title">@vehicle.Make @vehicle.Model</h5>
+                            <p class="card-text">@($"{vehicle.Color}, {vehicle.CarClass}, ${vehicle.DailyRate}/day")</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <NavLink class="btn btn-outline-primary btn-sm" href="@($"/vehicle/{vehicle.VehicleID}")">View Details</NavLink>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </section>
+
+
+
+@code {
+    private List<Vehicle> featuredVehicles = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        featuredVehicles = (await DbContext.Vehicles.ToListAsync())
+            .OrderBy(v => v.DailyRate)
+            .Take(4)
+            .ToList();
+
+    }
+}
