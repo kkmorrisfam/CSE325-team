@@ -14,6 +14,8 @@
 *.sln.docstates
 *.db
 Data/app.db
+*.db-shm
+*.db-wal
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -488,3 +490,4 @@ $RECYCLE.BIN/
 
 
 obj/
+bin/
