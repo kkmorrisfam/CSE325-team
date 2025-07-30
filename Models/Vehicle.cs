@@ -64,6 +64,15 @@ namespace CSE325_team.Models
         [Range(1, int.MaxValue)]
         public int Capacity { get; set; }
 
+<<<<<<< HEAD
        
+=======
+        // Exterior color
+        [Required]
+        public required string Color { get; set; }
+
+        // Image file name for the vehicle
+        public string? ImageFileName { get; set; }
+>>>>>>> origin/main
     }
 }
