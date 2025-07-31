@@ -70,26 +70,16 @@ using (var scope = scopeFactory.CreateScope())
 {
     //Seeding Identity roles/users
     var services = scope.ServiceProvider;
-    await CSE325_team.Data.SeedUser.InitializeAsync(services);
-
+   
     // Seeding data via ApplicationDbContext
     var db = services.GetRequiredService<ApplicationDbContext>();
     await db.Database.MigrateAsync();
-
+    await CSE325_team.Data.SeedUser.InitializeAsync(services);
     await CSE325_team.Data.SeedVehicle.InitializeAsync(db);   
     await CSE325_team.Data.SeedBooking.InitializeAsync(db);
     await CSE325_team.Data.SeedPayment.InitializeAsync(db);
-
-
-
 }
 
-if (app.Environment.IsProduction())
-{
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
-}
 
 app.MapControllers();
 
