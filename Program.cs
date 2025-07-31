@@ -20,10 +20,22 @@ builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-
-
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
+// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// if (builder.Environment.IsDevelopment())
+// {
+//     builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//         options.UseSqlite(connectionString)); // for local dev
+// }
+// else
+// {
+//     builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//         options.UseSqlServer(connectionString)); // for Azure SQL
+// }
+
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -62,6 +74,7 @@ using (var scope = scopeFactory.CreateScope())
 
     // Seeding data via ApplicationDbContext
     var db = services.GetRequiredService<ApplicationDbContext>();
+    await db.Database.MigrateAsync();
 
     await CSE325_team.Data.SeedVehicle.InitializeAsync(db);   
     await CSE325_team.Data.SeedBooking.InitializeAsync(db);
