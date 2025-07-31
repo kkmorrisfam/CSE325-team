@@ -29,6 +29,10 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
+      - name: List published files (debug app.db presence)
+        run: ls -R ${{env.DOTNET_ROOT}}/myapp
+
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -61,5 +65,8 @@ jobs:
         with:
           app-name: 'BookMeTeam'
           slot-name: 'Production'
-          package: .
-          
+          package: ${{ github.workspace }}/.net-app
+
+      - name: Confirm deployment success
+        run: echo "✅ Deployed BookMeTeam to Azure Web App"
+    
