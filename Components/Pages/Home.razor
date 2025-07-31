@@ -53,15 +53,15 @@
             {
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleID}")">
-                            <img src="/images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
+                        <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleId}")">
+                            <img src="images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
                         </NavLink>
                         <div class="card-body">
                             <h5 class="card-title">@vehicle.Make @vehicle.Model</h5>
-                            <p class="card-text">@($"{vehicle.Color}, {vehicle.CarClass}, ${vehicle.DailyRate}/day")</p>
+                            <p class="card-text">@($"{vehicle.Color}, {vehicle.VehicleType}, ${vehicle.DailyRate}/day")</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 text-end">
-                            <NavLink class="btn btn-outline-primary btn-sm" href="@($"/vehicle/{vehicle.VehicleID}")">View Details</NavLink>
+                            <NavLink class="btn btn-outline-primary btn-sm" href="@($"/vehicle/{vehicle.VehicleId}")">View Details</NavLink>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        featuredVehicles = (await DbContext.Vehicles.ToListAsync())
+        featuredVehicles = (await DbContext.Vehicle.ToListAsync())
             .OrderBy(v => v.DailyRate)
             .Take(4)
             .ToList();

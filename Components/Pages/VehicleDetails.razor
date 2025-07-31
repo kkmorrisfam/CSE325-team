@@ -10,7 +10,7 @@
 
 <PageTitle>Vehicle Details</PageTitle>
 
-@if (car == null)
+@if (vehicle == null)
 {
     <p>Vehicle not found.</p>
 }
@@ -25,14 +25,14 @@ else
 
         <div class="row">
             <div class="col-md-6">
-                <img src="/images/vehicles/@car.ImageFileName" class="img-fluid rounded shadow" alt="@car.Model" />
+                <img src="images/vehicles/@vehicle.ImageFileName" class="img-fluid rounded shadow" alt="@vehicle.Model" />
             </div>
             <div class="col-md-6">
-                <h2>@($"{car.Year} {car.Make} {car.Model}")</h2>
-                <p><strong>Color:</strong> @car.Color</p>
-                <p><strong>Category:</strong> @car.CarClass</p>
-                <p><strong>Price:</strong> $@car.DailyRate/day</p>    
-                <p><strong>Seats:</strong> @car.Capacity</p>
+                <h2>@($"{vehicle.Year} {vehicle.Make} {vehicle.Model}")</h2>
+                <p><strong>Color:</strong> @vehicle.Color</p>
+                <p><strong>Category:</strong> @vehicle.VehicleType</p>
+                <p><strong>Price:</strong> $@vehicle.DailyRate/day</p>    
+                <p><strong>Seats:</strong> @vehicle.Capacity</p>
                 <NavLink class="btn btn-primary" href="/bookings">Check Availability</NavLink>
             </div>
         </div>
@@ -45,13 +45,13 @@ else
             {
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/images/vehicles/@similar.ImageFileName" class="card-img-top" alt="@similar.Model" />
+                        <img src="images/vehicles/@similar.ImageFileName" class="card-img-top" alt="@similar.Model" />
                         <div class="card-body">
                             <h5 class="card-title">@similar.Make @similar.Model</h5>
                             <p class="card-text">$@similar.DailyRate/day</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 text-end">
-                            <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{similar.VehicleID}")">Details</NavLink>
+                            <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{similar.VehicleId}")">Details</NavLink>
                         </div>
                     </div>
                 </div>
@@ -64,17 +64,17 @@ else
     [Parameter]
     public int Id { get; set; }
 
-    private Vehicle? car;
+    private Vehicle? vehicle;
     private List<Vehicle> similarVehicles = new();
 
     protected override async Task OnInitializedAsync()
     {
-        car = await DbContext.Vehicles.FindAsync(Id);
+        vehicle = await DbContext.Vehicle.FindAsync(Id);
 
-        if (car != null)
+        if (vehicle != null)
         {
-            similarVehicles = await DbContext.Vehicles
-                .Where(v => v.CarClass == car.CarClass && v.VehicleID != car.VehicleID)
+            similarVehicles = await DbContext.Vehicle
+                .Where(v => v.VehicleType == vehicle.VehicleType && v.VehicleId != vehicle.VehicleId)
                 .Take(4)
                 .ToListAsync();
         }
