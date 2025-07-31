@@ -84,6 +84,12 @@ using (var scope = scopeFactory.CreateScope())
 
 }
 
+if (app.Environment.IsProduction())
+{
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+}
 
 app.MapControllers();
 
