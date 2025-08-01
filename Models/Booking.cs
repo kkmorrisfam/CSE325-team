@@ -7,10 +7,10 @@ namespace CSE325_team.Models
 {
     public class Booking
     {
-        public int Id { get; set; }
-
+        [Key]
+        public int BookingId { get; set; }
+  
         [Required]
-        public string ClientName { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
@@ -22,14 +22,11 @@ namespace CSE325_team.Models
         public decimal TotalPrice { get; set; }
 
         // Relación con Vehicle (antes era Car)
-        [ForeignKey("Vehicle")]
-        public int VehicleID { get; set; }
-        public Vehicle Vehicle { get; set; }
+        public required Vehicle Vehicle { get; set; }
 
         // Relación con el usuario que hizo la reserva
-        [ForeignKey("User")]
-        public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        [ForeignKey("User")][Required]
+        public required string UserId { get; set; }
+        public required ApplicationUser User { get; set; }
     }
 }
-

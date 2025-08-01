@@ -1,0 +1,119 @@
+﻿@page "/inventory"
+@rendermode InteractiveServer
+@using CSE325_team.Models
+@using Microsoft.EntityFrameworkCore
+@using CSE325_team.Data
+@using Microsoft.AspNetCore.Components
+@inject ApplicationDbContext _context
+
+<PageTitle>Inventory</PageTitle>
+
+<h1>Inventory</h1>
+
+<div class="mb-4">
+    <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+        <input placeholder="Search..." class="form-control w-auto"
+               value="@searchQuery"
+               @oninput="OnSearchChanged" />
+    </div>
+
+    <div class="d-flex flex-wrap gap-2">
+        <button class='@GetButtonClass("Coupe")' @onclick='() => FilterByCategory("Coupe")'>🚗 Coupe</button>
+        <button class='@GetButtonClass("Sedan")' @onclick='() => FilterByCategory("Sedan")'>🚙 Sedan</button>
+        <button class='@GetButtonClass("Truck")' @onclick='() => FilterByCategory("Truck")'>🛻 Truck</button>
+        <button class='@GetButtonClass("Motorcycle")' @onclick='() => FilterByCategory("Motorcycle")'>🏍 Motorcycle</button>
+        <button class='@GetButtonClass("Luxury")' @onclick='() => FilterByCategory("Luxury")'>💎 Luxury</button>
+    </div>
+</div>
+
+@if (filteredVehicles.Count == 0)
+{
+    <p>No vehicles available.</p>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        @foreach (var vehicle in filteredVehicles)
+        {
+            <div class="col">
+                <div class="card h-100 shadow rounded-3 border-0">
+                    <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleId}")">
+                        <img src="images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
+                    </NavLink>
+                    <div class="card-body">
+                        <h5 class="card-title">@vehicle.Make @vehicle.Model</h5>
+                        <p class="card-text">@vehicle.VehicleType • @vehicle.Color</p>
+                        <p class="card-text fw-bold">$@vehicle.DailyRate/day</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex justify-content-between">
+                            <NavLink class="btn btn-primary btn-sm" href="/bookings">Book Now</NavLink>
+                            <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{vehicle.VehicleId}")">Details</NavLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<Vehicle> vehicles = new();
+    private List<Vehicle> filteredVehicles = new();
+    private string? selectedCategory = null;
+    private string searchQuery = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicles = await _context.Vehicle.ToListAsync();
+        filteredVehicles = vehicles;
+    }
+
+    private void FilterByCategory(string category)
+    {
+        if (selectedCategory == category)
+        {
+            selectedCategory = null;
+        }
+        else
+        {
+            selectedCategory = category;
+        }
+
+        ApplyFilters();
+    }
+
+    private void OnSearchChanged(ChangeEventArgs e)
+    {
+        searchQuery = e.Value?.ToString() ?? "";
+        ApplyFilters();
+    }
+
+    private void ApplyFilters()
+    {
+        IEnumerable<Vehicle> query = vehicles;
+
+        if (!string.IsNullOrWhiteSpace(selectedCategory))
+        {
+            query = query.Where(v => v.VehicleType.Equals(selectedCategory, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(searchQuery))
+        {
+            query = query.Where(v =>
+                v.Make.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                v.Model.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                v.Color.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                v.VehicleType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                (v.Year.HasValue && v.Year.Value.ToString().Contains(searchQuery))
+            );
+        }
+
+        filteredVehicles = query.ToList();
+    }
+
+    private string GetButtonClass(string category)
+    {
+        return selectedCategory == category ? "btn btn-dark" : "btn btn-outline-dark";
+    }
+}

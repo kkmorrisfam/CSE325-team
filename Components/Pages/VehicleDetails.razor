@@ -1,0 +1,82 @@
+@page "/vehicle/{Id:int}"
+@rendermode InteractiveServer
+@using CSE325_team.Models
+@using CSE325_team.Data
+@using Microsoft.EntityFrameworkCore
+
+
+@inject NavigationManager Navigation
+@inject ApplicationDbContext DbContext
+
+<PageTitle>Vehicle Details</PageTitle>
+
+@if (vehicle == null)
+{
+    <p>Vehicle not found.</p>
+}
+else
+{
+    <div class="container py-4">
+        <button class="btn btn-outline-secondary mb-3"
+                @onclick:preventDefault
+                @onclick='() => Navigation.NavigateTo("/inventory")'>
+            ← Back to Inventory
+        </button>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="images/vehicles/@vehicle.ImageFileName" class="img-fluid rounded shadow" alt="@vehicle.Model" />
+            </div>
+            <div class="col-md-6">
+                <h2>@($"{vehicle.Year} {vehicle.Make} {vehicle.Model}")</h2>
+                <p><strong>Color:</strong> @vehicle.Color</p>
+                <p><strong>Category:</strong> @vehicle.VehicleType</p>
+                <p><strong>Price:</strong> $@vehicle.DailyRate/day</p>    
+                <p><strong>Seats:</strong> @vehicle.Capacity</p>
+                <NavLink class="btn btn-primary" href="/bookings">Check Availability</NavLink>
+            </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <h4>Similar Vehicles</h4>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach (var similar in similarVehicles)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/vehicles/@similar.ImageFileName" class="card-img-top" alt="@similar.Model" />
+                        <div class="card-body">
+                            <h5 class="card-title">@similar.Make @similar.Model</h5>
+                            <p class="card-text">$@similar.DailyRate/day</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{similar.VehicleId}")">Details</NavLink>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Vehicle? vehicle;
+    private List<Vehicle> similarVehicles = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicle = await DbContext.Vehicle.FindAsync(Id);
+
+        if (vehicle != null)
+        {
+            similarVehicles = await DbContext.Vehicle
+                .Where(v => v.VehicleType == vehicle.VehicleType && v.VehicleId != vehicle.VehicleId)
+                .Take(4)
+                .ToListAsync();
+        }
+    }
+}

@@ -17,7 +17,7 @@ namespace CSE325_team.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index()
         {
-            var bookings = await _context.Bookings
+            var bookings = await _context.Booking
                 .Include(b => b.Vehicle)
                 .Include(b => b.User)
                 .ToListAsync();
@@ -26,14 +26,14 @@ namespace CSE325_team.Controllers
         }
 
         // GET: Bookings/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? BookingId)
         {
-            if (id == null) return NotFound();
+            if (BookingId == null) return NotFound();
 
-            var booking = await _context.Bookings
+            var booking = await _context.Booking
                 .Include(b => b.Vehicle)
                 .Include(b => b.User)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.BookingId == BookingId);
 
             if (booking == null) return NotFound();
 
@@ -43,14 +43,14 @@ namespace CSE325_team.Controllers
         // GET: Bookings/Create
         public IActionResult Create()
         {
-            ViewData["Vehicles"] = _context.Vehicles.ToList();
+            ViewData["Vehicles"] = _context.Vehicle.ToList();
             return View();
         }
 
         // POST: Bookings/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClientName,StartDate,EndDate,TotalPrice,VehicleID,UserId")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,ClientName,StartDate,EndDate,TotalPrice,VehicleId,UserId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace CSE325_team.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Vehicles"] = _context.Vehicles.ToList();
+            ViewData["Vehicles"] = _context.Vehicle.ToList();
             return View(booking);
         }
 
@@ -67,19 +67,19 @@ namespace CSE325_team.Controllers
         {
             if (id == null) return NotFound();
 
-            var booking = await _context.Bookings.FindAsync(id);
+            var booking = await _context.Booking.FindAsync(id);
             if (booking == null) return NotFound();
 
-            ViewData["Vehicles"] = _context.Vehicles.ToList();
+            ViewData["Vehicles"] = _context.Vehicle.ToList();
             return View(booking);
         }
 
         // POST: Bookings/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ClientName,StartDate,EndDate,TotalPrice,VehicleID,UserId")] Booking booking)
+        public async Task<IActionResult> Edit(int BookingId, [Bind("BookingId,ClientName,StartDate,EndDate,TotalPrice,VehicleId,UserId")] Booking booking)
         {
-            if (id != booking.Id) return NotFound();
+            if (BookingId != booking.BookingId) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace CSE325_team.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.Bookings.Any(e => e.Id == id))
+                    if (!_context.Booking.Any(e => e.BookingId == BookingId))
                         return NotFound();
                     else
                         throw;
@@ -98,19 +98,19 @@ namespace CSE325_team.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["Vehicles"] = _context.Vehicles.ToList();
+            ViewData["Vehicles"] = _context.Vehicle.ToList();
             return View(booking);
         }
 
         // GET: Bookings/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? BookingId)
         {
-            if (id == null) return NotFound();
+            if (BookingId == null) return NotFound();
 
-            var booking = await _context.Bookings
+            var booking = await _context.Booking
                 .Include(b => b.Vehicle)
                 .Include(b => b.User)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.BookingId == BookingId);
 
             if (booking == null) return NotFound();
 
@@ -122,10 +122,10 @@ namespace CSE325_team.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var booking = await _context.Bookings.FindAsync(id);
+            var booking = await _context.Booking.FindAsync(id);
             if (booking != null)
             {
-                _context.Bookings.Remove(booking);
+                _context.Booking.Remove(booking);
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));

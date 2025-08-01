@@ -87,18 +87,90 @@ namespace CSE325_team.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("CSE325_team.Models.Booking", b =>
+                {
+                    b.Property<int>("BookingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("BookingId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("Booking");
+                });
+
+            modelBuilder.Entity("CSE325_team.Models.Payment", b =>
+                {
+                    b.Property<int>("PaymentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int?>("BookingId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("PaymentAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Zip")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PaymentId");
+
+                    b.HasIndex("BookingId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Payment");
+                });
+
             modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
                 {
-                    b.Property<int>("VehicleID")
+                    b.Property<int>("VehicleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Capacity")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("CarClass")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -106,6 +178,12 @@ namespace CSE325_team.Migrations
 
                     b.Property<decimal>("DailyRate")
                         .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("FuelType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageFileName")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LicensePlate")
                         .HasMaxLength(20)
@@ -122,16 +200,27 @@ namespace CSE325_team.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("Seats")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Transmission")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VehicleType")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("Year")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("VehicleID");
+                    b.HasKey("VehicleId");
 
-                    b.ToTable("Vehicles");
+                    b.ToTable("Vehicle");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -264,11 +353,28 @@ namespace CSE325_team.Migrations
 
             modelBuilder.Entity("CSE325_team.Models.Booking", b =>
                 {
-                    b.HasOne("CSE325_team.Models.Car", "Car")
+                    b.HasOne("CSE325_team.Data.ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("CarId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("CSE325_team.Models.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("CSE325_team.Models.Payment", b =>
+                {
+                    b.HasOne("CSE325_team.Models.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId");
 
                     b.HasOne("CSE325_team.Data.ApplicationUser", "User")
                         .WithMany()
@@ -276,7 +382,7 @@ namespace CSE325_team.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Car");
+                    b.Navigation("Booking");
 
                     b.Navigation("User");
                 });

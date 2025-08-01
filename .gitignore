@@ -13,6 +13,9 @@
 *.userosscache
 *.sln.docstates
 *.db
+Data/app.db
+*.db-shm
+*.db-wal
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -483,3 +486,8 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+
+
+obj/
+bin/
