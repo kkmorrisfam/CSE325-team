@@ -8,8 +8,6 @@ using CSE325_team.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddAntiforgery();
-
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
@@ -67,7 +65,6 @@ else
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-app.UseAntiforgery();
 
 app.UseAuthentication();    // Required for auth
 app.UseAuthorization();     // Required for role policies
