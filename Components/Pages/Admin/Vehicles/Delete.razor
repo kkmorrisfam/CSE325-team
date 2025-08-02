@@ -1,0 +1,39 @@
+@page "/admin/vehicles/delete/{Id:int}"
+@attribute [Authorize(Roles = "Admin")]
+@inject ApplicationDbContext Db
+@inject NavigationManager Nav
+
+<h3>Delete Vehicle</h3>
+
+@if (vehicle == null)
+{
+    <p><em>Vehicle not found.</em></p>
+}
+else
+{
+    <p>Are you sure you want to delete <strong>@vehicle.Make @vehicle.Model</strong>?</p>
+    <form method="post">
+        <button class="btn btn-danger" @onclick="DeleteVehicle">Delete</button>
+        <NavLink class="btn btn-secondary" href="/admin/vehicles">Cancel</NavLink>
+    </form>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Vehicle? vehicle;
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicle = await Db.Vehicle.FindAsync(Id);
+    }
+
+    private async Task DeleteVehicle()
+    {
+        if (vehicle is not null)
+        {
+            Db.Vehicle.Remove(vehicle);
+            await Db.SaveChangesAsync();
+            Nav.NavigateTo("/admin/vehicles");
+        }
+    }
+}

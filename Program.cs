@@ -8,6 +8,8 @@ using CSE325_team.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAntiforgery();
+
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
@@ -43,6 +45,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.S
     // .AddSignInManager() //can remove when using AddIdentity
     .AddDefaultTokenProviders();
 
+builder.Services.AddAuthorization(); // Needed for [Authorize] and role policies
+
+
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 var app = builder.Build();
@@ -63,6 +68,9 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.UseAuthentication();    // Required for auth
+app.UseAuthorization();     // Required for role policies
 
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
@@ -88,5 +96,7 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+
+builder.Logging.AddConsole();
 
 app.Run();

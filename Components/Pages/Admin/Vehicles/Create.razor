@@ -1,0 +1,60 @@
+@page "/admin/vehicles/create"
+@attribute [Authorize(Roles = "Admin")]
+@inject ApplicationDbContext Db
+@inject NavigationManager Nav
+
+<h3>Add New Vehicle</h3>
+
+<EditForm Model="vehicle" OnValidSubmit="HandleValidSubmit">
+    <AntiforgeryToken />
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Make:</label>
+        <InputText class="form-control" @bind-Value="vehicle.Make" />
+    </div>
+
+    <div class="mb-3">
+        <label>Model:</label>
+        <InputText class="form-control" @bind-Value="vehicle.Model" />
+    </div>
+
+    <div class="mb-3">
+        <label>Year:</label>
+        <InputNumber class="form-control" @bind-Value="vehicle.Year" />
+    </div>
+
+    <div class="mb-3">
+        <label>Daily Rate ($):</label>
+        <InputNumber class="form-control" @bind-Value="vehicle.DailyRate" />
+    </div>
+
+    <div class="mb-3">
+        <label>Status:</label>
+        <InputText class="form-control" @bind-Value="vehicle.Status" />
+    </div>
+
+    <button class="btn btn-success" type="submit">Save</button>
+    <NavLink class="btn btn-secondary" href="/admin/vehicles">Cancel</NavLink>
+
+</EditForm>
+
+@code {
+    private Vehicle vehicle = new()
+    {
+    Make = string.Empty,
+    Model = string.Empty,
+    Color = string.Empty,
+    VehicleType = string.Empty,
+    Transmission = string.Empty,
+    Status = "available"
+    };
+
+    private async Task HandleValidSubmit()
+    {
+        Db.Vehicle.Add(vehicle);
+        await Db.SaveChangesAsync();
+        Nav.NavigateTo("/admin/vehicles");
+    }
+}
