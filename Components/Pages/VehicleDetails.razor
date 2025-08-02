@@ -31,8 +31,12 @@ else
                 <h2>@($"{vehicle.Year} {vehicle.Make} {vehicle.Model}")</h2>
                 <p><strong>Color:</strong> @vehicle.Color</p>
                 <p><strong>Category:</strong> @vehicle.VehicleType</p>
+                <p><strong>Transmission:</strong> @vehicle.Transmission</p>
+                <p><strong>Fuel Type:</strong> @(vehicle.FuelType ?? "N/A")</p>
                 <p><strong>Price:</strong> $@vehicle.DailyRate/day</p>    
                 <p><strong>Seats:</strong> @vehicle.Capacity</p>
+                <p><strong>Mileage:</strong> @vehicle.Mileage miles</p>
+                <p><strong>Status:</strong> @vehicle.Status</p>
                 <NavLink class="btn btn-primary" href="/bookings">Check Availability</NavLink>
             </div>
         </div>
