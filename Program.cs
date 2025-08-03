@@ -69,6 +69,8 @@ app.UseStaticFiles();
 app.UseAuthentication();    // Required for auth
 app.UseAuthorization();     // Required for role policies
 
+app.UseAntiforgery();
+
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using (var scope = scopeFactory.CreateScope())
