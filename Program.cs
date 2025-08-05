@@ -20,6 +20,14 @@ builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+Console.WriteLine("🔍 Using connection string:");
+Console.WriteLine(connectionString);
+var dataSource = new Microsoft.Data.Sqlite.SqliteConnectionStringBuilder(connectionString).DataSource;
+Console.WriteLine("📁 Absolute path to database file:");
+Console.WriteLine(Path.GetFullPath(dataSource));
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

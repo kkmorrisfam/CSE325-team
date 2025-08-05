@@ -3,6 +3,7 @@ using System;
 using CSE325_team.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250804203708_UpdateVehicleSchema")]
+    partial class UpdateVehicleSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
@@ -169,7 +172,7 @@ namespace CSE325_team.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Capacity")
+                    b.Property<int?>("Capacity")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Color")
@@ -183,7 +186,6 @@ namespace CSE325_team.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImageFileName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Make")
@@ -191,13 +193,14 @@ namespace CSE325_team.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("Mileage")
+                        .HasMaxLength(20)
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Seats")
+                    b.Property<int?>("Seats")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Status")
@@ -212,7 +215,7 @@ namespace CSE325_team.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Year")
+                    b.Property<int?>("Year")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("VehicleId");
