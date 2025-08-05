@@ -19,7 +19,6 @@ namespace CSE325_team.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
-
             modelBuilder.Entity("CSE325_team.Data.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")

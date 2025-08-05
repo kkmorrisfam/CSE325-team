@@ -1,32 +1,17 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using CSE325_team.Data;
-
-namespace CSE325_team.Models
+namespace CSE325_team.Models; 
+public class Booking
 {
-    public class Booking
-    {
-        [Key]
-        public int BookingId { get; set; }
-  
-        [Required]
+    public int BookingId { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
+    public decimal TotalPrice { get; set; }
+    public int UserId { get; set; }
+    public int VehicleId { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime StartDate { get; set; }
+    // Navigation properties
+    public User User { get; set; }
+    public Vehicle Vehicle { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime EndDate { get; set; }
-
-        [Column(TypeName = "decimal(10,2)")]
-        public decimal TotalPrice { get; set; }
-
-        // Relación con Vehicle (antes era Car)
-        public required Vehicle Vehicle { get; set; }
-
-        // Relación con el usuario que hizo la reserva
-        [ForeignKey("User")][Required]
-        public required string UserId { get; set; }
-        public required ApplicationUser User { get; set; }
-    }
 }

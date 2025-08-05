@@ -30,9 +30,8 @@ namespace CSE325_team.Data
                         StartDate = DateTime.UtcNow,
                         EndDate = DateTime.UtcNow.AddDays(3),
                         TotalPrice = 269.97m,
-                        Vehicle = vehicle1,
-                        UserId = user1.Id,
-                        User = user1
+                        VehicleId = vehicle1.VehicleId,
+                        UserId = int.Parse(user1.Id),
                     });
 
                 await context.SaveChangesAsync();

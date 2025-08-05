@@ -1,0 +1,13 @@
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.card-text {
+  margin-bottom: 0.7rem;
+}
+.btn-success {
+  width: 100%;
+}
