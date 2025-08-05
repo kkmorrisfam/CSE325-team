@@ -1,0 +1,14 @@
+<file name=docfx.json path=/Users/davidvalentine/Documents/cse325/Team Project/CSE325-team>
+{
+  "build": {
+    "content": [
+      {
+        "files": [ "api/**.yml" ],
+        "src": ".",
+        "dest": "docs",
+        "flatten": false
+      }
+    ]
+  }
+}
+</file>

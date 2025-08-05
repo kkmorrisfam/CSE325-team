@@ -1,0 +1,1074 @@
+{
+  "source_base_path": "/Users/davidvalentine/Documents/cse325/Team Project/CSE325-team",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.AccessDenied.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.AccessDenied.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.AccessDenied",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ConfirmEmail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ConfirmEmail.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ConfirmEmail",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ConfirmEmailChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ConfirmEmailChange.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ConfirmEmailChange",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ExternalLogin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ExternalLogin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ExternalLogin",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ForgotPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ForgotPassword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ForgotPassword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.InvalidPasswordReset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.InvalidPasswordReset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.InvalidPasswordReset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.InvalidUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.InvalidUser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.InvalidUser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Lockout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Lockout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Lockout",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Login.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Login.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Login",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.LoginWith2fa.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.LoginWith2fa.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.LoginWith2fa",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.LoginWithRecoveryCode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.ChangePassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.ChangePassword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.ChangePassword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.DeletePersonalData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.Disable2fa.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.Disable2fa.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.Disable2fa",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.Email.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.Email.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.Email",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.ExternalLogins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.ExternalLogins.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.ExternalLogins",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.Index.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.Index.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.Index",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.PersonalData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.PersonalData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.PersonalData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.SetPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.SetPassword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.SetPassword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage._Imports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage._Imports.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage._Imports",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Manage",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Register.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Register.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.Register",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.RegisterConfirmation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.RegisterConfirmation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.RegisterConfirmation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ResendEmailConfirmation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ResendEmailConfirmation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ResendEmailConfirmation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ResetPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ResetPassword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ResetPassword",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages.ResetPasswordConfirmation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages._Imports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages._Imports.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages._Imports",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Pages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Pages",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.AccountLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.AccountLayout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.AccountLayout",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ExternalLoginPicker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ExternalLoginPicker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.ExternalLoginPicker",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ManageLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ManageLayout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.ManageLayout",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ManageNavMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ManageNavMenu.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.ManageNavMenu",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.RedirectToLogin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.RedirectToLogin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.RedirectToLogin",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ShowRecoveryCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ShowRecoveryCodes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.ShowRecoveryCodes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.StatusMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.StatusMessage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared.StatusMessage",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.Shared.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Account.Shared",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.App.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.App",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Layout.Footer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Layout.Footer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Layout.Footer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Layout.MainLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Layout.MainLayout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Layout.MainLayout",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Layout.NavMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Layout.NavMenu.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Layout.NavMenu",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Layout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Layout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Layout",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.Auth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.Auth.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.Auth",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.Bookings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.Bookings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.Bookings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.Error.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.Error.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.Error",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.Home.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.Home.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.Home",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.Inventory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.Inventory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.Inventory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.Test.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.Test.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.Test",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.TestName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.TestName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.TestName",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.VehicleDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.VehicleDetails.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages.VehicleDetails",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Pages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Pages.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Pages",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Routes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.Routes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components.Routes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components._Imports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components._Imports.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components._Imports",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Components.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Components",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Controllers.BookingsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Controllers.BookingsController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Controllers.BookingsController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Controllers.TestController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Controllers.TestController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Controllers.TestController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.ApplicationDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.ApplicationDbContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.ApplicationDbContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.ApplicationUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.ApplicationUser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.ApplicationUser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.SeedBooking.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.SeedBooking.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.SeedBooking",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.SeedCars.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.SeedCars.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.SeedCars",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.SeedPayment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.SeedPayment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.SeedPayment",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.SeedUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.SeedUser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.SeedUser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.SeedVehicle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.SeedVehicle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data.SeedVehicle",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Data",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Migrations.InitialCreate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Migrations.InitialCreate",
+      "Summary": "<p sourcefile=\"docs/CSE325_team.Migrations.InitialCreate.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Models.Booking.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Models.Booking.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Models.Booking",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Models.Payment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Models.Payment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Models.Payment",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Models.Vehicle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Models.Vehicle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Models.Vehicle",
+      "Summary": "<p sourcefile=\"docs/CSE325_team.Models.Vehicle.yml\" sourcestartlinenumber=\"1\">Represents a vehicle available for rent.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/CSE325_team.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CSE325_team.Models",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/docs/toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

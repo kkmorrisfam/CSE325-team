@@ -1,0 +1,1097 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Models.Vehicle
+  commentId: T:CSE325_team.Models.Vehicle
+  id: Vehicle
+  parent: CSE325_team.Models
+  children:
+  - CSE325_team.Models.Vehicle.#ctor
+  - CSE325_team.Models.Vehicle.Capacity
+  - CSE325_team.Models.Vehicle.Color
+  - CSE325_team.Models.Vehicle.DailyRate
+  - CSE325_team.Models.Vehicle.FuelType
+  - CSE325_team.Models.Vehicle.ImageFileName
+  - CSE325_team.Models.Vehicle.LicensePlate
+  - CSE325_team.Models.Vehicle.Make
+  - CSE325_team.Models.Vehicle.Mileage
+  - CSE325_team.Models.Vehicle.Model
+  - CSE325_team.Models.Vehicle.Seats
+  - CSE325_team.Models.Vehicle.Status
+  - CSE325_team.Models.Vehicle.Transmission
+  - CSE325_team.Models.Vehicle.VehicleId
+  - CSE325_team.Models.Vehicle.VehicleType
+  - CSE325_team.Models.Vehicle.Year
+  langs:
+  - csharp
+  - vb
+  name: Vehicle
+  nameWithType: Vehicle
+  fullName: CSE325_team.Models.Vehicle
+  type: Class
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Vehicle
+    path: Models/Vehicle.cs
+    startLine: 8
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  summary: Represents a vehicle available for rent.
+  example: []
+  syntax:
+    content: public class Vehicle
+    content.vb: Public Class Vehicle
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CSE325_team.Models.Vehicle.VehicleId
+  commentId: P:CSE325_team.Models.Vehicle.VehicleId
+  id: VehicleId
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: VehicleId
+  nameWithType: Vehicle.VehicleId
+  fullName: CSE325_team.Models.Vehicle.VehicleId
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: VehicleId
+    path: Models/Vehicle.cs
+    startLine: 11
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Key]
+
+      public int VehicleId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property VehicleId As Integer
+  overload: CSE325_team.Models.Vehicle.VehicleId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Vehicle.Make
+  commentId: P:CSE325_team.Models.Vehicle.Make
+  id: Make
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Make
+  nameWithType: Vehicle.Make
+  fullName: CSE325_team.Models.Vehicle.Make
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Make
+    path: Models/Vehicle.cs
+    startLine: 15
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public required string Make { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Make As String
+  overload: CSE325_team.Models.Vehicle.Make*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Vehicle.Model
+  commentId: P:CSE325_team.Models.Vehicle.Model
+  id: Model
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Model
+  nameWithType: Vehicle.Model
+  fullName: CSE325_team.Models.Vehicle.Model
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Model
+    path: Models/Vehicle.cs
+    startLine: 19
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public required string Model { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Model As String
+  overload: CSE325_team.Models.Vehicle.Model*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Vehicle.Year
+  commentId: P:CSE325_team.Models.Vehicle.Year
+  id: Year
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Year
+  nameWithType: Vehicle.Year
+  fullName: CSE325_team.Models.Vehicle.Year
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Year
+    path: Models/Vehicle.cs
+    startLine: 24
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public int? Year { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Year As Integer?
+  overload: CSE325_team.Models.Vehicle.Year*
+- uid: CSE325_team.Models.Vehicle.Color
+  commentId: P:CSE325_team.Models.Vehicle.Color
+  id: Color
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: Vehicle.Color
+  fullName: CSE325_team.Models.Vehicle.Color
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Color
+    path: Models/Vehicle.cs
+    startLine: 29
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public required string Color { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Color As String
+  overload: CSE325_team.Models.Vehicle.Color*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Vehicle.VehicleType
+  commentId: P:CSE325_team.Models.Vehicle.VehicleType
+  id: VehicleType
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: VehicleType
+  nameWithType: Vehicle.VehicleType
+  fullName: CSE325_team.Models.Vehicle.VehicleType
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: VehicleType
+    path: Models/Vehicle.cs
+    startLine: 32
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public required string VehicleType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property VehicleType As String
+  overload: CSE325_team.Models.Vehicle.VehicleType*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Vehicle.Transmission
+  commentId: P:CSE325_team.Models.Vehicle.Transmission
+  id: Transmission
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Transmission
+  nameWithType: Vehicle.Transmission
+  fullName: CSE325_team.Models.Vehicle.Transmission
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Transmission
+    path: Models/Vehicle.cs
+    startLine: 35
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public required string Transmission { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Transmission As String
+  overload: CSE325_team.Models.Vehicle.Transmission*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Vehicle.DailyRate
+  commentId: P:CSE325_team.Models.Vehicle.DailyRate
+  id: DailyRate
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: DailyRate
+  nameWithType: Vehicle.DailyRate
+  fullName: CSE325_team.Models.Vehicle.DailyRate
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: DailyRate
+    path: Models/Vehicle.cs
+    startLine: 40
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Column(TypeName = "decimal(10,2)")]
+
+      [Range(0, 1.7976931348623157E+308)]
+
+      public decimal DailyRate { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <Column(TypeName:="decimal(10,2)")>
+
+      <Range(0, 1.7976931348623157E+308)>
+
+      Public Property DailyRate As Decimal
+  overload: CSE325_team.Models.Vehicle.DailyRate*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: TypeName
+      type: System.String
+      value: decimal(10,2)
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)
+    arguments:
+    - type: System.Double
+      value: 0
+    - type: System.Double
+      value: 1.7976931348623157E+308
+- uid: CSE325_team.Models.Vehicle.ImageFileName
+  commentId: P:CSE325_team.Models.Vehicle.ImageFileName
+  id: ImageFileName
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: ImageFileName
+  nameWithType: Vehicle.ImageFileName
+  fullName: CSE325_team.Models.Vehicle.ImageFileName
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: ImageFileName
+    path: Models/Vehicle.cs
+    startLine: 44
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public string? ImageFileName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ImageFileName As String
+  overload: CSE325_team.Models.Vehicle.ImageFileName*
+- uid: CSE325_team.Models.Vehicle.FuelType
+  commentId: P:CSE325_team.Models.Vehicle.FuelType
+  id: FuelType
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: FuelType
+  nameWithType: Vehicle.FuelType
+  fullName: CSE325_team.Models.Vehicle.FuelType
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: FuelType
+    path: Models/Vehicle.cs
+    startLine: 46
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public string? FuelType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FuelType As String
+  overload: CSE325_team.Models.Vehicle.FuelType*
+- uid: CSE325_team.Models.Vehicle.Seats
+  commentId: P:CSE325_team.Models.Vehicle.Seats
+  id: Seats
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Seats
+  nameWithType: Vehicle.Seats
+  fullName: CSE325_team.Models.Vehicle.Seats
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Seats
+    path: Models/Vehicle.cs
+    startLine: 48
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public int? Seats { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Seats As Integer?
+  overload: CSE325_team.Models.Vehicle.Seats*
+- uid: CSE325_team.Models.Vehicle.LicensePlate
+  commentId: P:CSE325_team.Models.Vehicle.LicensePlate
+  id: LicensePlate
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: LicensePlate
+  nameWithType: Vehicle.LicensePlate
+  fullName: CSE325_team.Models.Vehicle.LicensePlate
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: LicensePlate
+    path: Models/Vehicle.cs
+    startLine: 49
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [MaxLength(20)]
+
+      public string? LicensePlate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MaxLength(20)>
+
+      Public Property LicensePlate As String
+  overload: CSE325_team.Models.Vehicle.LicensePlate*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 20
+- uid: CSE325_team.Models.Vehicle.Mileage
+  commentId: P:CSE325_team.Models.Vehicle.Mileage
+  id: Mileage
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Mileage
+  nameWithType: Vehicle.Mileage
+  fullName: CSE325_team.Models.Vehicle.Mileage
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Mileage
+    path: Models/Vehicle.cs
+    startLine: 53
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public int? Mileage { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Mileage As Integer?
+  overload: CSE325_team.Models.Vehicle.Mileage*
+- uid: CSE325_team.Models.Vehicle.Status
+  commentId: P:CSE325_team.Models.Vehicle.Status
+  id: Status
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: Vehicle.Status
+  fullName: CSE325_team.Models.Vehicle.Status
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Status
+    path: Models/Vehicle.cs
+    startLine: 56
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      [RegularExpression("available|rented|reserved|maintenance", ErrorMessage = "Invalid status")]
+
+      public required string Status { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <RegularExpression("available|rented|reserved|maintenance", ErrorMessage:="Invalid status")>
+
+      Public Property Status As String
+  overload: CSE325_team.Models.Vehicle.Status*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RegularExpressionAttribute
+    ctor: System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: available|rented|reserved|maintenance
+    namedArguments:
+    - name: ErrorMessage
+      type: System.String
+      value: Invalid status
+- uid: CSE325_team.Models.Vehicle.Capacity
+  commentId: P:CSE325_team.Models.Vehicle.Capacity
+  id: Capacity
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Capacity
+  nameWithType: Vehicle.Capacity
+  fullName: CSE325_team.Models.Vehicle.Capacity
+  type: Property
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Capacity
+    path: Models/Vehicle.cs
+    startLine: 62
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Range(1, 2147483647)]
+
+      public int Capacity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Range(1, 2147483647)>
+
+      Public Property Capacity As Integer
+  overload: CSE325_team.Models.Vehicle.Capacity*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 2147483647
+- uid: CSE325_team.Models.Vehicle.#ctor
+  commentId: M:CSE325_team.Models.Vehicle.#ctor
+  id: '#ctor'
+  parent: CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Vehicle()
+  nameWithType: Vehicle.Vehicle()
+  fullName: CSE325_team.Models.Vehicle.Vehicle()
+  type: Constructor
+  source:
+    remote:
+      path: Models/Vehicle.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: .ctor
+    path: Models/Vehicle.cs
+    startLine: 66
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public Vehicle()
+    content.vb: Public Sub New()
+  overload: CSE325_team.Models.Vehicle.#ctor*
+  nameWithType.vb: Vehicle.New()
+  fullName.vb: CSE325_team.Models.Vehicle.New()
+  name.vb: New()
+references:
+- uid: CSE325_team.Models
+  commentId: N:CSE325_team.Models
+  href: CSE325_team.html
+  name: CSE325_team.Models
+  nameWithType: CSE325_team.Models
+  fullName: CSE325_team.Models
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSE325_team.Models.Vehicle.VehicleId*
+  commentId: Overload:CSE325_team.Models.Vehicle.VehicleId
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_VehicleId
+  name: VehicleId
+  nameWithType: Vehicle.VehicleId
+  fullName: CSE325_team.Models.Vehicle.VehicleId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CSE325_team.Models.Vehicle.Make*
+  commentId: Overload:CSE325_team.Models.Vehicle.Make
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Make
+  name: Make
+  nameWithType: Vehicle.Make
+  fullName: CSE325_team.Models.Vehicle.Make
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CSE325_team.Models.Vehicle.Model*
+  commentId: Overload:CSE325_team.Models.Vehicle.Model
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Model
+  name: Model
+  nameWithType: Vehicle.Model
+  fullName: CSE325_team.Models.Vehicle.Model
+- uid: CSE325_team.Models.Vehicle.Year*
+  commentId: Overload:CSE325_team.Models.Vehicle.Year
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Year
+  name: Year
+  nameWithType: Vehicle.Year
+  fullName: CSE325_team.Models.Vehicle.Year
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CSE325_team.Models.Vehicle.Color*
+  commentId: Overload:CSE325_team.Models.Vehicle.Color
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Color
+  name: Color
+  nameWithType: Vehicle.Color
+  fullName: CSE325_team.Models.Vehicle.Color
+- uid: CSE325_team.Models.Vehicle.VehicleType*
+  commentId: Overload:CSE325_team.Models.Vehicle.VehicleType
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_VehicleType
+  name: VehicleType
+  nameWithType: Vehicle.VehicleType
+  fullName: CSE325_team.Models.Vehicle.VehicleType
+- uid: CSE325_team.Models.Vehicle.Transmission*
+  commentId: Overload:CSE325_team.Models.Vehicle.Transmission
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Transmission
+  name: Transmission
+  nameWithType: Vehicle.Transmission
+  fullName: CSE325_team.Models.Vehicle.Transmission
+- uid: CSE325_team.Models.Vehicle.DailyRate*
+  commentId: Overload:CSE325_team.Models.Vehicle.DailyRate
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_DailyRate
+  name: DailyRate
+  nameWithType: Vehicle.DailyRate
+  fullName: CSE325_team.Models.Vehicle.DailyRate
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: CSE325_team.Models.Vehicle.ImageFileName*
+  commentId: Overload:CSE325_team.Models.Vehicle.ImageFileName
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_ImageFileName
+  name: ImageFileName
+  nameWithType: Vehicle.ImageFileName
+  fullName: CSE325_team.Models.Vehicle.ImageFileName
+- uid: CSE325_team.Models.Vehicle.FuelType*
+  commentId: Overload:CSE325_team.Models.Vehicle.FuelType
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_FuelType
+  name: FuelType
+  nameWithType: Vehicle.FuelType
+  fullName: CSE325_team.Models.Vehicle.FuelType
+- uid: CSE325_team.Models.Vehicle.Seats*
+  commentId: Overload:CSE325_team.Models.Vehicle.Seats
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Seats
+  name: Seats
+  nameWithType: Vehicle.Seats
+  fullName: CSE325_team.Models.Vehicle.Seats
+- uid: CSE325_team.Models.Vehicle.LicensePlate*
+  commentId: Overload:CSE325_team.Models.Vehicle.LicensePlate
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_LicensePlate
+  name: LicensePlate
+  nameWithType: Vehicle.LicensePlate
+  fullName: CSE325_team.Models.Vehicle.LicensePlate
+- uid: CSE325_team.Models.Vehicle.Mileage*
+  commentId: Overload:CSE325_team.Models.Vehicle.Mileage
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Mileage
+  name: Mileage
+  nameWithType: Vehicle.Mileage
+  fullName: CSE325_team.Models.Vehicle.Mileage
+- uid: CSE325_team.Models.Vehicle.Status*
+  commentId: Overload:CSE325_team.Models.Vehicle.Status
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Status
+  name: Status
+  nameWithType: Vehicle.Status
+  fullName: CSE325_team.Models.Vehicle.Status
+- uid: CSE325_team.Models.Vehicle.Capacity*
+  commentId: Overload:CSE325_team.Models.Vehicle.Capacity
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle_Capacity
+  name: Capacity
+  nameWithType: Vehicle.Capacity
+  fullName: CSE325_team.Models.Vehicle.Capacity
+- uid: CSE325_team.Models.Vehicle.#ctor*
+  commentId: Overload:CSE325_team.Models.Vehicle.#ctor
+  href: CSE325_team.Models.Vehicle.html#CSE325_team_Models_Vehicle__ctor
+  name: Vehicle
+  nameWithType: Vehicle.Vehicle
+  fullName: CSE325_team.Models.Vehicle.Vehicle
+  nameWithType.vb: Vehicle.New
+  fullName.vb: CSE325_team.Models.Vehicle.New
+  name.vb: New

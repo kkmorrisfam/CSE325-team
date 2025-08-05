@@ -1,0 +1,954 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Models.Payment
+  commentId: T:CSE325_team.Models.Payment
+  id: Payment
+  parent: CSE325_team.Models
+  children:
+  - CSE325_team.Models.Payment.Amount
+  - CSE325_team.Models.Payment.Booking
+  - CSE325_team.Models.Payment.BookingId
+  - CSE325_team.Models.Payment.PaymentAt
+  - CSE325_team.Models.Payment.PaymentId
+  - CSE325_team.Models.Payment.PaymentMethod
+  - CSE325_team.Models.Payment.State
+  - CSE325_team.Models.Payment.Status
+  - CSE325_team.Models.Payment.StatusOptions
+  - CSE325_team.Models.Payment.User
+  - CSE325_team.Models.Payment.Zip
+  langs:
+  - csharp
+  - vb
+  name: Payment
+  nameWithType: Payment
+  fullName: CSE325_team.Models.Payment
+  type: Class
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Payment
+    path: Models/Payment.cs
+    startLine: 7
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public class Payment
+    content.vb: Public Class Payment
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CSE325_team.Models.Payment.PaymentId
+  commentId: P:CSE325_team.Models.Payment.PaymentId
+  id: PaymentId
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: PaymentId
+  nameWithType: Payment.PaymentId
+  fullName: CSE325_team.Models.Payment.PaymentId
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: PaymentId
+    path: Models/Payment.cs
+    startLine: 9
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Key]
+
+      public int PaymentId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property PaymentId As Integer
+  overload: CSE325_team.Models.Payment.PaymentId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Payment.PaymentAt
+  commentId: P:CSE325_team.Models.Payment.PaymentAt
+  id: PaymentAt
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: PaymentAt
+  nameWithType: Payment.PaymentAt
+  fullName: CSE325_team.Models.Payment.PaymentAt
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: PaymentAt
+    path: Models/Payment.cs
+    startLine: 12
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [DataType(DataType.Date)]
+
+      public DateTime PaymentAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: >-
+      <DataType(DataType.Date)>
+
+      Public Property PaymentAt As Date
+  overload: CSE325_team.Models.Payment.PaymentAt*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.DataTypeAttribute
+    ctor: System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.DataType)
+    arguments:
+    - type: System.ComponentModel.DataAnnotations.DataType
+      value: 2
+- uid: CSE325_team.Models.Payment.Amount
+  commentId: P:CSE325_team.Models.Payment.Amount
+  id: Amount
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: Payment.Amount
+  fullName: CSE325_team.Models.Payment.Amount
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Amount
+    path: Models/Payment.cs
+    startLine: 15
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Column(TypeName = "decimal(10,2)")]
+
+      [Range(0.01, 1.7976931348623157E+308)]
+
+      public decimal Amount { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <Column(TypeName:="decimal(10,2)")>
+
+      <Range(0.01, 1.7976931348623157E+308)>
+
+      Public Property Amount As Decimal
+  overload: CSE325_team.Models.Payment.Amount*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: TypeName
+      type: System.String
+      value: decimal(10,2)
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)
+    arguments:
+    - type: System.Double
+      value: 0.01
+    - type: System.Double
+      value: 1.7976931348623157E+308
+- uid: CSE325_team.Models.Payment.PaymentMethod
+  commentId: P:CSE325_team.Models.Payment.PaymentMethod
+  id: PaymentMethod
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: PaymentMethod
+  nameWithType: Payment.PaymentMethod
+  fullName: CSE325_team.Models.Payment.PaymentMethod
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: PaymentMethod
+    path: Models/Payment.cs
+    startLine: 19
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public string PaymentMethod { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property PaymentMethod As String
+  overload: CSE325_team.Models.Payment.PaymentMethod*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Payment.State
+  commentId: P:CSE325_team.Models.Payment.State
+  id: State
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: Payment.State
+  fullName: CSE325_team.Models.Payment.State
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: State
+    path: Models/Payment.cs
+    startLine: 22
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public string State { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property State As String
+  overload: CSE325_team.Models.Payment.State*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Payment.Zip
+  commentId: P:CSE325_team.Models.Payment.Zip
+  id: Zip
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: Zip
+  nameWithType: Payment.Zip
+  fullName: CSE325_team.Models.Payment.Zip
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Zip
+    path: Models/Payment.cs
+    startLine: 25
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      [MaxLength(10)]
+
+      public string Zip { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <MaxLength(10)>
+
+      Public Property Zip As String
+  overload: CSE325_team.Models.Payment.Zip*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 10
+- uid: CSE325_team.Models.Payment.User
+  commentId: P:CSE325_team.Models.Payment.User
+  id: User
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: Payment.User
+  fullName: CSE325_team.Models.Payment.User
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: User
+    path: Models/Payment.cs
+    startLine: 30
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public required ApplicationUser User { get; set; }
+    parameters: []
+    return:
+      type: CSE325_team.Data.ApplicationUser
+    content.vb: >-
+      <Required>
+
+      Public Property User As ApplicationUser
+  overload: CSE325_team.Models.Payment.User*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Payment.BookingId
+  commentId: P:CSE325_team.Models.Payment.BookingId
+  id: BookingId
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: BookingId
+  nameWithType: Payment.BookingId
+  fullName: CSE325_team.Models.Payment.BookingId
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: BookingId
+    path: Models/Payment.cs
+    startLine: 35
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public int? BookingId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property BookingId As Integer?
+  overload: CSE325_team.Models.Payment.BookingId*
+- uid: CSE325_team.Models.Payment.Booking
+  commentId: P:CSE325_team.Models.Payment.Booking
+  id: Booking
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: Booking
+  nameWithType: Payment.Booking
+  fullName: CSE325_team.Models.Payment.Booking
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Booking
+    path: Models/Payment.cs
+    startLine: 36
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public Booking? Booking { get; set; }
+    parameters: []
+    return:
+      type: CSE325_team.Models.Booking
+    content.vb: Public Property Booking As Booking
+  overload: CSE325_team.Models.Payment.Booking*
+- uid: CSE325_team.Models.Payment.Status
+  commentId: P:CSE325_team.Models.Payment.Status
+  id: Status
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: Payment.Status
+  fullName: CSE325_team.Models.Payment.Status
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Status
+    path: Models/Payment.cs
+    startLine: 38
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      public string Status { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Status As String
+  overload: CSE325_team.Models.Payment.Status*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Payment.StatusOptions
+  commentId: P:CSE325_team.Models.Payment.StatusOptions
+  id: StatusOptions
+  parent: CSE325_team.Models.Payment
+  langs:
+  - csharp
+  - vb
+  name: StatusOptions
+  nameWithType: Payment.StatusOptions
+  fullName: CSE325_team.Models.Payment.StatusOptions
+  type: Property
+  source:
+    remote:
+      path: Models/Payment.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: StatusOptions
+    path: Models/Payment.cs
+    startLine: 42
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public static string[] StatusOptions { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly Property StatusOptions As String()
+  overload: CSE325_team.Models.Payment.StatusOptions*
+references:
+- uid: CSE325_team.Models
+  commentId: N:CSE325_team.Models
+  href: CSE325_team.html
+  name: CSE325_team.Models
+  nameWithType: CSE325_team.Models
+  fullName: CSE325_team.Models
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSE325_team.Models.Payment.PaymentId*
+  commentId: Overload:CSE325_team.Models.Payment.PaymentId
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_PaymentId
+  name: PaymentId
+  nameWithType: Payment.PaymentId
+  fullName: CSE325_team.Models.Payment.PaymentId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CSE325_team.Models.Payment.PaymentAt*
+  commentId: Overload:CSE325_team.Models.Payment.PaymentAt
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_PaymentAt
+  name: PaymentAt
+  nameWithType: Payment.PaymentAt
+  fullName: CSE325_team.Models.Payment.PaymentAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CSE325_team.Models.Payment.Amount*
+  commentId: Overload:CSE325_team.Models.Payment.Amount
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_Amount
+  name: Amount
+  nameWithType: Payment.Amount
+  fullName: CSE325_team.Models.Payment.Amount
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: CSE325_team.Models.Payment.PaymentMethod*
+  commentId: Overload:CSE325_team.Models.Payment.PaymentMethod
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_PaymentMethod
+  name: PaymentMethod
+  nameWithType: Payment.PaymentMethod
+  fullName: CSE325_team.Models.Payment.PaymentMethod
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CSE325_team.Models.Payment.State*
+  commentId: Overload:CSE325_team.Models.Payment.State
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_State
+  name: State
+  nameWithType: Payment.State
+  fullName: CSE325_team.Models.Payment.State
+- uid: CSE325_team.Models.Payment.Zip*
+  commentId: Overload:CSE325_team.Models.Payment.Zip
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_Zip
+  name: Zip
+  nameWithType: Payment.Zip
+  fullName: CSE325_team.Models.Payment.Zip
+- uid: CSE325_team.Models.Payment.User*
+  commentId: Overload:CSE325_team.Models.Payment.User
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_User
+  name: User
+  nameWithType: Payment.User
+  fullName: CSE325_team.Models.Payment.User
+- uid: CSE325_team.Data.ApplicationUser
+  commentId: T:CSE325_team.Data.ApplicationUser
+  parent: CSE325_team.Data
+  href: CSE325_team.Data.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CSE325_team.Data.ApplicationUser
+- uid: CSE325_team.Data
+  commentId: N:CSE325_team.Data
+  href: CSE325_team.html
+  name: CSE325_team.Data
+  nameWithType: CSE325_team.Data
+  fullName: CSE325_team.Data
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html
+- uid: CSE325_team.Models.Payment.BookingId*
+  commentId: Overload:CSE325_team.Models.Payment.BookingId
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_BookingId
+  name: BookingId
+  nameWithType: Payment.BookingId
+  fullName: CSE325_team.Models.Payment.BookingId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CSE325_team.Models.Payment.Booking*
+  commentId: Overload:CSE325_team.Models.Payment.Booking
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_Booking
+  name: Booking
+  nameWithType: Payment.Booking
+  fullName: CSE325_team.Models.Payment.Booking
+- uid: CSE325_team.Models.Booking
+  commentId: T:CSE325_team.Models.Booking
+  parent: CSE325_team.Models
+  href: CSE325_team.Models.Booking.html
+  name: Booking
+  nameWithType: Booking
+  fullName: CSE325_team.Models.Booking
+- uid: CSE325_team.Models.Payment.Status*
+  commentId: Overload:CSE325_team.Models.Payment.Status
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_Status
+  name: Status
+  nameWithType: Payment.Status
+  fullName: CSE325_team.Models.Payment.Status
+- uid: CSE325_team.Models.Payment.StatusOptions*
+  commentId: Overload:CSE325_team.Models.Payment.StatusOptions
+  href: CSE325_team.Models.Payment.html#CSE325_team_Models_Payment_StatusOptions
+  name: StatusOptions
+  nameWithType: Payment.StatusOptions
+  fullName: CSE325_team.Models.Payment.StatusOptions
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )

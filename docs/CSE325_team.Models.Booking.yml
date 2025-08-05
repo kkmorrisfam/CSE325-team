@@ -1,0 +1,704 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Models.Booking
+  commentId: T:CSE325_team.Models.Booking
+  id: Booking
+  parent: CSE325_team.Models
+  children:
+  - CSE325_team.Models.Booking.BookingId
+  - CSE325_team.Models.Booking.EndDate
+  - CSE325_team.Models.Booking.StartDate
+  - CSE325_team.Models.Booking.TotalPrice
+  - CSE325_team.Models.Booking.User
+  - CSE325_team.Models.Booking.UserId
+  - CSE325_team.Models.Booking.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: Booking
+  nameWithType: Booking
+  fullName: CSE325_team.Models.Booking
+  type: Class
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Booking
+    path: Models/Booking.cs
+    startLine: 7
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public class Booking
+    content.vb: Public Class Booking
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CSE325_team.Models.Booking.BookingId
+  commentId: P:CSE325_team.Models.Booking.BookingId
+  id: BookingId
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: BookingId
+  nameWithType: Booking.BookingId
+  fullName: CSE325_team.Models.Booking.BookingId
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: BookingId
+    path: Models/Booking.cs
+    startLine: 9
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Key]
+
+      public int BookingId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property BookingId As Integer
+  overload: CSE325_team.Models.Booking.BookingId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Booking.StartDate
+  commentId: P:CSE325_team.Models.Booking.StartDate
+  id: StartDate
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: StartDate
+  nameWithType: Booking.StartDate
+  fullName: CSE325_team.Models.Booking.StartDate
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: StartDate
+    path: Models/Booking.cs
+    startLine: 12
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Required]
+
+      [DataType(DataType.Date)]
+
+      public DateTime StartDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: >-
+      <Required>
+
+      <DataType(DataType.Date)>
+
+      Public Property StartDate As Date
+  overload: CSE325_team.Models.Booking.StartDate*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.DataTypeAttribute
+    ctor: System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.DataType)
+    arguments:
+    - type: System.ComponentModel.DataAnnotations.DataType
+      value: 2
+- uid: CSE325_team.Models.Booking.EndDate
+  commentId: P:CSE325_team.Models.Booking.EndDate
+  id: EndDate
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: EndDate
+  nameWithType: Booking.EndDate
+  fullName: CSE325_team.Models.Booking.EndDate
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: EndDate
+    path: Models/Booking.cs
+    startLine: 17
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [DataType(DataType.Date)]
+
+      public DateTime EndDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: >-
+      <DataType(DataType.Date)>
+
+      Public Property EndDate As Date
+  overload: CSE325_team.Models.Booking.EndDate*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.DataTypeAttribute
+    ctor: System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.DataType)
+    arguments:
+    - type: System.ComponentModel.DataAnnotations.DataType
+      value: 2
+- uid: CSE325_team.Models.Booking.TotalPrice
+  commentId: P:CSE325_team.Models.Booking.TotalPrice
+  id: TotalPrice
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: TotalPrice
+  nameWithType: Booking.TotalPrice
+  fullName: CSE325_team.Models.Booking.TotalPrice
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: TotalPrice
+    path: Models/Booking.cs
+    startLine: 20
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [Column(TypeName = "decimal(10,2)")]
+
+      public decimal TotalPrice { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <Column(TypeName:="decimal(10,2)")>
+
+      Public Property TotalPrice As Decimal
+  overload: CSE325_team.Models.Booking.TotalPrice*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: TypeName
+      type: System.String
+      value: decimal(10,2)
+- uid: CSE325_team.Models.Booking.Vehicle
+  commentId: P:CSE325_team.Models.Booking.Vehicle
+  id: Vehicle
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: Vehicle
+  nameWithType: Booking.Vehicle
+  fullName: CSE325_team.Models.Booking.Vehicle
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: Vehicle
+    path: Models/Booking.cs
+    startLine: 24
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public required Vehicle Vehicle { get; set; }
+    parameters: []
+    return:
+      type: CSE325_team.Models.Vehicle
+    content.vb: Public Property Vehicle As Vehicle
+  overload: CSE325_team.Models.Booking.Vehicle*
+- uid: CSE325_team.Models.Booking.UserId
+  commentId: P:CSE325_team.Models.Booking.UserId
+  id: UserId
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: UserId
+  nameWithType: Booking.UserId
+  fullName: CSE325_team.Models.Booking.UserId
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: UserId
+    path: Models/Booking.cs
+    startLine: 27
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: >-
+      [ForeignKey("User")]
+
+      [Required]
+
+      public required string UserId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <ForeignKey("User")>
+
+      <Required>
+
+      Public Property UserId As String
+  overload: CSE325_team.Models.Booking.UserId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: User
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CSE325_team.Models.Booking.User
+  commentId: P:CSE325_team.Models.Booking.User
+  id: User
+  parent: CSE325_team.Models.Booking
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: Booking.User
+  fullName: CSE325_team.Models.Booking.User
+  type: Property
+  source:
+    remote:
+      path: Models/Booking.cs
+      branch: dpv-w2-docfx
+      repo: https://github.com/kkmorrisfam/CSE325-team.git
+    id: User
+    path: Models/Booking.cs
+    startLine: 29
+  assemblies:
+  - CSE325-team
+  namespace: CSE325_team.Models
+  syntax:
+    content: public required ApplicationUser User { get; set; }
+    parameters: []
+    return:
+      type: CSE325_team.Data.ApplicationUser
+    content.vb: Public Property User As ApplicationUser
+  overload: CSE325_team.Models.Booking.User*
+references:
+- uid: CSE325_team.Models
+  commentId: N:CSE325_team.Models
+  href: CSE325_team.html
+  name: CSE325_team.Models
+  nameWithType: CSE325_team.Models
+  fullName: CSE325_team.Models
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSE325_team.Models.Booking.BookingId*
+  commentId: Overload:CSE325_team.Models.Booking.BookingId
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_BookingId
+  name: BookingId
+  nameWithType: Booking.BookingId
+  fullName: CSE325_team.Models.Booking.BookingId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CSE325_team.Models.Booking.StartDate*
+  commentId: Overload:CSE325_team.Models.Booking.StartDate
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_StartDate
+  name: StartDate
+  nameWithType: Booking.StartDate
+  fullName: CSE325_team.Models.Booking.StartDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CSE325_team.Models.Booking.EndDate*
+  commentId: Overload:CSE325_team.Models.Booking.EndDate
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_EndDate
+  name: EndDate
+  nameWithType: Booking.EndDate
+  fullName: CSE325_team.Models.Booking.EndDate
+- uid: CSE325_team.Models.Booking.TotalPrice*
+  commentId: Overload:CSE325_team.Models.Booking.TotalPrice
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_TotalPrice
+  name: TotalPrice
+  nameWithType: Booking.TotalPrice
+  fullName: CSE325_team.Models.Booking.TotalPrice
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: CSE325_team.Models.Booking.Vehicle*
+  commentId: Overload:CSE325_team.Models.Booking.Vehicle
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_Vehicle
+  name: Vehicle
+  nameWithType: Booking.Vehicle
+  fullName: CSE325_team.Models.Booking.Vehicle
+- uid: CSE325_team.Models.Vehicle
+  commentId: T:CSE325_team.Models.Vehicle
+  parent: CSE325_team.Models
+  href: CSE325_team.Models.Vehicle.html
+  name: Vehicle
+  nameWithType: Vehicle
+  fullName: CSE325_team.Models.Vehicle
+- uid: CSE325_team.Models.Booking.UserId*
+  commentId: Overload:CSE325_team.Models.Booking.UserId
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_UserId
+  name: UserId
+  nameWithType: Booking.UserId
+  fullName: CSE325_team.Models.Booking.UserId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CSE325_team.Models.Booking.User*
+  commentId: Overload:CSE325_team.Models.Booking.User
+  href: CSE325_team.Models.Booking.html#CSE325_team_Models_Booking_User
+  name: User
+  nameWithType: Booking.User
+  fullName: CSE325_team.Models.Booking.User
+- uid: CSE325_team.Data.ApplicationUser
+  commentId: T:CSE325_team.Data.ApplicationUser
+  parent: CSE325_team.Data
+  href: CSE325_team.Data.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CSE325_team.Data.ApplicationUser
+- uid: CSE325_team.Data
+  commentId: N:CSE325_team.Data
+  href: CSE325_team.html
+  name: CSE325_team.Data
+  nameWithType: CSE325_team.Data
+  fullName: CSE325_team.Data
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html

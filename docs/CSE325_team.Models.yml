@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Models
+  commentId: N:CSE325_team.Models
+  id: CSE325_team.Models
+  children:
+  - CSE325_team.Models.Booking
+  - CSE325_team.Models.Payment
+  - CSE325_team.Models.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Models
+  nameWithType: CSE325_team.Models
+  fullName: CSE325_team.Models
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Models.Booking
+  commentId: T:CSE325_team.Models.Booking
+  parent: CSE325_team.Models
+  href: CSE325_team.Models.Booking.html
+  name: Booking
+  nameWithType: Booking
+  fullName: CSE325_team.Models.Booking
+- uid: CSE325_team.Models.Payment
+  commentId: T:CSE325_team.Models.Payment
+  href: CSE325_team.Models.Payment.html
+  name: Payment
+  nameWithType: Payment
+  fullName: CSE325_team.Models.Payment
+- uid: CSE325_team.Models.Vehicle
+  commentId: T:CSE325_team.Models.Vehicle
+  parent: CSE325_team.Models
+  href: CSE325_team.Models.Vehicle.html
+  name: Vehicle
+  nameWithType: Vehicle
+  fullName: CSE325_team.Models.Vehicle
+- uid: CSE325_team.Models
+  commentId: N:CSE325_team.Models
+  href: CSE325_team.html
+  name: CSE325_team.Models
+  nameWithType: CSE325_team.Models
+  fullName: CSE325_team.Models
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html

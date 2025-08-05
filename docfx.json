@@ -1,0 +1,38 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "**/*.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ]
+        }
+      ],
+      
+      "dest": "api",
+          "properties": {
+      "TargetFramework": "net8.0"
+    }
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [ "toc.yml", "index.md" ]
+      },
+      {
+        "files": [ "api/**.yml" ],
+        "src": ".",
+        "dest": "docs",
+        "flatten": false
+      }
+    ],
+    "resource": [],
+    "dest": "docs/_site",
+    "globalMetadata": {
+      "_appTitle": "CSE325 Team Project Docs"
+    },
+    "template": [
+      "default"
+    ]
+  }
+}

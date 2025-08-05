@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Migrations
+  commentId: N:CSE325_team.Migrations
+  id: CSE325_team.Migrations
+  children:
+  - CSE325_team.Migrations.InitialCreate
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Migrations
+  nameWithType: CSE325_team.Migrations
+  fullName: CSE325_team.Migrations
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Migrations.InitialCreate
+  commentId: T:CSE325_team.Migrations.InitialCreate
+  href: CSE325_team.Migrations.InitialCreate.html
+  name: InitialCreate
+  nameWithType: InitialCreate
+  fullName: CSE325_team.Migrations.InitialCreate

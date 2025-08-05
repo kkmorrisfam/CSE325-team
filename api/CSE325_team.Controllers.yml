@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Controllers
+  commentId: N:CSE325_team.Controllers
+  id: CSE325_team.Controllers
+  children:
+  - CSE325_team.Controllers.BookingsController
+  - CSE325_team.Controllers.TestController
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Controllers
+  nameWithType: CSE325_team.Controllers
+  fullName: CSE325_team.Controllers
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Controllers.BookingsController
+  commentId: T:CSE325_team.Controllers.BookingsController
+  href: CSE325_team.Controllers.BookingsController.html
+  name: BookingsController
+  nameWithType: BookingsController
+  fullName: CSE325_team.Controllers.BookingsController
+- uid: CSE325_team.Controllers.TestController
+  commentId: T:CSE325_team.Controllers.TestController
+  href: CSE325_team.Controllers.TestController.html
+  name: TestController
+  nameWithType: TestController
+  fullName: CSE325_team.Controllers.TestController

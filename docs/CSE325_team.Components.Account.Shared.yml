@@ -1,0 +1,105 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Components.Account.Shared
+  commentId: N:CSE325_team.Components.Account.Shared
+  id: CSE325_team.Components.Account.Shared
+  children:
+  - CSE325_team.Components.Account.Shared.AccountLayout
+  - CSE325_team.Components.Account.Shared.ExternalLoginPicker
+  - CSE325_team.Components.Account.Shared.ManageLayout
+  - CSE325_team.Components.Account.Shared.ManageNavMenu
+  - CSE325_team.Components.Account.Shared.RedirectToLogin
+  - CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+  - CSE325_team.Components.Account.Shared.StatusMessage
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Components.Account.Shared
+  nameWithType: CSE325_team.Components.Account.Shared
+  fullName: CSE325_team.Components.Account.Shared
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Components.Account.Shared.RedirectToLogin
+  commentId: T:CSE325_team.Components.Account.Shared.RedirectToLogin
+  href: CSE325_team.Components.Account.Shared.RedirectToLogin.html
+  name: RedirectToLogin
+  nameWithType: RedirectToLogin
+  fullName: CSE325_team.Components.Account.Shared.RedirectToLogin
+- uid: CSE325_team.Components.Account.Shared.StatusMessage
+  commentId: T:CSE325_team.Components.Account.Shared.StatusMessage
+  href: CSE325_team.Components.Account.Shared.StatusMessage.html
+  name: StatusMessage
+  nameWithType: StatusMessage
+  fullName: CSE325_team.Components.Account.Shared.StatusMessage
+- uid: CSE325_team.Components.Account.Shared.ExternalLoginPicker
+  commentId: T:CSE325_team.Components.Account.Shared.ExternalLoginPicker
+  href: CSE325_team.Components.Account.Shared.ExternalLoginPicker.html
+  name: ExternalLoginPicker
+  nameWithType: ExternalLoginPicker
+  fullName: CSE325_team.Components.Account.Shared.ExternalLoginPicker
+- uid: CSE325_team.Components.Account.Shared.AccountLayout
+  commentId: T:CSE325_team.Components.Account.Shared.AccountLayout
+  parent: CSE325_team.Components.Account.Shared
+  href: CSE325_team.Components.Account.Shared.AccountLayout.html
+  name: AccountLayout
+  nameWithType: AccountLayout
+  fullName: CSE325_team.Components.Account.Shared.AccountLayout
+- uid: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+  commentId: T:CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+  href: CSE325_team.Components.Account.Shared.ShowRecoveryCodes.html
+  name: ShowRecoveryCodes
+  nameWithType: ShowRecoveryCodes
+  fullName: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+- uid: CSE325_team.Components.Account.Shared.ManageLayout
+  commentId: T:CSE325_team.Components.Account.Shared.ManageLayout
+  parent: CSE325_team.Components.Account.Shared
+  href: CSE325_team.Components.Account.Shared.ManageLayout.html
+  name: ManageLayout
+  nameWithType: ManageLayout
+  fullName: CSE325_team.Components.Account.Shared.ManageLayout
+- uid: CSE325_team.Components.Account.Shared.ManageNavMenu
+  commentId: T:CSE325_team.Components.Account.Shared.ManageNavMenu
+  href: CSE325_team.Components.Account.Shared.ManageNavMenu.html
+  name: ManageNavMenu
+  nameWithType: ManageNavMenu
+  fullName: CSE325_team.Components.Account.Shared.ManageNavMenu
+- uid: CSE325_team.Components.Account.Shared
+  commentId: N:CSE325_team.Components.Account.Shared
+  href: CSE325_team.html
+  name: CSE325_team.Components.Account.Shared
+  nameWithType: CSE325_team.Components.Account.Shared
+  fullName: CSE325_team.Components.Account.Shared
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Account
+    name: Account
+    href: CSE325_team.Components.Account.html
+  - name: .
+  - uid: CSE325_team.Components.Account.Shared
+    name: Shared
+    href: CSE325_team.Components.Account.Shared.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Account
+    name: Account
+    href: CSE325_team.Components.Account.html
+  - name: .
+  - uid: CSE325_team.Components.Account.Shared
+    name: Shared
+    href: CSE325_team.Components.Account.Shared.html

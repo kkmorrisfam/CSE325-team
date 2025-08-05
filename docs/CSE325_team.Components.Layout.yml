@@ -1,0 +1,68 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Components.Layout
+  commentId: N:CSE325_team.Components.Layout
+  id: CSE325_team.Components.Layout
+  children:
+  - CSE325_team.Components.Layout.Footer
+  - CSE325_team.Components.Layout.MainLayout
+  - CSE325_team.Components.Layout.NavMenu
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Components.Layout
+  nameWithType: CSE325_team.Components.Layout
+  fullName: CSE325_team.Components.Layout
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Components.Layout.NavMenu
+  commentId: T:CSE325_team.Components.Layout.NavMenu
+  href: CSE325_team.Components.Layout.NavMenu.html
+  name: NavMenu
+  nameWithType: NavMenu
+  fullName: CSE325_team.Components.Layout.NavMenu
+- uid: CSE325_team.Components.Layout.Footer
+  commentId: T:CSE325_team.Components.Layout.Footer
+  href: CSE325_team.Components.Layout.Footer.html
+  name: Footer
+  nameWithType: Footer
+  fullName: CSE325_team.Components.Layout.Footer
+- uid: CSE325_team.Components.Layout.MainLayout
+  commentId: T:CSE325_team.Components.Layout.MainLayout
+  parent: CSE325_team.Components.Layout
+  href: CSE325_team.Components.Layout.MainLayout.html
+  name: MainLayout
+  nameWithType: MainLayout
+  fullName: CSE325_team.Components.Layout.MainLayout
+- uid: CSE325_team.Components.Layout
+  commentId: N:CSE325_team.Components.Layout
+  href: CSE325_team.html
+  name: CSE325_team.Components.Layout
+  nameWithType: CSE325_team.Components.Layout
+  fullName: CSE325_team.Components.Layout
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Layout
+    name: Layout
+    href: CSE325_team.Components.Layout.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Layout
+    name: Layout
+    href: CSE325_team.Components.Layout.html

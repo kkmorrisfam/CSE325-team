@@ -1,0 +1,89 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Data
+  commentId: N:CSE325_team.Data
+  id: CSE325_team.Data
+  children:
+  - CSE325_team.Data.ApplicationDbContext
+  - CSE325_team.Data.ApplicationUser
+  - CSE325_team.Data.SeedBooking
+  - CSE325_team.Data.SeedCars
+  - CSE325_team.Data.SeedPayment
+  - CSE325_team.Data.SeedUser
+  - CSE325_team.Data.SeedVehicle
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Data
+  nameWithType: CSE325_team.Data
+  fullName: CSE325_team.Data
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Data.ApplicationDbContext
+  commentId: T:CSE325_team.Data.ApplicationDbContext
+  parent: CSE325_team.Data
+  href: CSE325_team.Data.ApplicationDbContext.html
+  name: ApplicationDbContext
+  nameWithType: ApplicationDbContext
+  fullName: CSE325_team.Data.ApplicationDbContext
+- uid: CSE325_team.Data.ApplicationUser
+  commentId: T:CSE325_team.Data.ApplicationUser
+  parent: CSE325_team.Data
+  href: CSE325_team.Data.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CSE325_team.Data.ApplicationUser
+- uid: CSE325_team.Data.SeedBooking
+  commentId: T:CSE325_team.Data.SeedBooking
+  href: CSE325_team.Data.SeedBooking.html
+  name: SeedBooking
+  nameWithType: SeedBooking
+  fullName: CSE325_team.Data.SeedBooking
+- uid: CSE325_team.Data.SeedCars
+  commentId: T:CSE325_team.Data.SeedCars
+  href: CSE325_team.Data.SeedCars.html
+  name: SeedCars
+  nameWithType: SeedCars
+  fullName: CSE325_team.Data.SeedCars
+- uid: CSE325_team.Data.SeedPayment
+  commentId: T:CSE325_team.Data.SeedPayment
+  href: CSE325_team.Data.SeedPayment.html
+  name: SeedPayment
+  nameWithType: SeedPayment
+  fullName: CSE325_team.Data.SeedPayment
+- uid: CSE325_team.Data.SeedUser
+  commentId: T:CSE325_team.Data.SeedUser
+  href: CSE325_team.Data.SeedUser.html
+  name: SeedUser
+  nameWithType: SeedUser
+  fullName: CSE325_team.Data.SeedUser
+- uid: CSE325_team.Data.SeedVehicle
+  commentId: T:CSE325_team.Data.SeedVehicle
+  href: CSE325_team.Data.SeedVehicle.html
+  name: SeedVehicle
+  nameWithType: SeedVehicle
+  fullName: CSE325_team.Data.SeedVehicle
+- uid: CSE325_team.Data
+  commentId: N:CSE325_team.Data
+  href: CSE325_team.html
+  name: CSE325_team.Data
+  nameWithType: CSE325_team.Data
+  fullName: CSE325_team.Data
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html

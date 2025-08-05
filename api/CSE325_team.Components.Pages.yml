@@ -1,0 +1,72 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Components.Pages
+  commentId: N:CSE325_team.Components.Pages
+  id: CSE325_team.Components.Pages
+  children:
+  - CSE325_team.Components.Pages.Auth
+  - CSE325_team.Components.Pages.Bookings
+  - CSE325_team.Components.Pages.Error
+  - CSE325_team.Components.Pages.Home
+  - CSE325_team.Components.Pages.Inventory
+  - CSE325_team.Components.Pages.Test
+  - CSE325_team.Components.Pages.TestName
+  - CSE325_team.Components.Pages.VehicleDetails
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Components.Pages
+  nameWithType: CSE325_team.Components.Pages
+  fullName: CSE325_team.Components.Pages
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Components.Pages.VehicleDetails
+  commentId: T:CSE325_team.Components.Pages.VehicleDetails
+  href: CSE325_team.Components.Pages.VehicleDetails.html
+  name: VehicleDetails
+  nameWithType: VehicleDetails
+  fullName: CSE325_team.Components.Pages.VehicleDetails
+- uid: CSE325_team.Components.Pages.Error
+  commentId: T:CSE325_team.Components.Pages.Error
+  href: CSE325_team.Components.Pages.Error.html
+  name: Error
+  nameWithType: Error
+  fullName: CSE325_team.Components.Pages.Error
+- uid: CSE325_team.Components.Pages.TestName
+  commentId: T:CSE325_team.Components.Pages.TestName
+  href: CSE325_team.Components.Pages.TestName.html
+  name: TestName
+  nameWithType: TestName
+  fullName: CSE325_team.Components.Pages.TestName
+- uid: CSE325_team.Components.Pages.Test
+  commentId: T:CSE325_team.Components.Pages.Test
+  href: CSE325_team.Components.Pages.Test.html
+  name: Test
+  nameWithType: Test
+  fullName: CSE325_team.Components.Pages.Test
+- uid: CSE325_team.Components.Pages.Auth
+  commentId: T:CSE325_team.Components.Pages.Auth
+  href: CSE325_team.Components.Pages.Auth.html
+  name: Auth
+  nameWithType: Auth
+  fullName: CSE325_team.Components.Pages.Auth
+- uid: CSE325_team.Components.Pages.Home
+  commentId: T:CSE325_team.Components.Pages.Home
+  href: CSE325_team.Components.Pages.Home.html
+  name: Home
+  nameWithType: Home
+  fullName: CSE325_team.Components.Pages.Home
+- uid: CSE325_team.Components.Pages.Inventory
+  commentId: T:CSE325_team.Components.Pages.Inventory
+  href: CSE325_team.Components.Pages.Inventory.html
+  name: Inventory
+  nameWithType: Inventory
+  fullName: CSE325_team.Components.Pages.Inventory
+- uid: CSE325_team.Components.Pages.Bookings
+  commentId: T:CSE325_team.Components.Pages.Bookings
+  href: CSE325_team.Components.Pages.Bookings.html
+  name: Bookings
+  nameWithType: Bookings
+  fullName: CSE325_team.Components.Pages.Bookings

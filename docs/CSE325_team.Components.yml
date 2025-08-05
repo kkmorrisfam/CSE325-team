@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Components
+  commentId: N:CSE325_team.Components
+  id: CSE325_team.Components
+  children:
+  - CSE325_team.Components.App
+  - CSE325_team.Components.Routes
+  - CSE325_team.Components._Imports
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Components
+  nameWithType: CSE325_team.Components
+  fullName: CSE325_team.Components
+  type: Namespace
+  assemblies:
+  - CSE325-team
+references:
+- uid: CSE325_team.Components.App
+  commentId: T:CSE325_team.Components.App
+  href: CSE325_team.Components.App.html
+  name: App
+  nameWithType: App
+  fullName: CSE325_team.Components.App
+- uid: CSE325_team.Components._Imports
+  commentId: T:CSE325_team.Components._Imports
+  href: CSE325_team.Components._Imports.html
+  name: _Imports
+  nameWithType: _Imports
+  fullName: CSE325_team.Components._Imports
+- uid: CSE325_team.Components.Routes
+  commentId: T:CSE325_team.Components.Routes
+  href: CSE325_team.Components.Routes.html
+  name: Routes
+  nameWithType: Routes
+  fullName: CSE325_team.Components.Routes
