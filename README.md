@@ -4,5 +4,5 @@
 * Mitchel Drennan
 * David Valentine
 * Charles Burton
-* Roquin Espinal
+* Roguin Espinal
 * Kerri Morris
