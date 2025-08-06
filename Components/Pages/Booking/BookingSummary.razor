@@ -1,0 +1,85 @@
+@page "/bookings/summary"
+@inject CSE325_team.Services.BookingState BookingState
+@inject CSE325_team.Data.ApplicationDbContext Db
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthProvider
+
+<h3>Resumen de Reserva</h3>
+
+@if (BookingState.SelectedVehicle == null)
+{
+    <div class="alert alert-warning">No hay datos de reserva. Regresa al formulario.</div>
+}
+else
+{
+    <div>
+        <p><strong>Vehículo:</strong> @BookingState.SelectedVehicle.Make @BookingState.SelectedVehicle.Model (@BookingState.SelectedVehicle.Year)</p>
+        <p><strong>Color:</strong> @BookingState.SelectedVehicle.Color</p>
+        <p><strong>Tipo:</strong> @BookingState.SelectedVehicle.VehicleType</p>
+        <p><strong>Recogida:</strong> @BookingState.PickupDate.ToShortDateString()</p>
+        <p><strong>Entrega:</strong> @BookingState.DropOffDate.ToShortDateString()</p>
+        <p><strong>Precio total:</strong> $@BookingState.TotalPrice</p>
+    </div>
+    <AuthorizeView>
+        <Authorized>
+            <button class="btn btn-success" @onclick="SaveBooking" disabled="@saving">Guardar Reserva</button>
+            @if (!string.IsNullOrEmpty(successMessage))
+            {
+                <div class="alert alert-success mt-2">@successMessage</div>
+            }
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert alert-danger mt-2">@errorMessage</div>
+            }
+        </Authorized>
+        <NotAuthorized>
+            <div class="alert alert-warning">Debes iniciar sesión para guardar la reserva.</div>
+        </NotAuthorized>
+    </AuthorizeView>
+}
+
+@code {
+    private bool saving = false;
+    private string successMessage = string.Empty;
+    private string errorMessage = string.Empty;
+
+    private async Task SaveBooking()
+    {
+        saving = true;
+        errorMessage = null;
+        successMessage = null;
+        var authState = await AuthProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            errorMessage = "No autenticado.";
+            saving = false;
+            return;
+        }
+        try
+        {
+            var booking = new Booking
+            {
+                VehicleId = BookingState.VehicleId,
+                PickupDate = BookingState.PickupDate,
+                DropOffDate = BookingState.DropOffDate,
+                UserId = int.Parse(user.FindFirst("sub")?.Value ?? user.Identity.Name!), // Si UserId es int
+                TotalPrice = BookingState.TotalPrice
+            };
+            Db.Bookings.Add(booking);
+
+            // Opcional: Cambiar estado del vehículo si lo deseas.
+            var vehicle = await Db.Vehicles.FindAsync(BookingState.VehicleId);
+            if (vehicle != null) vehicle.Status = "reserved";
+
+            await Db.SaveChangesAsync();
+            BookingState.Clear();
+            successMessage = "Reserva guardada exitosamente.";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error al guardar: {ex.Message}";
+        }
+        saving = false;
+    }
+}

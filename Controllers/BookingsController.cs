@@ -19,7 +19,7 @@ namespace CSE325_team.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Booking>>> GetBookings()
         {
-            return await _context.Booking
+            return await _context.Bookings
                 .Include(b => b.Vehicle)
                 .Include(b => b.User)
                 .ToListAsync();
@@ -28,16 +28,16 @@ namespace CSE325_team.Controllers
         [HttpPost]
         public async Task<ActionResult<Booking>> CreateBooking(Booking booking)
         {
-            // Optional: validate vehicle availability here
-            var vehicle = await _context.Vehicle.FindAsync(booking.VehicleId);
+            // Validar disponibilidad del vehículo
+            var vehicle = await _context.Vehicles.FindAsync(booking.VehicleId);
             if (vehicle == null || vehicle.Status != "available")
             {
                 return BadRequest("Vehicle not available.");
             }
 
-            _context.Booking.Add(booking);
+            _context.Bookings.Add(booking);
 
-            // Optional: mark vehicle as reserved/rented
+            // Marcar el vehículo como reservado
             vehicle.Status = "reserved";
 
             await _context.SaveChangesAsync();

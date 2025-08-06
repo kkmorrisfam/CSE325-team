@@ -192,12 +192,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/BookingForm.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nRm9ybS5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Booking/BookingForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXEJvb2tpbmdGb3JtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/BookingSummary.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nU3VtbWFyeS5yYXpvcg==
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Booking/BookingSummary.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXEJvb2tpbmdTdW1tYXJ5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Booking/ListBooking.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29raW5nXExpc3RCb29raW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MSI/Desktop/Estudios/TECH/CSE325/CSE325_team/CSE325-team/Components/Pages/Error.razor]

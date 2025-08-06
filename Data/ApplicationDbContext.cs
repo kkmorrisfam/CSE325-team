@@ -9,12 +9,11 @@ namespace CSE325_team.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            }
-        public DbSet<Booking> Booking { get; set; }
-        public DbSet<Vehicle> Vehicle { get; set; }
-            // This must be *inside* the class body
-        
-        public DbSet<Payment> Payment { get; set; }
+        }
 
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<User> Users { get; set; } 
     }
 }

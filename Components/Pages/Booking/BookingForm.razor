@@ -1,0 +1,75 @@
+﻿@page "/bookings/form"
+@using CSE325_team.Models
+@using Microsoft.EntityFrameworkCore
+@inject CSE325_team.Data.ApplicationDbContext DbContext
+@inject NavigationManager Navigation
+@inject CSE325_team.Services.BookingState BookingState
+
+<h3>Reservar Vehículo</h3>
+<EditForm Model="@formModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Vehículo</label>
+        <select @bind="formModel.VehicleId" required>
+            <option value="">-- Selecciona --</option>
+            @foreach (var v in vehicles)
+            {
+                <option value="@v.VehicleId">
+                    @v.Make @v.Model (@v.Year) - @v.Color - @v.VehicleType - $@v.DailyRate/día
+                </option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Fecha de recogida</label>
+        <InputDate @bind-Value="formModel.PickupDate" required />
+    </div>
+    <div>
+        <label>Fecha de entrega</label>
+        <InputDate @bind-Value="formModel.DropOffDate" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Continuar</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+
+@code {
+    private Booking formModel = new();
+    private List<Vehicle> vehicles = new();
+    private string errorMessage = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicles = await DbContext.Vehicles.Where(v => v.Status == "available").ToListAsync();
+    }
+
+    private void HandleValidSubmit()
+    {
+        var selected = vehicles.FirstOrDefault(v => v.VehicleId == formModel.VehicleId);
+        if (selected == null)
+        {
+            errorMessage = "Selecciona un vehículo válido.";
+            return;
+        }
+
+        if (formModel.PickupDate >= formModel.DropOffDate)
+        {
+            errorMessage = "La fecha de entrega debe ser posterior a la de recogida.";
+            return;
+        }
+
+        BookingState.SelectedVehicle = selected;
+        BookingState.VehicleId = selected.VehicleId;
+        BookingState.PickupDate = formModel.PickupDate;
+        BookingState.DropOffDate = formModel.DropOffDate;
+        var days = (formModel.DropOffDate - formModel.PickupDate).Days;
+        BookingState.TotalPrice = selected.DailyRate * days;
+
+        Navigation.NavigateTo("/bookings/summary");
+    }
+}
