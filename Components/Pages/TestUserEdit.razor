@@ -1,0 +1,127 @@
+@page "/TestUserEdit"
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Identity
+@using CSE325_team.Data  
+
+@inject AuthenticationStateProvider AuthStateProvider
+@inject UserManager<ApplicationUser> UserManager
+@inject ApplicationDbContext DbContext
+
+<EditForm Model="Input" OnValidSubmit="SaveChanges" FormName="TestEdit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary />
+
+    <h3>Test Edit Profile</h3>
+
+    <div class="form-group">
+        <label>First Name</label>
+        <InputText @bind-Value="Input.FirstName" class="form-control" />        
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <InputText @bind-Value="Input.LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <InputText @bind-Value="Input.Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Alternate Phone Number</label>
+        <InputText @bind-Value="Input.AltPhone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <InputText @bind-Value="Input.City" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Save Changes</button>
+
+</EditForm>
+
+
+@code {
+
+    //create instance of class to use, set it as a property with {get;set} so it can be updated with binding
+    private InputModel Input {get;set;} = new();
+
+   // update user when submit button clicked
+    private async Task SaveChanges()
+    {
+        //get user again
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = await UserManager.GetUserAsync(authState.User);
+
+        //check for null user before continuing
+        if (user is null) return;
+
+        //update user databae fields with data in Input fields
+        user.FirstName = Input.FirstName;
+        user.LastName = Input.LastName;
+        user.PhoneNumber = Input.Phone;
+        //send user to database for update
+        await UserManager.UpdateAsync(user);
+
+        //get or create a contact for user
+        var contact = await DbContext.Contact.FirstOrDefaultAsync(c=>c.ApplicationUserId == user.Id);
+        //create new contact if not already there
+        if (contact is null)
+        {
+            contact = new Models.Contact {ApplicationUserId = user.Id};
+            DbContext.Contact.Add(contact);
+        }
+        //add data from input fields into database
+        contact.City = Input.City;
+        contact.AltPhoneNumber = Input.AltPhone;
+        //save data to database
+        await DbContext.SaveChangesAsync();
+
+    }
+
+
+    //OnInitializedAsync method to fetch user with matching id
+    protected override async Task OnInitializedAsync()
+    {
+        //get authentication state, get authorized user
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = await UserManager.GetUserAsync(authState.User);
+        //check for null user before continuing
+        if (user is null) return;
+
+        //get contact information attached to user
+        //user.Id comes from AspNetUser table, Id column from Identity; ApplicationUserId is foreign key in Contacts table
+        var contact = await DbContext.Contact.FirstOrDefaultAsync(c => c.ApplicationUserId == user.Id);
+
+        //initialize fields with values from user and contact tables
+        Input = new InputModel
+        {
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Phone = user.PhoneNumber,
+            AltPhone = contact?.AltPhoneNumber,
+            City = contact?.City
+        };
+    }
+
+ 
+
+
+    //create InputModel class to take data from User and Contact
+
+    public class InputModel 
+    {
+        public string? FirstName { get; set;}
+        public string? LastName { get; set;}
+        public string? Phone {get; set;}
+        public string? AltPhone {get; set;}
+        public string? City {get; set;}
+    }
+
+    
+}using Microsoft.AspNetCore.Identity;
+#line default
+using CSE325_team.Data;
+#line default
+using CSE325_team.Data;
+#line default
+using Microsoft.EntityFrameworkCore;
+#line default
