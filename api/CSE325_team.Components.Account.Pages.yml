@@ -32,36 +32,36 @@ items:
   assemblies:
   - CSE325-team
 references:
-- uid: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
-  commentId: T:CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
-  href: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.html
-  name: ForgotPasswordConfirmation
-  nameWithType: ForgotPasswordConfirmation
-  fullName: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
+- uid: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
+  commentId: T:CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
+  href: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.html
+  name: ResetPasswordConfirmation
+  nameWithType: ResetPasswordConfirmation
+  fullName: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
+- uid: CSE325_team.Components.Account.Pages.ConfirmEmail
+  commentId: T:CSE325_team.Components.Account.Pages.ConfirmEmail
+  href: CSE325_team.Components.Account.Pages.ConfirmEmail.html
+  name: ConfirmEmail
+  nameWithType: ConfirmEmail
+  fullName: CSE325_team.Components.Account.Pages.ConfirmEmail
+- uid: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
+  commentId: T:CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
+  href: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.html
+  name: LoginWithRecoveryCode
+  nameWithType: LoginWithRecoveryCode
+  fullName: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
 - uid: CSE325_team.Components.Account.Pages.ResendEmailConfirmation
   commentId: T:CSE325_team.Components.Account.Pages.ResendEmailConfirmation
   href: CSE325_team.Components.Account.Pages.ResendEmailConfirmation.html
   name: ResendEmailConfirmation
   nameWithType: ResendEmailConfirmation
   fullName: CSE325_team.Components.Account.Pages.ResendEmailConfirmation
-- uid: CSE325_team.Components.Account.Pages.Login
-  commentId: T:CSE325_team.Components.Account.Pages.Login
-  href: CSE325_team.Components.Account.Pages.Login.html
-  name: Login
-  nameWithType: Login
-  fullName: CSE325_team.Components.Account.Pages.Login
-- uid: CSE325_team.Components.Account.Pages.InvalidUser
-  commentId: T:CSE325_team.Components.Account.Pages.InvalidUser
-  href: CSE325_team.Components.Account.Pages.InvalidUser.html
-  name: InvalidUser
-  nameWithType: InvalidUser
-  fullName: CSE325_team.Components.Account.Pages.InvalidUser
-- uid: CSE325_team.Components.Account.Pages.ForgotPassword
-  commentId: T:CSE325_team.Components.Account.Pages.ForgotPassword
-  href: CSE325_team.Components.Account.Pages.ForgotPassword.html
-  name: ForgotPassword
-  nameWithType: ForgotPassword
-  fullName: CSE325_team.Components.Account.Pages.ForgotPassword
+- uid: CSE325_team.Components.Account.Pages.Lockout
+  commentId: T:CSE325_team.Components.Account.Pages.Lockout
+  href: CSE325_team.Components.Account.Pages.Lockout.html
+  name: Lockout
+  nameWithType: Lockout
+  fullName: CSE325_team.Components.Account.Pages.Lockout
 - uid: CSE325_team.Components.Account.Pages.ResetPassword
   commentId: T:CSE325_team.Components.Account.Pages.ResetPassword
   href: CSE325_team.Components.Account.Pages.ResetPassword.html
@@ -74,48 +74,54 @@ references:
   name: RegisterConfirmation
   nameWithType: RegisterConfirmation
   fullName: CSE325_team.Components.Account.Pages.RegisterConfirmation
-- uid: CSE325_team.Components.Account.Pages._Imports
-  commentId: T:CSE325_team.Components.Account.Pages._Imports
-  href: CSE325_team.Components.Account.Pages._Imports.html
-  name: _Imports
-  nameWithType: _Imports
-  fullName: CSE325_team.Components.Account.Pages._Imports
-- uid: CSE325_team.Components.Account.Pages.ConfirmEmailChange
-  commentId: T:CSE325_team.Components.Account.Pages.ConfirmEmailChange
-  href: CSE325_team.Components.Account.Pages.ConfirmEmailChange.html
-  name: ConfirmEmailChange
-  nameWithType: ConfirmEmailChange
-  fullName: CSE325_team.Components.Account.Pages.ConfirmEmailChange
-- uid: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
-  commentId: T:CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
-  href: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.html
-  name: ResetPasswordConfirmation
-  nameWithType: ResetPasswordConfirmation
-  fullName: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
-- uid: CSE325_team.Components.Account.Pages.InvalidPasswordReset
-  commentId: T:CSE325_team.Components.Account.Pages.InvalidPasswordReset
-  href: CSE325_team.Components.Account.Pages.InvalidPasswordReset.html
-  name: InvalidPasswordReset
-  nameWithType: InvalidPasswordReset
-  fullName: CSE325_team.Components.Account.Pages.InvalidPasswordReset
-- uid: CSE325_team.Components.Account.Pages.Register
-  commentId: T:CSE325_team.Components.Account.Pages.Register
-  href: CSE325_team.Components.Account.Pages.Register.html
-  name: Register
-  nameWithType: Register
-  fullName: CSE325_team.Components.Account.Pages.Register
 - uid: CSE325_team.Components.Account.Pages.LoginWith2fa
   commentId: T:CSE325_team.Components.Account.Pages.LoginWith2fa
   href: CSE325_team.Components.Account.Pages.LoginWith2fa.html
   name: LoginWith2fa
   nameWithType: LoginWith2fa
   fullName: CSE325_team.Components.Account.Pages.LoginWith2fa
-- uid: CSE325_team.Components.Account.Pages.ConfirmEmail
-  commentId: T:CSE325_team.Components.Account.Pages.ConfirmEmail
-  href: CSE325_team.Components.Account.Pages.ConfirmEmail.html
-  name: ConfirmEmail
-  nameWithType: ConfirmEmail
-  fullName: CSE325_team.Components.Account.Pages.ConfirmEmail
+- uid: CSE325_team.Components.Account.Pages.InvalidPasswordReset
+  commentId: T:CSE325_team.Components.Account.Pages.InvalidPasswordReset
+  href: CSE325_team.Components.Account.Pages.InvalidPasswordReset.html
+  name: InvalidPasswordReset
+  nameWithType: InvalidPasswordReset
+  fullName: CSE325_team.Components.Account.Pages.InvalidPasswordReset
+- uid: CSE325_team.Components.Account.Pages.InvalidUser
+  commentId: T:CSE325_team.Components.Account.Pages.InvalidUser
+  href: CSE325_team.Components.Account.Pages.InvalidUser.html
+  name: InvalidUser
+  nameWithType: InvalidUser
+  fullName: CSE325_team.Components.Account.Pages.InvalidUser
+- uid: CSE325_team.Components.Account.Pages.ConfirmEmailChange
+  commentId: T:CSE325_team.Components.Account.Pages.ConfirmEmailChange
+  href: CSE325_team.Components.Account.Pages.ConfirmEmailChange.html
+  name: ConfirmEmailChange
+  nameWithType: ConfirmEmailChange
+  fullName: CSE325_team.Components.Account.Pages.ConfirmEmailChange
+- uid: CSE325_team.Components.Account.Pages._Imports
+  commentId: T:CSE325_team.Components.Account.Pages._Imports
+  href: CSE325_team.Components.Account.Pages._Imports.html
+  name: _Imports
+  nameWithType: _Imports
+  fullName: CSE325_team.Components.Account.Pages._Imports
+- uid: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
+  commentId: T:CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
+  href: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.html
+  name: ForgotPasswordConfirmation
+  nameWithType: ForgotPasswordConfirmation
+  fullName: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
+- uid: CSE325_team.Components.Account.Pages.ForgotPassword
+  commentId: T:CSE325_team.Components.Account.Pages.ForgotPassword
+  href: CSE325_team.Components.Account.Pages.ForgotPassword.html
+  name: ForgotPassword
+  nameWithType: ForgotPassword
+  fullName: CSE325_team.Components.Account.Pages.ForgotPassword
+- uid: CSE325_team.Components.Account.Pages.Register
+  commentId: T:CSE325_team.Components.Account.Pages.Register
+  href: CSE325_team.Components.Account.Pages.Register.html
+  name: Register
+  nameWithType: Register
+  fullName: CSE325_team.Components.Account.Pages.Register
 - uid: CSE325_team.Components.Account.Pages.AccessDenied
   commentId: T:CSE325_team.Components.Account.Pages.AccessDenied
   href: CSE325_team.Components.Account.Pages.AccessDenied.html
@@ -128,15 +134,9 @@ references:
   name: ExternalLogin
   nameWithType: ExternalLogin
   fullName: CSE325_team.Components.Account.Pages.ExternalLogin
-- uid: CSE325_team.Components.Account.Pages.Lockout
-  commentId: T:CSE325_team.Components.Account.Pages.Lockout
-  href: CSE325_team.Components.Account.Pages.Lockout.html
-  name: Lockout
-  nameWithType: Lockout
-  fullName: CSE325_team.Components.Account.Pages.Lockout
-- uid: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
-  commentId: T:CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
-  href: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.html
-  name: LoginWithRecoveryCode
-  nameWithType: LoginWithRecoveryCode
-  fullName: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
+- uid: CSE325_team.Components.Account.Pages.Login
+  commentId: T:CSE325_team.Components.Account.Pages.Login
+  href: CSE325_team.Components.Account.Pages.Login.html
+  name: Login
+  nameWithType: Login
+  fullName: CSE325_team.Components.Account.Pages.Login

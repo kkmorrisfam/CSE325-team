@@ -34,39 +34,39 @@ references:
   name: Error
   nameWithType: Error
   fullName: CSE325_team.Components.Pages.Error
-- uid: CSE325_team.Components.Pages.TestName
-  commentId: T:CSE325_team.Components.Pages.TestName
-  href: CSE325_team.Components.Pages.TestName.html
-  name: TestName
-  nameWithType: TestName
-  fullName: CSE325_team.Components.Pages.TestName
-- uid: CSE325_team.Components.Pages.Test
-  commentId: T:CSE325_team.Components.Pages.Test
-  href: CSE325_team.Components.Pages.Test.html
-  name: Test
-  nameWithType: Test
-  fullName: CSE325_team.Components.Pages.Test
 - uid: CSE325_team.Components.Pages.Auth
   commentId: T:CSE325_team.Components.Pages.Auth
   href: CSE325_team.Components.Pages.Auth.html
   name: Auth
   nameWithType: Auth
   fullName: CSE325_team.Components.Pages.Auth
-- uid: CSE325_team.Components.Pages.Home
-  commentId: T:CSE325_team.Components.Pages.Home
-  href: CSE325_team.Components.Pages.Home.html
-  name: Home
-  nameWithType: Home
-  fullName: CSE325_team.Components.Pages.Home
-- uid: CSE325_team.Components.Pages.Inventory
-  commentId: T:CSE325_team.Components.Pages.Inventory
-  href: CSE325_team.Components.Pages.Inventory.html
-  name: Inventory
-  nameWithType: Inventory
-  fullName: CSE325_team.Components.Pages.Inventory
+- uid: CSE325_team.Components.Pages.TestName
+  commentId: T:CSE325_team.Components.Pages.TestName
+  href: CSE325_team.Components.Pages.TestName.html
+  name: TestName
+  nameWithType: TestName
+  fullName: CSE325_team.Components.Pages.TestName
 - uid: CSE325_team.Components.Pages.Bookings
   commentId: T:CSE325_team.Components.Pages.Bookings
   href: CSE325_team.Components.Pages.Bookings.html
   name: Bookings
   nameWithType: Bookings
   fullName: CSE325_team.Components.Pages.Bookings
+- uid: CSE325_team.Components.Pages.Home
+  commentId: T:CSE325_team.Components.Pages.Home
+  href: CSE325_team.Components.Pages.Home.html
+  name: Home
+  nameWithType: Home
+  fullName: CSE325_team.Components.Pages.Home
+- uid: CSE325_team.Components.Pages.Test
+  commentId: T:CSE325_team.Components.Pages.Test
+  href: CSE325_team.Components.Pages.Test.html
+  name: Test
+  nameWithType: Test
+  fullName: CSE325_team.Components.Pages.Test
+- uid: CSE325_team.Components.Pages.Inventory
+  commentId: T:CSE325_team.Components.Pages.Inventory
+  href: CSE325_team.Components.Pages.Inventory.html
+  name: Inventory
+  nameWithType: Inventory
+  fullName: CSE325_team.Components.Pages.Inventory

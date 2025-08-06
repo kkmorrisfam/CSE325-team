@@ -7,11 +7,16 @@
           "exclude": [ "**/bin/**", "**/obj/**" ]
         }
       ],
-      
-      "dest": "api",
-          "properties": {
-      "TargetFramework": "net8.0"
-    }
+      "dest": "docs",
+      "properties": {
+        "TargetFramework": "net8.0"
+      },
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": false,
+      "namespaceLayout": "nested",
+      "memberLayout": "samePage",
+      "allowCompilationErrors": false
     }
   ],
   "build": {
@@ -20,19 +25,28 @@
         "files": [ "toc.yml", "index.md" ]
       },
       {
-        "files": [ "api/**.yml" ],
+        "files": [ "docs/**.yml", "docs/index.md" ],
         "src": ".",
-        "dest": "docs",
-        "flatten": false
+        "dest": "api"
       }
     ],
-    "resource": [],
+    "resource": [
+      {
+        "files": [ "images/**" ]
+      }
+    ],
     "dest": "docs/_site",
     "globalMetadata": {
-      "_appTitle": "CSE325 Team Project Docs"
+      "_appTitle": "CSE325 Team Project Docs",
+      "_enableSearch": true,
+      "_enableNewTab": true
     },
     "template": [
-      "default"
-    ]
+      "default",
+      "templates/custom"
+    ],
+    "postProcessors": [],
+    "keepFileLink": false,
+    "cleanupCacheHistory": false
   }
 }

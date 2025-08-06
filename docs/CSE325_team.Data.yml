@@ -2,7 +2,8 @@
 items:
 - uid: CSE325_team.Data
   commentId: N:CSE325_team.Data
-  id: CSE325_team.Data
+  id: Data
+  parent: CSE325_team
   children:
   - CSE325_team.Data.ApplicationDbContext
   - CSE325_team.Data.ApplicationUser

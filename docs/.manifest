@@ -1,5 +1,7 @@
 {
+  "CSE325_team": "CSE325_team.yml",
   "CSE325_team.Components": "CSE325_team.Components.yml",
+  "CSE325_team.Components.Account": "CSE325_team.Components.Account.yml",
   "CSE325_team.Components.Account.Pages": "CSE325_team.Components.Account.Pages.yml",
   "CSE325_team.Components.Account.Pages.AccessDenied": "CSE325_team.Components.Account.Pages.AccessDenied.yml",
   "CSE325_team.Components.Account.Pages.AccessDenied.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": "CSE325_team.Components.Account.Pages.AccessDenied.yml",

@@ -17,12 +17,6 @@ items:
   assemblies:
   - CSE325-team
 references:
-- uid: CSE325_team.Components.Layout.NavMenu
-  commentId: T:CSE325_team.Components.Layout.NavMenu
-  href: CSE325_team.Components.Layout.NavMenu.html
-  name: NavMenu
-  nameWithType: NavMenu
-  fullName: CSE325_team.Components.Layout.NavMenu
 - uid: CSE325_team.Components.Layout.MainLayout
   commentId: T:CSE325_team.Components.Layout.MainLayout
   parent: CSE325_team.Components.Layout
@@ -30,6 +24,12 @@ references:
   name: MainLayout
   nameWithType: MainLayout
   fullName: CSE325_team.Components.Layout.MainLayout
+- uid: CSE325_team.Components.Layout.NavMenu
+  commentId: T:CSE325_team.Components.Layout.NavMenu
+  href: CSE325_team.Components.Layout.NavMenu.html
+  name: NavMenu
+  nameWithType: NavMenu
+  fullName: CSE325_team.Components.Layout.NavMenu
 - uid: CSE325_team.Components.Layout.Footer
   commentId: T:CSE325_team.Components.Layout.Footer
   href: CSE325_team.Components.Layout.Footer.html

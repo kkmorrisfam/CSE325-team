@@ -3,11 +3,19 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.AccessDenied.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.AccessDenied.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.AccessDenied.html"
         }
       },
       "version": "",
@@ -21,7 +29,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ConfirmEmail.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ConfirmEmail.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ConfirmEmail.html"
         }
       },
       "version": "",
@@ -35,7 +43,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ConfirmEmailChange.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ConfirmEmailChange.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ConfirmEmailChange.html"
         }
       },
       "version": "",
@@ -49,7 +57,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ExternalLogin.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ExternalLogin.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ExternalLogin.html"
         }
       },
       "version": "",
@@ -63,7 +71,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ForgotPassword.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ForgotPassword.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ForgotPassword.html"
         }
       },
       "version": "",
@@ -77,7 +85,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation.html"
         }
       },
       "version": "",
@@ -91,7 +99,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.InvalidPasswordReset.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.InvalidPasswordReset.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.InvalidPasswordReset.html"
         }
       },
       "version": "",
@@ -105,7 +113,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.InvalidUser.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.InvalidUser.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.InvalidUser.html"
         }
       },
       "version": "",
@@ -119,7 +127,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Lockout.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Lockout.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Lockout.html"
         }
       },
       "version": "",
@@ -133,7 +141,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Login.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Login.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Login.html"
         }
       },
       "version": "",
@@ -147,7 +155,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.LoginWith2fa.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.LoginWith2fa.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.LoginWith2fa.html"
         }
       },
       "version": "",
@@ -161,7 +169,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.LoginWithRecoveryCode.html"
         }
       },
       "version": "",
@@ -175,7 +183,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.ChangePassword.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.ChangePassword.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.ChangePassword.html"
         }
       },
       "version": "",
@@ -189,7 +197,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.html"
         }
       },
       "version": "",
@@ -203,7 +211,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.Disable2fa.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.Disable2fa.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.Disable2fa.html"
         }
       },
       "version": "",
@@ -217,7 +225,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.Email.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.Email.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.Email.html"
         }
       },
       "version": "",
@@ -231,7 +239,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.html"
         }
       },
       "version": "",
@@ -245,7 +253,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.ExternalLogins.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.ExternalLogins.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.ExternalLogins.html"
         }
       },
       "version": "",
@@ -259,7 +267,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes.html"
         }
       },
       "version": "",
@@ -273,7 +281,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.Index.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.Index.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.Index.html"
         }
       },
       "version": "",
@@ -287,7 +295,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.PersonalData.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.PersonalData.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.PersonalData.html"
         }
       },
       "version": "",
@@ -301,7 +309,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator.html"
         }
       },
       "version": "",
@@ -315,7 +323,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.SetPassword.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.SetPassword.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.SetPassword.html"
         }
       },
       "version": "",
@@ -329,7 +337,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.html"
         }
       },
       "version": "",
@@ -343,7 +351,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage._Imports.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage._Imports.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage._Imports.html"
         }
       },
       "version": "",
@@ -357,7 +365,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Manage.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Manage.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Manage.html"
         }
       },
       "version": "",
@@ -371,7 +379,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.Register.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.Register.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.Register.html"
         }
       },
       "version": "",
@@ -385,7 +393,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.RegisterConfirmation.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.RegisterConfirmation.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.RegisterConfirmation.html"
         }
       },
       "version": "",
@@ -399,7 +407,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ResendEmailConfirmation.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ResendEmailConfirmation.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ResendEmailConfirmation.html"
         }
       },
       "version": "",
@@ -413,7 +421,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ResetPassword.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ResetPassword.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ResetPassword.html"
         }
       },
       "version": "",
@@ -427,7 +435,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.ResetPasswordConfirmation.html"
         }
       },
       "version": "",
@@ -441,7 +449,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages._Imports.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages._Imports.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages._Imports.html"
         }
       },
       "version": "",
@@ -455,7 +463,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Pages.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Pages.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Pages.html"
         }
       },
       "version": "",
@@ -469,7 +477,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.AccountLayout.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.AccountLayout.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.AccountLayout.html"
         }
       },
       "version": "",
@@ -483,7 +491,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ExternalLoginPicker.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ExternalLoginPicker.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.ExternalLoginPicker.html"
         }
       },
       "version": "",
@@ -497,7 +505,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ManageLayout.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ManageLayout.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.ManageLayout.html"
         }
       },
       "version": "",
@@ -511,7 +519,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ManageNavMenu.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ManageNavMenu.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.ManageNavMenu.html"
         }
       },
       "version": "",
@@ -525,7 +533,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.RedirectToLogin.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.RedirectToLogin.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.RedirectToLogin.html"
         }
       },
       "version": "",
@@ -539,7 +547,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.ShowRecoveryCodes.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.ShowRecoveryCodes.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.ShowRecoveryCodes.html"
         }
       },
       "version": "",
@@ -553,7 +561,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.StatusMessage.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.StatusMessage.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.StatusMessage.html"
         }
       },
       "version": "",
@@ -567,7 +575,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Account.Shared.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Account.Shared.html"
+          "relative_path": "api/docs/CSE325_team.Components.Account.Shared.html"
         }
       },
       "version": "",
@@ -578,10 +586,24 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.Components.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/docs/CSE325_team.Components.Account.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": null,
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/CSE325_team.Components.App.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.App.html"
+          "relative_path": "api/docs/CSE325_team.Components.App.html"
         }
       },
       "version": "",
@@ -595,7 +617,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Layout.Footer.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Layout.Footer.html"
+          "relative_path": "api/docs/CSE325_team.Components.Layout.Footer.html"
         }
       },
       "version": "",
@@ -609,7 +631,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Layout.MainLayout.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Layout.MainLayout.html"
+          "relative_path": "api/docs/CSE325_team.Components.Layout.MainLayout.html"
         }
       },
       "version": "",
@@ -623,7 +645,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Layout.NavMenu.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Layout.NavMenu.html"
+          "relative_path": "api/docs/CSE325_team.Components.Layout.NavMenu.html"
         }
       },
       "version": "",
@@ -637,7 +659,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Layout.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Layout.html"
+          "relative_path": "api/docs/CSE325_team.Components.Layout.html"
         }
       },
       "version": "",
@@ -651,7 +673,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.Auth.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.Auth.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.Auth.html"
         }
       },
       "version": "",
@@ -665,7 +687,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.Bookings.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.Bookings.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.Bookings.html"
         }
       },
       "version": "",
@@ -679,7 +701,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.Error.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.Error.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.Error.html"
         }
       },
       "version": "",
@@ -693,7 +715,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.Home.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.Home.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.Home.html"
         }
       },
       "version": "",
@@ -707,7 +729,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.Inventory.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.Inventory.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.Inventory.html"
         }
       },
       "version": "",
@@ -721,7 +743,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.Test.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.Test.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.Test.html"
         }
       },
       "version": "",
@@ -735,7 +757,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.TestName.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.TestName.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.TestName.html"
         }
       },
       "version": "",
@@ -749,7 +771,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.VehicleDetails.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.VehicleDetails.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.VehicleDetails.html"
         }
       },
       "version": "",
@@ -763,7 +785,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Pages.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Pages.html"
+          "relative_path": "api/docs/CSE325_team.Components.Pages.html"
         }
       },
       "version": "",
@@ -777,7 +799,7 @@
       "source_relative_path": "docs/CSE325_team.Components.Routes.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.Routes.html"
+          "relative_path": "api/docs/CSE325_team.Components.Routes.html"
         }
       },
       "version": "",
@@ -791,7 +813,7 @@
       "source_relative_path": "docs/CSE325_team.Components._Imports.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components._Imports.html"
+          "relative_path": "api/docs/CSE325_team.Components._Imports.html"
         }
       },
       "version": "",
@@ -805,7 +827,7 @@
       "source_relative_path": "docs/CSE325_team.Components.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Components.html"
+          "relative_path": "api/docs/CSE325_team.Components.html"
         }
       },
       "version": "",
@@ -819,7 +841,7 @@
       "source_relative_path": "docs/CSE325_team.Controllers.BookingsController.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Controllers.BookingsController.html"
+          "relative_path": "api/docs/CSE325_team.Controllers.BookingsController.html"
         }
       },
       "version": "",
@@ -833,7 +855,7 @@
       "source_relative_path": "docs/CSE325_team.Controllers.TestController.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Controllers.TestController.html"
+          "relative_path": "api/docs/CSE325_team.Controllers.TestController.html"
         }
       },
       "version": "",
@@ -847,7 +869,7 @@
       "source_relative_path": "docs/CSE325_team.Controllers.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Controllers.html"
+          "relative_path": "api/docs/CSE325_team.Controllers.html"
         }
       },
       "version": "",
@@ -861,7 +883,7 @@
       "source_relative_path": "docs/CSE325_team.Data.ApplicationDbContext.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.ApplicationDbContext.html"
+          "relative_path": "api/docs/CSE325_team.Data.ApplicationDbContext.html"
         }
       },
       "version": "",
@@ -875,7 +897,7 @@
       "source_relative_path": "docs/CSE325_team.Data.ApplicationUser.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.ApplicationUser.html"
+          "relative_path": "api/docs/CSE325_team.Data.ApplicationUser.html"
         }
       },
       "version": "",
@@ -889,7 +911,7 @@
       "source_relative_path": "docs/CSE325_team.Data.SeedBooking.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.SeedBooking.html"
+          "relative_path": "api/docs/CSE325_team.Data.SeedBooking.html"
         }
       },
       "version": "",
@@ -903,7 +925,7 @@
       "source_relative_path": "docs/CSE325_team.Data.SeedCars.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.SeedCars.html"
+          "relative_path": "api/docs/CSE325_team.Data.SeedCars.html"
         }
       },
       "version": "",
@@ -917,7 +939,7 @@
       "source_relative_path": "docs/CSE325_team.Data.SeedPayment.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.SeedPayment.html"
+          "relative_path": "api/docs/CSE325_team.Data.SeedPayment.html"
         }
       },
       "version": "",
@@ -931,7 +953,7 @@
       "source_relative_path": "docs/CSE325_team.Data.SeedUser.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.SeedUser.html"
+          "relative_path": "api/docs/CSE325_team.Data.SeedUser.html"
         }
       },
       "version": "",
@@ -945,7 +967,7 @@
       "source_relative_path": "docs/CSE325_team.Data.SeedVehicle.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.SeedVehicle.html"
+          "relative_path": "api/docs/CSE325_team.Data.SeedVehicle.html"
         }
       },
       "version": "",
@@ -959,7 +981,7 @@
       "source_relative_path": "docs/CSE325_team.Data.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Data.html"
+          "relative_path": "api/docs/CSE325_team.Data.html"
         }
       },
       "version": "",
@@ -973,7 +995,7 @@
       "source_relative_path": "docs/CSE325_team.Migrations.InitialCreate.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Migrations.InitialCreate.html"
+          "relative_path": "api/docs/CSE325_team.Migrations.InitialCreate.html"
         }
       },
       "version": "",
@@ -987,7 +1009,7 @@
       "source_relative_path": "docs/CSE325_team.Migrations.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Migrations.html"
+          "relative_path": "api/docs/CSE325_team.Migrations.html"
         }
       },
       "version": "",
@@ -1001,7 +1023,7 @@
       "source_relative_path": "docs/CSE325_team.Models.Booking.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Models.Booking.html"
+          "relative_path": "api/docs/CSE325_team.Models.Booking.html"
         }
       },
       "version": "",
@@ -1015,7 +1037,7 @@
       "source_relative_path": "docs/CSE325_team.Models.Payment.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Models.Payment.html"
+          "relative_path": "api/docs/CSE325_team.Models.Payment.html"
         }
       },
       "version": "",
@@ -1029,7 +1051,7 @@
       "source_relative_path": "docs/CSE325_team.Models.Vehicle.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Models.Vehicle.html"
+          "relative_path": "api/docs/CSE325_team.Models.Vehicle.html"
         }
       },
       "version": "",
@@ -1043,7 +1065,7 @@
       "source_relative_path": "docs/CSE325_team.Models.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/CSE325_team.Models.html"
+          "relative_path": "api/docs/CSE325_team.Models.html"
         }
       },
       "version": "",
@@ -1053,14 +1075,28 @@
       "Summary": null
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/CSE325_team.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/docs/CSE325_team.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": null,
+      "Summary": null
+    },
+    {
       "type": "Toc",
       "source_relative_path": "docs/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/docs/toc.html"
+          "relative_path": "api/docs/toc.html"
         },
         ".json": {
-          "relative_path": "docs/docs/toc.json"
+          "relative_path": "api/docs/toc.json"
         }
       },
       "version": ""

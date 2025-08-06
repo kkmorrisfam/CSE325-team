@@ -2,7 +2,8 @@
 items:
 - uid: CSE325_team.Components.Account.Pages.Manage
   commentId: N:CSE325_team.Components.Account.Pages.Manage
-  id: CSE325_team.Components.Account.Pages.Manage
+  id: Manage
+  parent: CSE325_team.Components.Account.Pages
   children:
   - CSE325_team.Components.Account.Pages.Manage.ChangePassword
   - CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
@@ -27,30 +28,54 @@ items:
   assemblies:
   - CSE325-team
 references:
-- uid: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
-  href: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.html
-  name: EnableAuthenticator
-  nameWithType: EnableAuthenticator
-  fullName: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
-- uid: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
-  href: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.html
-  name: TwoFactorAuthentication
-  nameWithType: TwoFactorAuthentication
-  fullName: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
+- uid: CSE325_team.Components.Account.Pages.Manage.ChangePassword
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.ChangePassword
+  href: CSE325_team.Components.Account.Pages.Manage.ChangePassword.html
+  name: ChangePassword
+  nameWithType: ChangePassword
+  fullName: CSE325_team.Components.Account.Pages.Manage.ChangePassword
+- uid: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
+  href: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.html
+  name: DeletePersonalData
+  nameWithType: DeletePersonalData
+  fullName: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
 - uid: CSE325_team.Components.Account.Pages.Manage.Disable2fa
   commentId: T:CSE325_team.Components.Account.Pages.Manage.Disable2fa
   href: CSE325_team.Components.Account.Pages.Manage.Disable2fa.html
   name: Disable2fa
   nameWithType: Disable2fa
   fullName: CSE325_team.Components.Account.Pages.Manage.Disable2fa
+- uid: CSE325_team.Components.Account.Pages.Manage.Email
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.Email
+  href: CSE325_team.Components.Account.Pages.Manage.Email.html
+  name: Email
+  nameWithType: Email
+  fullName: CSE325_team.Components.Account.Pages.Manage.Email
+- uid: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
+  href: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator.html
+  name: EnableAuthenticator
+  nameWithType: EnableAuthenticator
+  fullName: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
+- uid: CSE325_team.Components.Account.Pages.Manage.ExternalLogins
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.ExternalLogins
+  href: CSE325_team.Components.Account.Pages.Manage.ExternalLogins.html
+  name: ExternalLogins
+  nameWithType: ExternalLogins
+  fullName: CSE325_team.Components.Account.Pages.Manage.ExternalLogins
 - uid: CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes
   commentId: T:CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes
   href: CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes.html
   name: GenerateRecoveryCodes
   nameWithType: GenerateRecoveryCodes
   fullName: CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes
+- uid: CSE325_team.Components.Account.Pages.Manage.Index
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.Index
+  href: CSE325_team.Components.Account.Pages.Manage.Index.html
+  name: Index
+  nameWithType: Index
+  fullName: CSE325_team.Components.Account.Pages.Manage.Index
 - uid: CSE325_team.Components.Account.Pages.Manage.PersonalData
   commentId: T:CSE325_team.Components.Account.Pages.Manage.PersonalData
   href: CSE325_team.Components.Account.Pages.Manage.PersonalData.html
@@ -69,39 +94,15 @@ references:
   name: SetPassword
   nameWithType: SetPassword
   fullName: CSE325_team.Components.Account.Pages.Manage.SetPassword
-- uid: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
-  href: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData.html
-  name: DeletePersonalData
-  nameWithType: DeletePersonalData
-  fullName: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
-- uid: CSE325_team.Components.Account.Pages.Manage.ExternalLogins
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.ExternalLogins
-  href: CSE325_team.Components.Account.Pages.Manage.ExternalLogins.html
-  name: ExternalLogins
-  nameWithType: ExternalLogins
-  fullName: CSE325_team.Components.Account.Pages.Manage.ExternalLogins
+- uid: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
+  commentId: T:CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
+  href: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication.html
+  name: TwoFactorAuthentication
+  nameWithType: TwoFactorAuthentication
+  fullName: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
 - uid: CSE325_team.Components.Account.Pages.Manage._Imports
   commentId: T:CSE325_team.Components.Account.Pages.Manage._Imports
   href: CSE325_team.Components.Account.Pages.Manage._Imports.html
   name: _Imports
   nameWithType: _Imports
   fullName: CSE325_team.Components.Account.Pages.Manage._Imports
-- uid: CSE325_team.Components.Account.Pages.Manage.ChangePassword
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.ChangePassword
-  href: CSE325_team.Components.Account.Pages.Manage.ChangePassword.html
-  name: ChangePassword
-  nameWithType: ChangePassword
-  fullName: CSE325_team.Components.Account.Pages.Manage.ChangePassword
-- uid: CSE325_team.Components.Account.Pages.Manage.Index
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.Index
-  href: CSE325_team.Components.Account.Pages.Manage.Index.html
-  name: Index
-  nameWithType: Index
-  fullName: CSE325_team.Components.Account.Pages.Manage.Index
-- uid: CSE325_team.Components.Account.Pages.Manage.Email
-  commentId: T:CSE325_team.Components.Account.Pages.Manage.Email
-  href: CSE325_team.Components.Account.Pages.Manage.Email.html
-  name: Email
-  nameWithType: Email
-  fullName: CSE325_team.Components.Account.Pages.Manage.Email

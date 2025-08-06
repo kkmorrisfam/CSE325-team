@@ -1,0 +1,90 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team.Components.Account
+  id: Account
+  parent: CSE325_team.Components
+  children:
+  - CSE325_team.Components.Account.Pages
+  - CSE325_team.Components.Account.Shared
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team.Components.Account
+  type: Namespace
+references:
+- uid: CSE325_team.Components.Account.Pages
+  commentId: N:CSE325_team.Components.Account.Pages
+  href: CSE325_team.html
+  name: CSE325_team.Components.Account.Pages
+  nameWithType: CSE325_team.Components.Account.Pages
+  fullName: CSE325_team.Components.Account.Pages
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Account
+    name: Account
+    href: CSE325_team.Components.Account.html
+  - name: .
+  - uid: CSE325_team.Components.Account.Pages
+    name: Pages
+    href: CSE325_team.Components.Account.Pages.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Account
+    name: Account
+    href: CSE325_team.Components.Account.html
+  - name: .
+  - uid: CSE325_team.Components.Account.Pages
+    name: Pages
+    href: CSE325_team.Components.Account.Pages.html
+- uid: CSE325_team.Components.Account.Shared
+  commentId: N:CSE325_team.Components.Account.Shared
+  href: CSE325_team.html
+  name: CSE325_team.Components.Account.Shared
+  nameWithType: CSE325_team.Components.Account.Shared
+  fullName: CSE325_team.Components.Account.Shared
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Account
+    name: Account
+    href: CSE325_team.Components.Account.html
+  - name: .
+  - uid: CSE325_team.Components.Account.Shared
+    name: Shared
+    href: CSE325_team.Components.Account.Shared.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Account
+    name: Account
+    href: CSE325_team.Components.Account.html
+  - name: .
+  - uid: CSE325_team.Components.Account.Shared
+    name: Shared
+    href: CSE325_team.Components.Account.Shared.html

@@ -2,7 +2,8 @@
 items:
 - uid: CSE325_team.Components.Account.Shared
   commentId: N:CSE325_team.Components.Account.Shared
-  id: CSE325_team.Components.Account.Shared
+  id: Shared
+  parent: CSE325_team.Components.Account
   children:
   - CSE325_team.Components.Account.Shared.AccountLayout
   - CSE325_team.Components.Account.Shared.ExternalLoginPicker
@@ -21,24 +22,6 @@ items:
   assemblies:
   - CSE325-team
 references:
-- uid: CSE325_team.Components.Account.Shared.RedirectToLogin
-  commentId: T:CSE325_team.Components.Account.Shared.RedirectToLogin
-  href: CSE325_team.Components.Account.Shared.RedirectToLogin.html
-  name: RedirectToLogin
-  nameWithType: RedirectToLogin
-  fullName: CSE325_team.Components.Account.Shared.RedirectToLogin
-- uid: CSE325_team.Components.Account.Shared.StatusMessage
-  commentId: T:CSE325_team.Components.Account.Shared.StatusMessage
-  href: CSE325_team.Components.Account.Shared.StatusMessage.html
-  name: StatusMessage
-  nameWithType: StatusMessage
-  fullName: CSE325_team.Components.Account.Shared.StatusMessage
-- uid: CSE325_team.Components.Account.Shared.ExternalLoginPicker
-  commentId: T:CSE325_team.Components.Account.Shared.ExternalLoginPicker
-  href: CSE325_team.Components.Account.Shared.ExternalLoginPicker.html
-  name: ExternalLoginPicker
-  nameWithType: ExternalLoginPicker
-  fullName: CSE325_team.Components.Account.Shared.ExternalLoginPicker
 - uid: CSE325_team.Components.Account.Shared.AccountLayout
   commentId: T:CSE325_team.Components.Account.Shared.AccountLayout
   parent: CSE325_team.Components.Account.Shared
@@ -46,12 +29,12 @@ references:
   name: AccountLayout
   nameWithType: AccountLayout
   fullName: CSE325_team.Components.Account.Shared.AccountLayout
-- uid: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
-  commentId: T:CSE325_team.Components.Account.Shared.ShowRecoveryCodes
-  href: CSE325_team.Components.Account.Shared.ShowRecoveryCodes.html
-  name: ShowRecoveryCodes
-  nameWithType: ShowRecoveryCodes
-  fullName: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+- uid: CSE325_team.Components.Account.Shared.ExternalLoginPicker
+  commentId: T:CSE325_team.Components.Account.Shared.ExternalLoginPicker
+  href: CSE325_team.Components.Account.Shared.ExternalLoginPicker.html
+  name: ExternalLoginPicker
+  nameWithType: ExternalLoginPicker
+  fullName: CSE325_team.Components.Account.Shared.ExternalLoginPicker
 - uid: CSE325_team.Components.Account.Shared.ManageLayout
   commentId: T:CSE325_team.Components.Account.Shared.ManageLayout
   parent: CSE325_team.Components.Account.Shared
@@ -65,6 +48,24 @@ references:
   name: ManageNavMenu
   nameWithType: ManageNavMenu
   fullName: CSE325_team.Components.Account.Shared.ManageNavMenu
+- uid: CSE325_team.Components.Account.Shared.RedirectToLogin
+  commentId: T:CSE325_team.Components.Account.Shared.RedirectToLogin
+  href: CSE325_team.Components.Account.Shared.RedirectToLogin.html
+  name: RedirectToLogin
+  nameWithType: RedirectToLogin
+  fullName: CSE325_team.Components.Account.Shared.RedirectToLogin
+- uid: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+  commentId: T:CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+  href: CSE325_team.Components.Account.Shared.ShowRecoveryCodes.html
+  name: ShowRecoveryCodes
+  nameWithType: ShowRecoveryCodes
+  fullName: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+- uid: CSE325_team.Components.Account.Shared.StatusMessage
+  commentId: T:CSE325_team.Components.Account.Shared.StatusMessage
+  href: CSE325_team.Components.Account.Shared.StatusMessage.html
+  name: StatusMessage
+  nameWithType: StatusMessage
+  fullName: CSE325_team.Components.Account.Shared.StatusMessage
 - uid: CSE325_team.Components.Account.Shared
   commentId: N:CSE325_team.Components.Account.Shared
   href: CSE325_team.html

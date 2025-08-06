@@ -2,9 +2,13 @@
 items:
 - uid: CSE325_team.Components
   commentId: N:CSE325_team.Components
-  id: CSE325_team.Components
+  id: Components
+  parent: CSE325_team
   children:
+  - CSE325_team.Components.Account
   - CSE325_team.Components.App
+  - CSE325_team.Components.Layout
+  - CSE325_team.Components.Pages
   - CSE325_team.Components.Routes
   - CSE325_team.Components._Imports
   langs:
@@ -17,21 +21,83 @@ items:
   assemblies:
   - CSE325-team
 references:
+- uid: CSE325_team.Components.Account
+  isExternal: true
+- uid: CSE325_team.Components.Layout
+  commentId: N:CSE325_team.Components.Layout
+  href: CSE325_team.html
+  name: CSE325_team.Components.Layout
+  nameWithType: CSE325_team.Components.Layout
+  fullName: CSE325_team.Components.Layout
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Layout
+    name: Layout
+    href: CSE325_team.Components.Layout.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Layout
+    name: Layout
+    href: CSE325_team.Components.Layout.html
+- uid: CSE325_team.Components.Pages
+  commentId: N:CSE325_team.Components.Pages
+  href: CSE325_team.html
+  name: CSE325_team.Components.Pages
+  nameWithType: CSE325_team.Components.Pages
+  fullName: CSE325_team.Components.Pages
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Pages
+    name: Pages
+    href: CSE325_team.Components.Pages.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  - name: .
+  - uid: CSE325_team.Components.Pages
+    name: Pages
+    href: CSE325_team.Components.Pages.html
 - uid: CSE325_team.Components.App
   commentId: T:CSE325_team.Components.App
   href: CSE325_team.Components.App.html
   name: App
   nameWithType: App
   fullName: CSE325_team.Components.App
-- uid: CSE325_team.Components._Imports
-  commentId: T:CSE325_team.Components._Imports
-  href: CSE325_team.Components._Imports.html
-  name: _Imports
-  nameWithType: _Imports
-  fullName: CSE325_team.Components._Imports
 - uid: CSE325_team.Components.Routes
   commentId: T:CSE325_team.Components.Routes
   href: CSE325_team.Components.Routes.html
   name: Routes
   nameWithType: Routes
   fullName: CSE325_team.Components.Routes
+- uid: CSE325_team.Components._Imports
+  commentId: T:CSE325_team.Components._Imports
+  href: CSE325_team.Components._Imports.html
+  name: _Imports
+  nameWithType: _Imports
+  fullName: CSE325_team.Components._Imports

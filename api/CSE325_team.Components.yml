@@ -23,15 +23,15 @@ references:
   name: App
   nameWithType: App
   fullName: CSE325_team.Components.App
-- uid: CSE325_team.Components._Imports
-  commentId: T:CSE325_team.Components._Imports
-  href: CSE325_team.Components._Imports.html
-  name: _Imports
-  nameWithType: _Imports
-  fullName: CSE325_team.Components._Imports
 - uid: CSE325_team.Components.Routes
   commentId: T:CSE325_team.Components.Routes
   href: CSE325_team.Components.Routes.html
   name: Routes
   nameWithType: Routes
   fullName: CSE325_team.Components.Routes
+- uid: CSE325_team.Components._Imports
+  commentId: T:CSE325_team.Components._Imports
+  href: CSE325_team.Components._Imports.html
+  name: _Imports
+  nameWithType: _Imports
+  fullName: CSE325_team.Components._Imports

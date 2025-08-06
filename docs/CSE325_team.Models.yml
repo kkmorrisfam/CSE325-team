@@ -2,7 +2,8 @@
 items:
 - uid: CSE325_team.Models
   commentId: N:CSE325_team.Models
-  id: CSE325_team.Models
+  id: Models
+  parent: CSE325_team
   children:
   - CSE325_team.Models.Booking
   - CSE325_team.Models.Payment

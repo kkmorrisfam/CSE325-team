@@ -2,7 +2,8 @@
 items:
 - uid: CSE325_team.Controllers
   commentId: N:CSE325_team.Controllers
-  id: CSE325_team.Controllers
+  id: Controllers
+  parent: CSE325_team
   children:
   - CSE325_team.Controllers.BookingsController
   - CSE325_team.Controllers.TestController

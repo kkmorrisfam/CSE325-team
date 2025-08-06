@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ApplicationDbContext | CSE325 Team Project Docs </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ApplicationDbContext | CSE325 Team Project Docs ">
+    
+    
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CSE325_team.Data.ApplicationDbContext">
+
+
+
+  <h1 id="CSE325_team_Data_ApplicationDbContext" data-uid="CSE325_team.Data.ApplicationDbContext" class="text-break">Class ApplicationDbContext</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a></div>
+    <div class="level2"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5">IdentityUserContext</a>&lt;<a class="xref" href="CSE325_team.Data.ApplicationUser.html">ApplicationUser</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuserclaim-1">IdentityUserClaim</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuserlogin-1">IdentityUserLogin</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityusertoken-1">IdentityUserToken</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</div>
+    <div class="level3"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-8">IdentityDbContext</a>&lt;<a class="xref" href="CSE325_team.Data.ApplicationUser.html">ApplicationUser</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole">IdentityRole</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuserclaim-1">IdentityUserClaim</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuserrole-1">IdentityUserRole</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuserlogin-1">IdentityUserLogin</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityroleclaim-1">IdentityRoleClaim</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityusertoken-1">IdentityUserToken</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</div>
+    <div class="level4"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3">IdentityDbContext</a>&lt;<a class="xref" href="CSE325_team.Data.ApplicationUser.html">ApplicationUser</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole">IdentityRole</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</div>
+    <div class="level5"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-1">IdentityDbContext</a>&lt;<a class="xref" href="CSE325_team.Data.ApplicationUser.html">ApplicationUser</a>&gt;</div>
+    <div class="level6"><span class="xref">ApplicationDbContext</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iinfrastructure-1">IInfrastructure</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbcontextdependencies">IDbContextDependencies</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbsetcache">IDbSetCache</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbcontextpoolable">IDbContextPoolable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iresettableservice">IResettableService</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-8.onmodelcreating">IdentityDbContext&lt;ApplicationUser, IdentityRole, string, IdentityUserClaim&lt;string&gt;, IdentityUserRole&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityRoleClaim&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.OnModelCreating(ModelBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-8.userroles">IdentityDbContext&lt;ApplicationUser, IdentityRole, string, IdentityUserClaim&lt;string&gt;, IdentityUserRole&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityRoleClaim&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.UserRoles</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-8.roles">IdentityDbContext&lt;ApplicationUser, IdentityRole, string, IdentityUserClaim&lt;string&gt;, IdentityUserRole&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityRoleClaim&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.Roles</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-8.roleclaims">IdentityDbContext&lt;ApplicationUser, IdentityRole, string, IdentityUserClaim&lt;string&gt;, IdentityUserRole&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityRoleClaim&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.RoleClaims</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5.onmodelcreating">IdentityUserContext&lt;ApplicationUser, string, IdentityUserClaim&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.OnModelCreating(ModelBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5.users">IdentityUserContext&lt;ApplicationUser, string, IdentityUserClaim&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.Users</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5.userclaims">IdentityUserContext&lt;ApplicationUser, string, IdentityUserClaim&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.UserClaims</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5.userlogins">IdentityUserContext&lt;ApplicationUser, string, IdentityUserClaim&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.UserLogins</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5.usertokens">IdentityUserContext&lt;ApplicationUser, string, IdentityUserClaim&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.UserTokens</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityusercontext-5.schemaversion">IdentityUserContext&lt;ApplicationUser, string, IdentityUserClaim&lt;string&gt;, IdentityUserLogin&lt;string&gt;, IdentityUserToken&lt;string&gt;&gt;.SchemaVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.set#microsoft-entityframeworkcore-dbcontext-set-1">DbContext.Set&lt;TEntity&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.set#microsoft-entityframeworkcore-dbcontext-set-1(system-string)">DbContext.Set&lt;TEntity&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.onconfiguring">DbContext.OnConfiguring(DbContextOptionsBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.configureconventions">DbContext.ConfigureConventions(ModelConfigurationBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating">DbContext.OnModelCreating(ModelBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges#microsoft-entityframeworkcore-dbcontext-savechanges">DbContext.SaveChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges#microsoft-entityframeworkcore-dbcontext-savechanges(system-boolean)">DbContext.SaveChanges(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#microsoft-entityframeworkcore-dbcontext-savechangesasync(system-threading-cancellationtoken)">DbContext.SaveChangesAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#microsoft-entityframeworkcore-dbcontext-savechangesasync(system-boolean-system-threading-cancellationtoken)">DbContext.SaveChangesAsync(bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.dispose">DbContext.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.disposeasync">DbContext.DisposeAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.entry#microsoft-entityframeworkcore-dbcontext-entry-1(-0)">DbContext.Entry&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.entry#microsoft-entityframeworkcore-dbcontext-entry(system-object)">DbContext.Entry(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.add#microsoft-entityframeworkcore-dbcontext-add-1(-0)">DbContext.Add&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addasync#microsoft-entityframeworkcore-dbcontext-addasync-1(-0-system-threading-cancellationtoken)">DbContext.AddAsync&lt;TEntity&gt;(TEntity, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attach#microsoft-entityframeworkcore-dbcontext-attach-1(-0)">DbContext.Attach&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.update#microsoft-entityframeworkcore-dbcontext-update-1(-0)">DbContext.Update&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.remove#microsoft-entityframeworkcore-dbcontext-remove-1(-0)">DbContext.Remove&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.add#microsoft-entityframeworkcore-dbcontext-add(system-object)">DbContext.Add(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addasync#microsoft-entityframeworkcore-dbcontext-addasync(system-object-system-threading-cancellationtoken)">DbContext.AddAsync(object, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attach#microsoft-entityframeworkcore-dbcontext-attach(system-object)">DbContext.Attach(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.update#microsoft-entityframeworkcore-dbcontext-update(system-object)">DbContext.Update(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.remove#microsoft-entityframeworkcore-dbcontext-remove(system-object)">DbContext.Remove(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrange#microsoft-entityframeworkcore-dbcontext-addrange(system-object())">DbContext.AddRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrangeasync#microsoft-entityframeworkcore-dbcontext-addrangeasync(system-object())">DbContext.AddRangeAsync(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attachrange#microsoft-entityframeworkcore-dbcontext-attachrange(system-object())">DbContext.AttachRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.updaterange#microsoft-entityframeworkcore-dbcontext-updaterange(system-object())">DbContext.UpdateRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.removerange#microsoft-entityframeworkcore-dbcontext-removerange(system-object())">DbContext.RemoveRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrange#microsoft-entityframeworkcore-dbcontext-addrange(system-collections-generic-ienumerable((system-object)))">DbContext.AddRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrangeasync#microsoft-entityframeworkcore-dbcontext-addrangeasync(system-collections-generic-ienumerable((system-object))-system-threading-cancellationtoken)">DbContext.AddRangeAsync(IEnumerable&lt;object&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attachrange#microsoft-entityframeworkcore-dbcontext-attachrange(system-collections-generic-ienumerable((system-object)))">DbContext.AttachRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.updaterange#microsoft-entityframeworkcore-dbcontext-updaterange(system-collections-generic-ienumerable((system-object)))">DbContext.UpdateRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.removerange#microsoft-entityframeworkcore-dbcontext-removerange(system-collections-generic-ienumerable((system-object)))">DbContext.RemoveRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.find#microsoft-entityframeworkcore-dbcontext-find(system-type-system-object())">DbContext.Find(Type, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync(system-type-system-object())">DbContext.FindAsync(Type, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync(system-type-system-object()-system-threading-cancellationtoken)">DbContext.FindAsync(Type, object[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.find#microsoft-entityframeworkcore-dbcontext-find-1(system-object())">DbContext.Find&lt;TEntity&gt;(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync-1(system-object())">DbContext.FindAsync&lt;TEntity&gt;(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync-1(system-object()-system-threading-cancellationtoken)">DbContext.FindAsync&lt;TEntity&gt;(object[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.fromexpression">DbContext.FromExpression&lt;TResult&gt;(Expression&lt;Func&lt;IQueryable&lt;TResult&gt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.database">DbContext.Database</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.changetracker">DbContext.ChangeTracker</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.model">DbContext.Model</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.contextid">DbContext.ContextId</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savingchanges">DbContext.SavingChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savedchanges">DbContext.SavedChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesfailed">DbContext.SaveChangesFailed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CSE325_team.html">CSE325_team</a>.<a class="xref" href="CSE325_team.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: CSE325-team.dll</h6>
+  <h5 id="CSE325_team_Data_ApplicationDbContext_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ApplicationDbContext : IdentityDbContext&lt;ApplicationUser&gt;, IInfrastructure&lt;IServiceProvider&gt;, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/kkmorrisfam/CSE325-team/new/dpv-w2-docfx/apiSpec/new?filename=CSE325_team_Data_ApplicationDbContext__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_CSE325_team_Data_ApplicationDbContext__.md&amp;value=---%0Auid%3A%20CSE325_team.Data.ApplicationDbContext.%23ctor(Microsoft.EntityFrameworkCore.DbContextOptions%7BCSE325_team.Data.ApplicationDbContext%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/kkmorrisfam/CSE325-team/blob/dpv-w2-docfx/Data/ApplicationDbContext.cs/#L9">View Source</a>
+  </span>
+  <a id="CSE325_team_Data_ApplicationDbContext__ctor_" data-uid="CSE325_team.Data.ApplicationDbContext.#ctor*"></a>
+  <h4 id="CSE325_team_Data_ApplicationDbContext__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_CSE325_team_Data_ApplicationDbContext__" data-uid="CSE325_team.Data.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{CSE325_team.Data.ApplicationDbContext})">ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions-1">DbContextOptions</a>&lt;<a class="xref" href="CSE325_team.Data.ApplicationDbContext.html">ApplicationDbContext</a>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/kkmorrisfam/CSE325-team/new/dpv-w2-docfx/apiSpec/new?filename=CSE325_team_Data_ApplicationDbContext_Booking.md&amp;value=---%0Auid%3A%20CSE325_team.Data.ApplicationDbContext.Booking%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/kkmorrisfam/CSE325-team/blob/dpv-w2-docfx/Data/ApplicationDbContext.cs/#L14">View Source</a>
+  </span>
+  <a id="CSE325_team_Data_ApplicationDbContext_Booking_" data-uid="CSE325_team.Data.ApplicationDbContext.Booking*"></a>
+  <h4 id="CSE325_team_Data_ApplicationDbContext_Booking" data-uid="CSE325_team.Data.ApplicationDbContext.Booking">Booking</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Booking&gt; Booking { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="CSE325_team.Models.Booking.html">Booking</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/kkmorrisfam/CSE325-team/new/dpv-w2-docfx/apiSpec/new?filename=CSE325_team_Data_ApplicationDbContext_Payment.md&amp;value=---%0Auid%3A%20CSE325_team.Data.ApplicationDbContext.Payment%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/kkmorrisfam/CSE325-team/blob/dpv-w2-docfx/Data/ApplicationDbContext.cs/#L17">View Source</a>
+  </span>
+  <a id="CSE325_team_Data_ApplicationDbContext_Payment_" data-uid="CSE325_team.Data.ApplicationDbContext.Payment*"></a>
+  <h4 id="CSE325_team_Data_ApplicationDbContext_Payment" data-uid="CSE325_team.Data.ApplicationDbContext.Payment">Payment</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Payment&gt; Payment { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="CSE325_team.Models.Payment.html">Payment</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/kkmorrisfam/CSE325-team/new/dpv-w2-docfx/apiSpec/new?filename=CSE325_team_Data_ApplicationDbContext_Vehicle.md&amp;value=---%0Auid%3A%20CSE325_team.Data.ApplicationDbContext.Vehicle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/kkmorrisfam/CSE325-team/blob/dpv-w2-docfx/Data/ApplicationDbContext.cs/#L13">View Source</a>
+  </span>
+  <a id="CSE325_team_Data_ApplicationDbContext_Vehicle_" data-uid="CSE325_team.Data.ApplicationDbContext.Vehicle*"></a>
+  <h4 id="CSE325_team_Data_ApplicationDbContext_Vehicle" data-uid="CSE325_team.Data.ApplicationDbContext.Vehicle">Vehicle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DbSet&lt;Vehicle&gt; Vehicle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet</a>&lt;<a class="xref" href="CSE325_team.Models.Vehicle.html">Vehicle</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iinfrastructure-1">IInfrastructure&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbcontextdependencies">IDbContextDependencies</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbsetcache">IDbSetCache</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbcontextpoolable">IDbContextPoolable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iresettableservice">IResettableService</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/kkmorrisfam/CSE325-team/new/dpv-w2-docfx/apiSpec/new?filename=CSE325_team_Data_ApplicationDbContext.md&amp;value=---%0Auid%3A%20CSE325_team.Data.ApplicationDbContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/kkmorrisfam/CSE325-team/blob/dpv-w2-docfx/Data/ApplicationDbContext.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSE325_team
+  id: CSE325_team
+  children:
+  - CSE325_team.Components
+  - CSE325_team.Controllers
+  - CSE325_team.Data
+  - CSE325_team.Migrations
+  - CSE325_team.Models
+  langs:
+  - csharp
+  - vb
+  name: CSE325_team
+  type: Namespace
+references:
+- uid: CSE325_team.Components
+  commentId: N:CSE325_team.Components
+  href: CSE325_team.html
+  name: CSE325_team.Components
+  nameWithType: CSE325_team.Components
+  fullName: CSE325_team.Components
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Components
+    name: Components
+    href: CSE325_team.Components.html
+- uid: CSE325_team.Controllers
+  commentId: N:CSE325_team.Controllers
+  href: CSE325_team.html
+  name: CSE325_team.Controllers
+  nameWithType: CSE325_team.Controllers
+  fullName: CSE325_team.Controllers
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Controllers
+    name: Controllers
+    href: CSE325_team.Controllers.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Controllers
+    name: Controllers
+    href: CSE325_team.Controllers.html
+- uid: CSE325_team.Data
+  commentId: N:CSE325_team.Data
+  href: CSE325_team.html
+  name: CSE325_team.Data
+  nameWithType: CSE325_team.Data
+  fullName: CSE325_team.Data
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Data
+    name: Data
+    href: CSE325_team.Data.html
+- uid: CSE325_team.Migrations
+  commentId: N:CSE325_team.Migrations
+  href: CSE325_team.html
+  name: CSE325_team.Migrations
+  nameWithType: CSE325_team.Migrations
+  fullName: CSE325_team.Migrations
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Migrations
+    name: Migrations
+    href: CSE325_team.Migrations.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Migrations
+    name: Migrations
+    href: CSE325_team.Migrations.html
+- uid: CSE325_team.Models
+  commentId: N:CSE325_team.Models
+  href: CSE325_team.html
+  name: CSE325_team.Models
+  nameWithType: CSE325_team.Models
+  fullName: CSE325_team.Models
+  spec.csharp:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html
+  spec.vb:
+  - uid: CSE325_team
+    name: CSE325_team
+    href: CSE325_team.html
+  - name: .
+  - uid: CSE325_team.Models
+    name: Models
+    href: CSE325_team.Models.html

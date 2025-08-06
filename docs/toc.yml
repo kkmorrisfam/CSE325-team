@@ -1,14 +1,246 @@
-<file name=docfx.json path=/Users/davidvalentine/Documents/cse325/Team Project/CSE325-team>
-{
-  "build": {
-    "content": [
-      {
-        "files": [ "api/**.yml" ],
-        "src": ".",
-        "dest": "docs",
-        "flatten": false
-      }
-    ]
-  }
-}
-</file>
+### YamlMime:TableOfContent
+items:
+- uid: CSE325_team
+  name: CSE325_team
+  type: Namespace
+  items:
+  - uid: CSE325_team.Components
+    name: Components
+    type: Namespace
+    items:
+    - uid: CSE325_team.Components.Account
+      name: Account
+      type: Namespace
+      items:
+      - uid: CSE325_team.Components.Account.Pages
+        name: Pages
+        type: Namespace
+        items:
+        - uid: CSE325_team.Components.Account.Pages.Manage
+          name: Manage
+          type: Namespace
+          items:
+          - uid: CSE325_team.Components.Account.Pages.Manage.ChangePassword
+            name: ChangePassword
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.DeletePersonalData
+            name: DeletePersonalData
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.Disable2fa
+            name: Disable2fa
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.Email
+            name: Email
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.EnableAuthenticator
+            name: EnableAuthenticator
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.ExternalLogins
+            name: ExternalLogins
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.GenerateRecoveryCodes
+            name: GenerateRecoveryCodes
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.Index
+            name: Index
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.PersonalData
+            name: PersonalData
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.ResetAuthenticator
+            name: ResetAuthenticator
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.SetPassword
+            name: SetPassword
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage.TwoFactorAuthentication
+            name: TwoFactorAuthentication
+            type: Class
+          - uid: CSE325_team.Components.Account.Pages.Manage._Imports
+            name: _Imports
+            type: Class
+        - uid: CSE325_team.Components.Account.Pages.AccessDenied
+          name: AccessDenied
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ConfirmEmail
+          name: ConfirmEmail
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ConfirmEmailChange
+          name: ConfirmEmailChange
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ExternalLogin
+          name: ExternalLogin
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ForgotPassword
+          name: ForgotPassword
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ForgotPasswordConfirmation
+          name: ForgotPasswordConfirmation
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.InvalidPasswordReset
+          name: InvalidPasswordReset
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.InvalidUser
+          name: InvalidUser
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.Lockout
+          name: Lockout
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.Login
+          name: Login
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.LoginWith2fa
+          name: LoginWith2fa
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.LoginWithRecoveryCode
+          name: LoginWithRecoveryCode
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.Register
+          name: Register
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.RegisterConfirmation
+          name: RegisterConfirmation
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ResendEmailConfirmation
+          name: ResendEmailConfirmation
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ResetPassword
+          name: ResetPassword
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages.ResetPasswordConfirmation
+          name: ResetPasswordConfirmation
+          type: Class
+        - uid: CSE325_team.Components.Account.Pages._Imports
+          name: _Imports
+          type: Class
+      - uid: CSE325_team.Components.Account.Shared
+        name: Shared
+        type: Namespace
+        items:
+        - uid: CSE325_team.Components.Account.Shared.AccountLayout
+          name: AccountLayout
+          type: Class
+        - uid: CSE325_team.Components.Account.Shared.ExternalLoginPicker
+          name: ExternalLoginPicker
+          type: Class
+        - uid: CSE325_team.Components.Account.Shared.ManageLayout
+          name: ManageLayout
+          type: Class
+        - uid: CSE325_team.Components.Account.Shared.ManageNavMenu
+          name: ManageNavMenu
+          type: Class
+        - uid: CSE325_team.Components.Account.Shared.RedirectToLogin
+          name: RedirectToLogin
+          type: Class
+        - uid: CSE325_team.Components.Account.Shared.ShowRecoveryCodes
+          name: ShowRecoveryCodes
+          type: Class
+        - uid: CSE325_team.Components.Account.Shared.StatusMessage
+          name: StatusMessage
+          type: Class
+    - uid: CSE325_team.Components.Layout
+      name: Layout
+      type: Namespace
+      items:
+      - uid: CSE325_team.Components.Layout.Footer
+        name: Footer
+        type: Class
+      - uid: CSE325_team.Components.Layout.MainLayout
+        name: MainLayout
+        type: Class
+      - uid: CSE325_team.Components.Layout.NavMenu
+        name: NavMenu
+        type: Class
+    - uid: CSE325_team.Components.Pages
+      name: Pages
+      type: Namespace
+      items:
+      - uid: CSE325_team.Components.Pages.Auth
+        name: Auth
+        type: Class
+      - uid: CSE325_team.Components.Pages.Bookings
+        name: Bookings
+        type: Class
+      - uid: CSE325_team.Components.Pages.Error
+        name: Error
+        type: Class
+      - uid: CSE325_team.Components.Pages.Home
+        name: Home
+        type: Class
+      - uid: CSE325_team.Components.Pages.Inventory
+        name: Inventory
+        type: Class
+      - uid: CSE325_team.Components.Pages.Test
+        name: Test
+        type: Class
+      - uid: CSE325_team.Components.Pages.TestName
+        name: TestName
+        type: Class
+      - uid: CSE325_team.Components.Pages.VehicleDetails
+        name: VehicleDetails
+        type: Class
+    - uid: CSE325_team.Components.App
+      name: App
+      type: Class
+    - uid: CSE325_team.Components.Routes
+      name: Routes
+      type: Class
+    - uid: CSE325_team.Components._Imports
+      name: _Imports
+      type: Class
+  - uid: CSE325_team.Controllers
+    name: Controllers
+    type: Namespace
+    items:
+    - uid: CSE325_team.Controllers.BookingsController
+      name: BookingsController
+      type: Class
+    - uid: CSE325_team.Controllers.TestController
+      name: TestController
+      type: Class
+  - uid: CSE325_team.Data
+    name: Data
+    type: Namespace
+    items:
+    - uid: CSE325_team.Data.ApplicationDbContext
+      name: ApplicationDbContext
+      type: Class
+    - uid: CSE325_team.Data.ApplicationUser
+      name: ApplicationUser
+      type: Class
+    - uid: CSE325_team.Data.SeedBooking
+      name: SeedBooking
+      type: Class
+    - uid: CSE325_team.Data.SeedCars
+      name: SeedCars
+      type: Class
+    - uid: CSE325_team.Data.SeedPayment
+      name: SeedPayment
+      type: Class
+    - uid: CSE325_team.Data.SeedUser
+      name: SeedUser
+      type: Class
+    - uid: CSE325_team.Data.SeedVehicle
+      name: SeedVehicle
+      type: Class
+  - uid: CSE325_team.Migrations
+    name: Migrations
+    type: Namespace
+    items:
+    - uid: CSE325_team.Migrations.InitialCreate
+      name: InitialCreate
+      type: Class
+  - uid: CSE325_team.Models
+    name: Models
+    type: Namespace
+    items:
+    - uid: CSE325_team.Models.Booking
+      name: Booking
+      type: Class
+    - uid: CSE325_team.Models.Payment
+      name: Payment
+      type: Class
+    - uid: CSE325_team.Models.Vehicle
+      name: Vehicle
+      type: Class
+memberLayout: SamePage
