@@ -21,23 +21,23 @@ namespace CSE325_team.Controllers
         {
             return await _context.Bookings
                 .Include(b => b.Vehicle)
-                .Include(b => b.User)
+                .Include(b => b.User) 
                 .ToListAsync();
         }
 
         [HttpPost]
         public async Task<ActionResult<Booking>> CreateBooking(Booking booking)
         {
-            // Validar disponibilidad del vehículo
+
             var vehicle = await _context.Vehicles.FindAsync(booking.VehicleId);
             if (vehicle == null || vehicle.Status != "available")
             {
-                return BadRequest("Vehicle not available.");
+                return BadRequest("Vehicle not available for booking.");
             }
 
             _context.Bookings.Add(booking);
 
-            // Marcar el vehículo como reservado
+
             vehicle.Status = "reserved";
 
             await _context.SaveChangesAsync();

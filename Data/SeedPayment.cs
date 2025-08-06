@@ -14,11 +14,11 @@ public static class SeedPayment
     public static async Task InitializeAsync(ApplicationDbContext context)
     {
 
-        if (await context.Payment.AnyAsync())
+        if (await context.Payments.AnyAsync())
             return;
 
-            var user1 = await context.Users.FirstOrDefaultAsync(u => u.UserName == "user@gmail.com");
-    var booking1 = await context.Booking.FirstOrDefaultAsync(); // Gets first booking — adjust logic if needed
+            var user1 = await context.Users.FirstOrDefaultAsync(u => u.Email == "user@gmail.com");
+    var booking1 = await context.Bookings.FirstOrDefaultAsync(); // Gets first booking — adjust logic if needed
 
 if (user1 == null || booking1 == null)
     {
@@ -26,7 +26,7 @@ if (user1 == null || booking1 == null)
         return;
     }
 
-        context.Payment.AddRange(
+        context.Payments.AddRange(
             new Payment
             {
                 User = user1,

@@ -10,7 +10,7 @@ namespace CSE325_team.Data
         public static async Task InitializeAsync(ApplicationDbContext context)
         {
 
-            if (await context.Vehicle.AnyAsync())
+            if (await context.Vehicles.AnyAsync())
                 return;
 
             var vehicles = new List<Vehicle>
@@ -382,7 +382,7 @@ new Vehicle
 
             };
 
-            context.Vehicle.AddRange(vehicles);
+            context.Vehicles.AddRange(vehicles);
 await context.SaveChangesAsync();
         }
 
