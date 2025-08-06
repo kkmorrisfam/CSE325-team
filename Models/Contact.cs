@@ -9,9 +9,8 @@ namespace CSE325_team.Models
         [Key]
         public int ContactId { get; set; }
 
-        [Required]
         [RegularExpression(@"^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$")]
-        public string? PhoneNumber { get; set; }
+        public string? AltPhoneNumber { get; set; }
 
         [MinLength(5), MaxLength(100)]
         public string? StreetLine1 { get; set; }
