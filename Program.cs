@@ -19,6 +19,15 @@ builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
+
+builder.Services.AddScoped(sp =>
+{
+    var config = sp.GetRequiredService<IConfiguration>();
+    var baseAddress = config.GetValue<string>("ApiBaseUrl");
+    return new HttpClient { BaseAddress = new Uri(baseAddress) };
+});
+
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
@@ -44,6 +53,13 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.S
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+    });
+
 
 var app = builder.Build();
 
@@ -79,6 +95,7 @@ using (var scope = scopeFactory.CreateScope())
     await CSE325_team.Data.SeedBooking.InitializeAsync(db);
     await CSE325_team.Data.SeedPayment.InitializeAsync(db);
 }
+
 
 
 app.MapControllers();
