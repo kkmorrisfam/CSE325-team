@@ -3,6 +3,7 @@ using System;
 using CSE325_team.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250805235919_RenamePhoneNumber")]
+    partial class RenamePhoneNumber
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
@@ -93,10 +96,10 @@ namespace CSE325_team.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DropOffDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("PickupDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("TotalPrice")
@@ -115,7 +118,7 @@ namespace CSE325_team.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Booking");
                 });
 
             modelBuilder.Entity("CSE325_team.Models.Contact", b =>
@@ -199,7 +202,7 @@ namespace CSE325_team.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
@@ -259,7 +262,7 @@ namespace CSE325_team.Migrations
 
                     b.HasKey("VehicleId");
 
-                    b.ToTable("Vehicles");
+                    b.ToTable("Vehicle");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -399,7 +402,7 @@ namespace CSE325_team.Migrations
                         .IsRequired();
 
                     b.HasOne("CSE325_team.Models.Vehicle", "Vehicle")
-                        .WithMany("Bookings")
+                        .WithMany()
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -423,7 +426,7 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Models.Payment", b =>
                 {
                     b.HasOne("CSE325_team.Models.Booking", "Booking")
-                        .WithMany("Payments")
+                        .WithMany()
                         .HasForeignKey("BookingId");
 
                     b.HasOne("CSE325_team.Data.ApplicationUser", "User")
@@ -491,17 +494,8 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Data.ApplicationUser", b =>
                 {
                     b.Navigation("Bookings");
-                });
 
-            modelBuilder.Entity("CSE325_team.Models.Booking", b =>
-                {
-                    b.Navigation("Payments");
-                });
-
-            modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
-                {
-                    b.Navigation("Bookings");
-
+                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }
