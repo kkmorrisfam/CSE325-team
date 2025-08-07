@@ -3,13 +3,39 @@
 @using Microsoft.AspNetCore.Identity
 @using CSE325_team.Data  
 
+@*
+REFACTORING CHANGES MADE TO FIX INITIALIZATION ISSUES:
+
+Problem: The component was resetting the Input object on form submission due to OnInitializedAsync 
+being called multiple times, causing user input to be lost.
+
+Solutions implemented:
+1. Added caching variables (_currentUser, _currentContact) to store fetched data and avoid 
+   re-fetching the same data multiple times during the component lifecycle.
+
+2. Fixed initialization logic by moving _initialized = true to the end of OnInitializedAsync 
+   and adding a check to only populate Input if it's actually empty (checking FirstName/LastName).
+   This prevents overwriting user changes.
+
+3. Removed @key="Input" from EditForm which was causing unnecessary re-renders and 
+   triggering re-initialization when the Input object changed.
+
+4. Modified SaveChanges to use cached _currentUser instead of re-fetching from the database,
+   improving performance and preventing potential race conditions.
+
+5. Added better error handling in SaveChanges with early return if user update fails.
+
+Result: The page now loads initial data once, preserves user input during editing, 
+and successfully saves changes without resetting form fields.
+*@
+
 @inject AuthenticationStateProvider AuthStateProvider
 @inject UserManager<ApplicationUser> UserManager
 @inject ApplicationDbContext DbContext
 
 <p>Live Preview: @Input.FirstName</p>
 
-<EditForm Model="Input" OnSubmit="SaveChanges" FormName="TestEdit" @key="Input">
+<EditForm Model="Input" OnSubmit="SaveChanges" FormName="TestEdit">
     <DataAnnotationsValidator/>
     <ValidationSummary />
 
@@ -47,88 +73,88 @@
     [SupplyParameterFromForm]
     private InputModel Input {get;set;} = new();
     private bool _initialized = false;
+    private ApplicationUser? _currentUser;
+    private Models.Contact? _currentContact;
 
    // update user when submit button clicked
     private async Task SaveChanges()
     {
-        
-        //get user again
-        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
-        var user = await UserManager.GetUserAsync(authState.User);
-
-        //check for null user before continuing
-        if (user is null) return;
+        // Use cached user instead of fetching again
+        if (_currentUser is null) return;
         
         Console.WriteLine("***************************************");
-        Console.WriteLine("User before update: " + user.FirstName);
+        Console.WriteLine("User before update: " + _currentUser.FirstName);
         Console.WriteLine("User after update: " + Input.FirstName);
 
-
-        //update user databae fields with data in Input fields
-        user.FirstName = Input.FirstName;
-        user.LastName = Input.LastName;
-        user.PhoneNumber = Input.Phone;
+        //update user database fields with data in Input fields
+        _currentUser.FirstName = Input.FirstName;
+        _currentUser.LastName = Input.LastName;
+        _currentUser.PhoneNumber = Input.Phone;
+        
         //send user to database for update
-        var result = await UserManager.UpdateAsync(user);
+        var result = await UserManager.UpdateAsync(_currentUser);
         if (!result.Succeeded)
         {
             foreach (var error in result.Errors)
             {
                 Console.WriteLine($"User Update error: {error.Description}");
             }
+            return;
         }
 
-
-
         //get or create a contact for user
-        var contact = await DbContext.Contact.FirstOrDefaultAsync(c=>c.ApplicationUserId == user.Id);
-        //create new contact if not already there
-        if (contact is null)
+        if (_currentContact is null)
         {
-            contact = new Models.Contact {ApplicationUserId = user.Id};
-            DbContext.Contact.Add(contact);
+            _currentContact = new Models.Contact {ApplicationUserId = _currentUser.Id};
+            DbContext.Contact.Add(_currentContact);
         }
         else
         {
-            DbContext.Entry(contact).State = EntityState.Modified;
+            DbContext.Entry(_currentContact).State = EntityState.Modified;
         }
 
         //add data from input fields into database
-        contact.City = Input.City;
-        contact.AltPhoneNumber = Input.AltPhone;
+        _currentContact.City = Input.City;
+        _currentContact.AltPhoneNumber = Input.AltPhone;
+        
         //save data to database
         await DbContext.SaveChangesAsync();
-
+        
+        Console.WriteLine("Changes saved successfully!");
     }
 
 
     //OnInitializedAsync method to fetch user with matching id
     protected override async Task OnInitializedAsync()
     {
-        //don't reset data
-         @* if (_initialized) return; // don't reset input on every render
-            _initialized = true; *@
+        // Prevent re-initialization if already loaded
+        if (_initialized) return;
 
-            
         //get authentication state, get authorized user
         var authState = await AuthStateProvider.GetAuthenticationStateAsync();
-        var user = await UserManager.GetUserAsync(authState.User);
+        _currentUser = await UserManager.GetUserAsync(authState.User);
+        
         //check for null user before continuing
-        if (user is null) return;
+        if (_currentUser is null) return;
 
         //get contact information attached to user
         //user.Id comes from AspNetUser table, Id column from Identity; ApplicationUserId is foreign key in Contacts table
-        var contact = await DbContext.Contact.FirstOrDefaultAsync(c => c.ApplicationUserId == user.Id);
+        _currentContact = await DbContext.Contact.FirstOrDefaultAsync(c => c.ApplicationUserId == _currentUser.Id);
 
-        //initialize fields with values from user and contact tables
-        Input = new InputModel
+        //initialize fields with values from user and contact tables only if Input is empty
+        if (string.IsNullOrEmpty(Input.FirstName) && string.IsNullOrEmpty(Input.LastName))
         {
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            Phone = user.PhoneNumber,
-            AltPhone = contact?.AltPhoneNumber,
-            City = contact?.City
-        };
+            Input = new InputModel
+            {
+                FirstName = _currentUser.FirstName,
+                LastName = _currentUser.LastName,
+                Phone = _currentUser.PhoneNumber,
+                AltPhone = _currentContact?.AltPhoneNumber,
+                City = _currentContact?.City
+            };
+        }
+
+        _initialized = true;
     }
 
 
