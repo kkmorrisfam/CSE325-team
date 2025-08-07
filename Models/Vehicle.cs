@@ -36,7 +36,7 @@ namespace CSE325_team.Models
 
         public string? FuelType { get; set; }
 
-        public int? Seats { get; set; }
+        // public int? Seats { get; set; }
 
         [MaxLength(20)]
         public string? LicensePlate { get; set; }
