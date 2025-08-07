@@ -45,7 +45,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        vehicles = await DbContext.Vehicles.Where(v => v.Status == "available").ToListAsync();
+        vehicles = await DbContext.Vehicle.Where(v => v.Status == "available").ToListAsync();
     }
 
     private void HandleValidSubmit()

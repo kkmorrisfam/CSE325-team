@@ -19,7 +19,7 @@ namespace CSE325_team.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Vehicle>>> GetAvailableVehicles()
         {
-            return await _context.Vehicles
+            return await _context.Vehicle
                 .Where(v => v.Status == "available")
                 .ToListAsync();
         }
@@ -27,7 +27,7 @@ namespace CSE325_team.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Vehicle>> GetVehicle(int id)
         {
-            var vehicle = await _context.Vehicles.FindAsync(id);
+            var vehicle = await _context.Vehicle.FindAsync(id);
 
             if (vehicle == null)
             {

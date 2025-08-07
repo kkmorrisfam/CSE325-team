@@ -19,7 +19,7 @@ namespace CSE325_team.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Booking>>> GetBookings()
         {
-            return await _context.Bookings
+            return await _context.Booking
                 .Include(b => b.Vehicle)
                 .Include(b => b.User) 
                 .ToListAsync();
@@ -29,13 +29,13 @@ namespace CSE325_team.Controllers
         public async Task<ActionResult<Booking>> CreateBooking(Booking booking)
         {
 
-            var vehicle = await _context.Vehicles.FindAsync(booking.VehicleId);
+            var vehicle = await _context.Vehicle.FindAsync(booking.VehicleId);
             if (vehicle == null || vehicle.Status != "available")
             {
                 return BadRequest("Vehicle not available for booking.");
             }
 
-            _context.Bookings.Add(booking);
+            _context.Booking.Add(booking);
 
 
             vehicle.Status = "reserved";

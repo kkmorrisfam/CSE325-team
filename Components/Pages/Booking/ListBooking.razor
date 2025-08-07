@@ -51,7 +51,7 @@ else
         {
             var userIdClaim = user.FindFirst("sub")?.Value ?? user.Identity.Name;
             // Si UserId es int, debes convertirlo:
-            bookings = await Db.Bookings
+            bookings = await Db.Booking
                 .Include(b => b.Vehicle)
                 .Where(b => b.UserId.ToString() == userIdClaim)
                 .ToListAsync();

@@ -77,7 +77,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        featuredVehicles = (await DbContext.Vehicles.ToListAsync())
+        featuredVehicles = (await DbContext.Vehicle.ToListAsync())
             .OrderBy(v => v.DailyRate)
             .Take(4)
             .ToList();

@@ -67,9 +67,9 @@ else
                 UserId = user.FindFirst("sub")?.Value ?? user.Identity.Name!, 
                 TotalPrice = BookingState.TotalPrice
             };
-            Db.Bookings.Add(booking);
+            Db.Booking.Add(booking);
 
-            var vehicle = await Db.Vehicles.FindAsync(BookingState.VehicleId);
+            var vehicle = await Db.Vehicle.FindAsync(BookingState.VehicleId);
             if (vehicle != null) vehicle.Status = "reserved";
 
             await Db.SaveChangesAsync();

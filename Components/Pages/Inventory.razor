@@ -65,7 +65,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        vehicles = await _context.Vehicles.ToListAsync();
+        vehicles = await _context.Vehicle.ToListAsync();
         filteredVehicles = vehicles;
     }
 

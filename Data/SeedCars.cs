@@ -9,7 +9,7 @@ namespace CSE325_team.Data
     {
         public static async Task InitializeAsync(ApplicationDbContext context)
         {
-            if (await context.Vehicles.AnyAsync())
+            if (await context.Vehicle.AnyAsync())
                 return;
 
             var vehicles = new List<Vehicle>
@@ -45,7 +45,7 @@ namespace CSE325_team.Data
                 new Vehicle { Make = "Chevy", Model = "Silverado", Year = 2020, VehicleType = "Truck", Transmission = "Automatic", Color = "silver", DailyRate = 100, Status = "available", Capacity = 5, ImageFileName = "truck5.png" }
             };
 
-            context.Vehicles.AddRange(vehicles);
+            context.Vehicle.AddRange(vehicles);
             await context.SaveChangesAsync();
         }
     }

@@ -69,11 +69,11 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        vehicle = await DbContext.Vehicles.FindAsync(Id);
+        vehicle = await DbContext.Vehicle.FindAsync(Id);
 
         if (vehicle != null)
         {
-            similarVehicles = await DbContext.Vehicles
+            similarVehicles = await DbContext.Vehicle
                 .Where(v => v.VehicleType == vehicle.VehicleType && v.VehicleId != vehicle.VehicleId)
                 .Take(4)
                 .ToListAsync();
