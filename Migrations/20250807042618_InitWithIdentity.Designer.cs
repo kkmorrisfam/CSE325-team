@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250807030247_RemoveSeatsFromVehicle")]
-    partial class RemoveSeatsFromVehicle
+    [Migration("20250807042618_InitWithIdentity")]
+    partial class InitWithIdentity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

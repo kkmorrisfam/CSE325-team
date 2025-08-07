@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CSE325_team.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitWithIdentity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,14 +64,12 @@ namespace CSE325_team.Migrations
                     Color = table.Column<string>(type: "TEXT", nullable: false),
                     VehicleType = table.Column<string>(type: "TEXT", nullable: false),
                     Transmission = table.Column<string>(type: "TEXT", nullable: false),
-                    DailyRate = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
-                    ImageFileName = table.Column<string>(type: "TEXT", nullable: true),
-                    FuelType = table.Column<string>(type: "TEXT", nullable: true),
-                    Seats = table.Column<int>(type: "INTEGER", nullable: true),
-                    LicensePlate = table.Column<string>(type: "TEXT", maxLength: 20, nullable: true),
-                    Mileage = table.Column<int>(type: "INTEGER", nullable: true),
+                    FuelType = table.Column<string>(type: "TEXT", nullable: false),
+                    DailyRate = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Capacity = table.Column<int>(type: "INTEGER", nullable: false),
+                    Mileage = table.Column<int>(type: "INTEGER", nullable: false),
                     Status = table.Column<string>(type: "TEXT", nullable: false),
-                    Capacity = table.Column<int>(type: "INTEGER", nullable: false)
+                    ImageFileName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
