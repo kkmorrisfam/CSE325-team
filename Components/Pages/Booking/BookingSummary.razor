@@ -64,12 +64,11 @@ else
                 VehicleId = BookingState.VehicleId,
                 PickupDate = BookingState.PickupDate,
                 DropOffDate = BookingState.DropOffDate,
-                UserId = int.Parse(user.FindFirst("sub")?.Value ?? user.Identity.Name!), // Si UserId es int
+                UserId = user.FindFirst("sub")?.Value ?? user.Identity.Name!, 
                 TotalPrice = BookingState.TotalPrice
             };
             Db.Bookings.Add(booking);
 
-            // Opcional: Cambiar estado del vehículo si lo deseas.
             var vehicle = await Db.Vehicles.FindAsync(BookingState.VehicleId);
             if (vehicle != null) vehicle.Status = "reserved";
 

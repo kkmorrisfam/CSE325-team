@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using CSE325_team.Models; 
 
 namespace CSE325_team.Models
 {
@@ -28,7 +29,8 @@ namespace CSE325_team.Models
 
         // Foreign key to User
         [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
         public User User { get; set; } = null!;
 
         [Column(TypeName = "decimal(10,2)")]
