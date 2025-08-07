@@ -31,7 +31,7 @@ namespace CSE325_team.Data
                         DropOffDate = DateTime.UtcNow.AddDays(3),
                         TotalPrice = 269.97m,
                         VehicleId = vehicle1.VehicleId,
-                        UserId = user1.UserId,
+                        UserId = user1.Id,
                     });
 
                 await context.SaveChangesAsync();

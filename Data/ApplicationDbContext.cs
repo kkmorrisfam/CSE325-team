@@ -14,6 +14,6 @@ namespace CSE325_team.Data
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Payment> Payments { get; set; }
-        public DbSet<User> Users { get; set; } 
+
     }
 }
