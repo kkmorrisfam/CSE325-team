@@ -27,6 +27,24 @@
             <h2>Create a new account.</h2>
             <hr />
             <ValidationSummary class="text-danger" role="alert" />
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.FirstName" class="form-control" placeholder="First Name" aria-required="true" />
+                <label for="FirstName">First Name</label>
+                <ValidationMessage For="() => Input.FirstName" class="text-danger" />
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.LastName" class="form-control" placeholder="Last Name" aria-required="true" />
+                <label for="LastName">Last Name</label>
+                <ValidationMessage For="() => Input.LastName" class="text-danger" />
+            </div>
+
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="Input.PhoneNumber" class="form-control" placeholder="Phone Number" />
+                <label for="PhoneNumber">Phone Number</label>
+                <ValidationMessage For="() => Input.PhoneNumber" class="text-danger" />
+            </div>
             <div class="form-floating mb-3">
                 <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
                 <label for="email">Email</label>
@@ -45,13 +63,13 @@
             <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </EditForm>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    @* <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to register.</h3>
             <hr />
             <ExternalLoginPicker />
         </section>
-    </div>
+    </div> *@
 </div>
 
 @code {
@@ -69,6 +87,11 @@
     {
         var user = CreateUser();
 
+        user.FirstName = Input.FirstName;
+        user.LastName = Input.LastName;
+        user.PhoneNumber = Input.PhoneNumber;
+
+
         await UserStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
         var emailStore = GetEmailStore();
         await emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -79,6 +102,10 @@
             identityErrors = result.Errors;
             return;
         }
+
+        //if registration succeeded....
+        // new user is assigned as "User" role by default
+        await UserManager.AddToRoleAsync(user, "User");
 
         Logger.LogInformation("User created a new account with password.");
 
@@ -91,15 +118,16 @@
 
         await EmailSender.SendConfirmationLinkAsync(user, Input.Email, HtmlEncoder.Default.Encode(callbackUrl));
 
-        if (UserManager.Options.SignIn.RequireConfirmedAccount)
+        @* if (UserManager.Options.SignIn.RequireConfirmedAccount)
         {
             RedirectManager.RedirectTo(
                 "Account/RegisterConfirmation",
                 new() { ["email"] = Input.Email, ["returnUrl"] = ReturnUrl });
-        }
+        } *@
 
+        //redirect to success page instead of email confirmation page for now.
         await SignInManager.SignInAsync(user, isPersistent: false);
-        RedirectManager.RedirectTo(ReturnUrl);
+        RedirectManager.RedirectTo("Account/RegisterSuccess");
     }
 
     private ApplicationUser CreateUser()
@@ -126,6 +154,18 @@
 
     private sealed class InputModel
     {
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; } = "";
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; } = "";
+
+        [Phone]
+        [Display(Name = "Phone Number")]
+        public string? PhoneNumber { get; set; }        
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
