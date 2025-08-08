@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using CSE325_team.Models; 
+using CSE325_team.Data; // Para ApplicationUser
 
 namespace CSE325_team.Models
 {
@@ -27,11 +27,12 @@ namespace CSE325_team.Models
         [DateGreaterThan("PickupDate", ErrorMessage = "La fecha de entrega debe ser posterior a la de recogida.")]
         public DateTime DropOffDate { get; set; }
 
-        // Foreign key to User
+        // Foreign key to ApplicationUser (Identity)
         [Required]
-        public string UserId { get; set; }
+        public string UserId { get; set; } = null!;
+
         [ForeignKey("UserId")]
-        public User User { get; set; } = null!;
+        public ApplicationUser User { get; set; } = null!;
 
         [Column(TypeName = "decimal(10,2)")]
         [Required]

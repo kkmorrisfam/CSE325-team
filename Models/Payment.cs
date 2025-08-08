@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using CSE325_team.Data; // Para ApplicationUser
 
 namespace CSE325_team.Models
 {
@@ -27,10 +28,12 @@ namespace CSE325_team.Models
         [Required, MaxLength(10)]
         public string Zip { get; set; } = "";
 
-        // Foreign key to User
+        // Foreign key to ApplicationUser (Identity)
         [Required]
-        public int UserId { get; set; }
-        public User User { get; set; } = null!;
+        public string UserId { get; set; } = null!;
+
+        [ForeignKey("UserId")]
+        public ApplicationUser User { get; set; } = null!;
 
         // Optional: Link to Booking
         public int? BookingId { get; set; }

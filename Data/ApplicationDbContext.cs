@@ -14,12 +14,12 @@ namespace CSE325_team.Data
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<Booking> Booking { get; set; }
         public DbSet<Payment> Payment { get; set; }
-        public DbSet<User> User { get; set; } 
-        // This must be *inside* the class body
+        // Elimina o comenta la siguiente línea si existe:
+        // public DbSet<User> User { get; set; }
 
         public DbSet<Contact> Contact { get; set; }
 
-         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -29,7 +29,5 @@ namespace CSE325_team.Data
                 .WithMany(u => u.Contacts)
                 .HasForeignKey(c => c.ApplicationUserId);
         }
-
-
     }
 }

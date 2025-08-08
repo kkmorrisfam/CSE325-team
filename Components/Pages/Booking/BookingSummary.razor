@@ -1,85 +1,81 @@
-@page "/bookings/summary"
-@using CSE325_team.Models // Add this line or use the correct namespace for Booking
-@inject CSE325_team.Services.BookingState BookingState
-@inject CSE325_team.Data.ApplicationDbContext Db
+@page "/booking-summary"
+@inject CSE325_team.Data.ApplicationDbContext DbContext
+@using Microsoft.EntityFrameworkCore
 @inject NavigationManager Navigation
-@inject AuthenticationStateProvider AuthProvider
+@inject CSE325_team.Services.BookingState BookingState
 
-<h3>Resumen de Reserva</h3>
+@using CSE325_team.Models
 
-@if (BookingState.SelectedVehicle == null)
+<PageTitle>Booking Summary</PageTitle>
+
+<h2 class="booking-title">Booking Confirmation</h2>
+@if (string.IsNullOrEmpty(BookingState.CustomerName) || BookingState.VehicleId == 0)
 {
-    <div class="alert alert-warning">No hay datos de reserva. Regresa al formulario.</div>
+    <div class="alert alert-warning">
+        No booking data found. Please <a href="/booking">start a new booking</a>.
+    </div>
 }
 else
 {
-    <div>
-        <p><strong>Vehículo:</strong> @BookingState.SelectedVehicle.Make @BookingState.SelectedVehicle.Model (@BookingState.SelectedVehicle.Year)</p>
-        <p><strong>Color:</strong> @BookingState.SelectedVehicle.Color</p>
-        <p><strong>Tipo:</strong> @BookingState.SelectedVehicle.VehicleType</p>
-        <p><strong>Recogida:</strong> @BookingState.PickupDate.ToShortDateString()</p>
-        <p><strong>Entrega:</strong> @BookingState.DropOffDate.ToShortDateString()</p>
-        <p><strong>Precio total:</strong> $@BookingState.TotalPrice</p>
+    <div class="booking-form-wrapper">
+        <div class="booking-summary">
+            <h4>Booking Details</h4>
+            <table>
+                <tr>
+                    <td>Vehicle</td>
+                    <td>@BookingState.VehicleDisplay</td>
+                </tr>
+                <tr>
+                    <td>Daily Rate</td>
+                    <td>@BookingState.DailyRate.ToString("C")</td>
+                </tr>
+                <tr>
+                    <td>Days</td>
+                    <td>@((BookingState.DropOffDate - BookingState.PickupDate).Days)</td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>@BookingState.Subtotal.ToString("C")</td>
+                </tr>
+                <tr>
+                    <td>Tax (18%)</td>
+                    <td>@BookingState.Tax.ToString("C")</td>
+                </tr>
+                <tr class="summary-total">
+                    <td><strong>Total</strong></td>
+                    <td><strong>@BookingState.TotalPrice.ToString("C")</strong></td>
+                </tr>
+            </table>
+            <div class="summary-details">
+                <span><b>Pick-up:</b> @BookingState.PickupDate.ToShortDateString()</span>
+                <span><b>Drop-off:</b> @BookingState.DropOffDate.ToShortDateString()</span>
+                <span><b>Customer:</b> @BookingState.CustomerName</span>
+                <span><b>Payment:</b> @BookingState.PaymentMethod</span>
+            </div>
+            <button class="btn btn-confirm" @onclick="ConfirmAndSave">Confirm & Book</button>
+        </div>
     </div>
-    <AuthorizeView>
-        <Authorized>
-            <button class="btn btn-success" @onclick="SaveBooking" disabled="@saving">Guardar Reserva</button>
-            @if (!string.IsNullOrEmpty(successMessage))
-            {
-                <div class="alert alert-success mt-2">@successMessage</div>
-            }
-            @if (!string.IsNullOrEmpty(errorMessage))
-            {
-                <div class="alert alert-danger mt-2">@errorMessage</div>
-            }
-        </Authorized>
-        <NotAuthorized>
-            <div class="alert alert-warning">Debes iniciar sesión para guardar la reserva.</div>
-        </NotAuthorized>
-    </AuthorizeView>
 }
 
 @code {
-    private bool saving = false;
-    private string successMessage = string.Empty;
-    private string errorMessage = string.Empty;
-
-    private async Task SaveBooking()
+    private async Task ConfirmAndSave()
     {
-        saving = true;
-        errorMessage = null;
-        successMessage = null;
-        var authState = await AuthProvider.GetAuthenticationStateAsync();
-        var user = authState.User;
-        if (!user.Identity.IsAuthenticated)
-        {
-            errorMessage = "No autenticado.";
-            saving = false;
-            return;
-        }
-        try
-        {
-            var booking = new Booking
-            {
-                VehicleId = BookingState.VehicleId,
-                PickupDate = BookingState.PickupDate,
-                DropOffDate = BookingState.DropOffDate,
-                UserId = user.FindFirst("sub")?.Value ?? user.Identity.Name!, 
-                TotalPrice = BookingState.TotalPrice
-            };
-            Db.Booking.Add(booking);
+        var days = (BookingState.DropOffDate - BookingState.PickupDate).Days;
+        if (days <= 0) days = 1;
 
-            var vehicle = await Db.Vehicle.FindAsync(BookingState.VehicleId);
-            if (vehicle != null) vehicle.Status = "reserved";
-
-            await Db.SaveChangesAsync();
-            BookingState.Clear();
-            successMessage = "Reserva guardada exitosamente.";
-        }
-        catch (Exception ex)
+        var booking = new Booking
         {
-            errorMessage = $"Error al guardar: {ex.Message}";
-        }
-        saving = false;
+            VehicleId = BookingState.VehicleId,
+            PickupDate = BookingState.PickupDate,
+            DropOffDate = BookingState.DropOffDate,
+            TotalPrice = BookingState.TotalPrice,
+            // Replace with real user ID if authenticated
+            UserId = "demoUser",
+        };
+
+        DbContext.Booking.Add(booking);
+        await DbContext.SaveChangesAsync();
+
+        Navigation.NavigateTo("/booking-success");
     }
 }

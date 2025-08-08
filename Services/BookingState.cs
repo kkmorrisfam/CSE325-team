@@ -1,22 +1,18 @@
-using CSE325_team.Models;
+using System;
 
 namespace CSE325_team.Services
 {
     public class BookingState
     {
-        public Vehicle? SelectedVehicle { get; set; }
         public int VehicleId { get; set; }
+        public string VehicleDisplay { get; set; }
+        public decimal DailyRate { get; set; }
         public DateTime PickupDate { get; set; }
         public DateTime DropOffDate { get; set; }
+        public string PaymentMethod { get; set; }
+        public string CustomerName { get; set; }
         public decimal TotalPrice { get; set; }
-
-        public void Clear()
-        {
-            SelectedVehicle = null;
-            VehicleId = 0;
-            PickupDate = default;
-            DropOffDate = default;
-            TotalPrice = 0;
-        }
+        public decimal Subtotal { get; set; }
+        public decimal Tax { get; set; }
     }
 }
