@@ -208,9 +208,6 @@ namespace CSE325_team.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Capacity")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -218,9 +215,12 @@ namespace CSE325_team.Migrations
                     b.Property<decimal>("DailyRate")
                         .HasColumnType("decimal(10,2)");
 
+<<<<<<< Updated upstream
                     b.Property<string>("FuelType")
                         .HasColumnType("TEXT");
 
+=======
+>>>>>>> Stashed changes
                     b.Property<string>("ImageFileName")
                         .HasColumnType("TEXT");
 

@@ -3,42 +3,79 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSE325_team.Models
 {
-    public class Vehicle
+    /// <summary>
+    /// Represents a vehicle available for rent.
+    /// </summary>
+     public class Vehicle
     {
         [Key]
         public int VehicleId { get; set; }
 
-        [Required(ErrorMessage = "Make is required")]
-        public string Make { get; set; } = string.Empty;
+        // ——— Required text fields ———
+        [Required, MaxLength(100)]
+        public string Make { get; set; } = default!;
 
-        [Required(ErrorMessage = "Model is required")]
-        public string Model { get; set; } = string.Empty;
+        [Required, MaxLength(100)]
+        public string Model { get; set; } = default!;
 
-        public int? Year { get; set; }
+        [Required, MaxLength(40)]
+        public string Color { get; set; } = default!;
 
-        [Required(ErrorMessage = "Color is required")]
-        public string Color { get; set; } = string.Empty;
+        // ——— Numbers ———
+        [Range(1900, 2100, ErrorMessage = "Year must be between 1900 and 2100.")]
+        public int? Year { get; set; } // make this non-nullable if you want it required
 
-        [Required(ErrorMessage = "Vehicle Type is required")]
-        public string VehicleType { get; set; } = string.Empty;
+        [Range(0, 20, ErrorMessage = "Seats must be between 0 and 20.")]
+        public int? Seats { get; set; }
 
-        [Required(ErrorMessage = "Transmission is required")]
-        public string Transmission { get; set; } = string.Empty;
+        [Range(0, int.MaxValue, ErrorMessage = "Mileage cannot be negative.")]
+        public int? Mileage { get; set; }
 
-        public string FuelType { get; set; } = string.Empty;
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(typeof(decimal), "0", "79228162514264337593543950335", ErrorMessage = "Price must be non-negative.")]
+        public decimal Price { get; set; }
 
-        [Range(0.01, 1000, ErrorMessage = "Daily Rate must be positive")]
-        public decimal DailyRate { get; set; }
+        // ——— Enums ———
+        [Required]
+        public VehicleCategory Category { get; set; }
 
-        [Range(1, 20, ErrorMessage = "Capacity is required")]
-        public int Capacity { get; set; }
+        [Required]
+        public TransmissionType Transmission { get; set; }
 
-        public int Mileage { get; set; }
+        [Required]
+        public FuelType FuelType { get; set; }
 
-        [Required(ErrorMessage = "Status is required")]
-        public string Status { get; set; } = string.Empty;
+        [Required]
+        public VehicleStatus Status { get; set; }
+    }
 
-        public string ImageFileName { get; set; } = "default.png";
+    
+    public enum VehicleCategory
+    {
+        Coupe,
+        Sedan,
+        Truck,
+        Motorcycle,
+        Luxury,
+    }
 
+    public enum TransmissionType
+    {
+        Automatic,
+        Manual
+    }
+
+    public enum FuelType
+    {
+        Gasoline,
+        Electric,
+    }
+
+    public enum VehicleStatus
+    {
+        Available,
+        Rented,
+        Reserved,
+        Maintenance
     }
 }

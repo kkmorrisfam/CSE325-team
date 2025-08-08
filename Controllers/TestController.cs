@@ -92,9 +92,8 @@ public class TestController : ControllerBase
             v.Status,
             v.ImageFileName,
             v.Transmission,
-            v.Capacity,
+            v.Seats,
             v.Mileage,
-            v.FuelType
         }));
     }
 

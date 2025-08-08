@@ -71,7 +71,7 @@ else
                 <th>Vehicle</th>
                 <th>Class</th>
                 <th>Color</th>
-                <th>Capacity</th>
+                <th>Seats</th>
                 <th>Price/Day</th>
                 <th>Start Date</th>
                 <th>End Date</th>
@@ -87,7 +87,7 @@ else
                     <td>@booking.Vehicle?.Make @booking.Vehicle?.Model</td>
                     <td>@booking.Vehicle?.VehicleType</td>
                     <td>@booking.Vehicle?.Color</td>
-                    <td>@booking.Vehicle?.Capacity</td>
+                    <td>@booking.Vehicle?.Seats</td>
                     <td>@booking.Vehicle?.DailyRate.ToString("C")</td>
                     <td>@booking.StartDate.ToShortDateString()</td>
                     <td>@booking.EndDate.ToShortDateString()</td>
@@ -126,7 +126,7 @@ else
                 Make = "Nissan",
                 Model = "Versa",
                 Color = "Black",
-                Capacity = 5,
+                Seats = 5,
                 DailyRate = 45.00m,
                 Status = "available",
                 VehicleType = "Compact",

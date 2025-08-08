@@ -25,7 +25,7 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 75.99m,
         Status = "available",
-        Capacity = 5,
+        Seats = 5,
         Mileage = 62000,
         ImageFileName = "sedan1.png"
     },
@@ -39,7 +39,7 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 56.99m,
         Status = "available",
-        Capacity = 5,
+        Seats = 5,
         Mileage = 31000,
         ImageFileName = "sedan2.png"
     },
@@ -53,7 +53,7 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 72.99m,
         Status = "available",
-        Capacity = 5,
+        Seats = 5,
         Mileage = 62000,
         ImageFileName = "sedan3.png"
     },
@@ -67,7 +67,7 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 46.99m,
         Status = "available",
-        Capacity = 5,
+        Seats = 5,
         Mileage = 38000,
         ImageFileName = "sedan4.png"
     },
@@ -81,7 +81,7 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 57.99m,
         Status = "available",
-        Capacity = 5,
+        Seats = 5,
         Mileage = 43000,
         ImageFileName = "sedan5.png"
     },
@@ -95,9 +95,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 47.99m,
         Status = "available",
-        Capacity = 5,
-        Mileage = 55000,
-        FuelType = "Gasoline",
+        Seats = 5,
+        Mileage = 55000,        
         ImageFileName = "coupe1.png"
     },
     new Vehicle
@@ -110,9 +109,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 79.99m,
         Status = "available",
-        Capacity = 5,
-        Mileage = 25000,
-        FuelType = "Gasoline",
+        Seats = 5,
+        Mileage = 25000,        
         ImageFileName = "coupe2.png"
     },
     new Vehicle
@@ -125,9 +123,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 159.99m,
         Status = "available",
-        Capacity = 4,
-        Mileage = 5000,
-        FuelType = "Gasoline",
+        Seats = 4,
+        Mileage = 5000,        
         ImageFileName = "coupe3.png"
     },
     new Vehicle
@@ -140,9 +137,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 64.99m,
         Status = "available",
-        Capacity = 4,
-        Mileage = 72000,
-        FuelType = "Gasoline",
+        Seats = 4,
+        Mileage = 72000,        
         ImageFileName = "coupe4.png"
     },
     new Vehicle
@@ -155,9 +151,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 79.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 52000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 52000,        
         ImageFileName = "coupe5.png"
     },
     new Vehicle
@@ -170,9 +165,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 239.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 22000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 22000,        
         ImageFileName = "luxury1.png"
     },
     new Vehicle
@@ -185,9 +179,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 459.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 8000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 8000,        
         ImageFileName = "luxury2.png"
     },
     new Vehicle
@@ -200,9 +193,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 399.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 12000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 12000,        
         ImageFileName = "luxury3.png"
     },
     new Vehicle
@@ -215,9 +207,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 289.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 34000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 34000,        
         ImageFileName = "luxury4.png"
     },
     new Vehicle
@@ -230,9 +221,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 299.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 48000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 48000,        
         ImageFileName = "luxury5.png"
     },
 
@@ -246,9 +236,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 99.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 12000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 12000,        
         ImageFileName = "motorcycle1.png"
     },
     new Vehicle
@@ -261,9 +250,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 109.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 26000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 26000,        
         ImageFileName = "motorcycle2.png"
     },
     new Vehicle
@@ -276,9 +264,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 119.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 18000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 18000,        
         ImageFileName = "motorcycle3.png"
     },
     new Vehicle
@@ -291,9 +278,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 129.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 9500,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 9500,        
         ImageFileName = "motorcycle4.png"
     },
     new Vehicle
@@ -306,9 +292,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 109.99m,
         Status = "available",
-        Capacity = 2,
-        Mileage = 14000,
-        FuelType = "Gasoline",
+        Seats = 2,
+        Mileage = 14000,        
         ImageFileName = "motorcycle5.png"
     },
 
@@ -322,9 +307,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 119.99m,
         Status = "available",
-        Capacity = 5,
-        Mileage = 35000,
-        FuelType = "Gasoline",
+        Seats = 5,
+        Mileage = 35000,        
         ImageFileName = "truck1.png"
     },
     new Vehicle
@@ -337,9 +321,8 @@ namespace CSE325_team.Data
         Transmission = "Manual",
         DailyRate = 109.99m,
         Status = "available",
-        Capacity = 4,
-        Mileage = 28000,
-        FuelType = "Gasoline",
+        Seats = 4,
+        Mileage = 28000,        
         ImageFileName = "truck2.png"
     },
     new Vehicle
@@ -352,9 +335,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 89.99m,
         Status = "available",
-        Capacity = 4,
-        Mileage = 40000,
-        FuelType = "Gasoline",
+        Seats = 4,
+        Mileage = 40000,        
         ImageFileName = "truck3.png"
     },
     new Vehicle
@@ -367,9 +349,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 94.99m,
         Status = "available",
-        Capacity = 5,
-        Mileage = 37000,
-        FuelType = "Gasoline",
+        Seats = 5,
+        Mileage = 37000,        
         ImageFileName = "truck4.png"
     },
     new Vehicle
@@ -382,9 +363,8 @@ namespace CSE325_team.Data
         Transmission = "Automatic",
         DailyRate = 84.99m,
         Status = "available",
-        Capacity = 4,
-        Mileage = 52000,
-        FuelType = "Gasoline",
+        Seats = 4,
+        Mileage = 52000,        
         ImageFileName = "truck5.png"
     }
 

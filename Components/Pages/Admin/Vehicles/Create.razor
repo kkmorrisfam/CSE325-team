@@ -50,20 +50,15 @@
     </div>
 
     <div class="mb-3">
-        <label>Fuel Type:</label>
-        <InputText class="form-control" @bind-Value="vehicle.FuelType" />
-    </div>
-
-    <div class="mb-3">
         <label>Daily Rate ($):</label>
         <InputNumber class="form-control" @bind-Value="vehicle.DailyRate" />
         <ValidationMessage For="@(() => vehicle.DailyRate)" />
     </div>
 
     <div class="mb-3">
-        <label>Capacity:</label>
-        <InputNumber class="form-control" @bind-Value="vehicle.Capacity" />
-        <ValidationMessage For="@(() => vehicle.Capacity)" />
+        <label>Seats:</label>
+        <InputNumber class="form-control" @bind-Value="vehicle.Seats" />
+        <ValidationMessage For="@(() => vehicle.Seats)" />
     </div>
 
     <div class="mb-3">
