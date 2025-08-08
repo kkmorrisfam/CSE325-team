@@ -1,0 +1,22 @@
+@page "/Account/RegisterSuccess"
+
+@using System.Text
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.WebUtilities
+@using CSE325_team.Data
+
+@inject NavigationManager NavigationManager
+@inject IdentityRedirectManager RedirectManager
+
+<PageTitle>Register confirmation</PageTitle>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div>
+        <h1 class="container text-center">Success Baby!</h1>
+        <img src="images/success.jpg" class="img-fluid rounded mb-4" style="max-width: 300px;" alt="successful registration picture"/>
+        <h2 class="container text-center">You are registered.</h2>
+        <a href="/" class="btn btn-primary mt-3 align-items-center container">Return to Home</a>
+    </div>
+    
+</div>
+
+
