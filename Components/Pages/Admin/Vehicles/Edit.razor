@@ -1,7 +1,9 @@
+@using System.ComponentModel.DataAnnotations;
 @page "/admin/vehicles/edit/{Id:int}"
 @attribute [Authorize(Roles = "Admin")]
 @inject ApplicationDbContext Db
 @inject NavigationManager Nav
+@rendermode InteractiveServer
 
 <h3>Edit Vehicle</h3>
 
@@ -11,7 +13,7 @@
 }
 else
 {
-    <EditForm Model="@vehicle" OnValidSubmit="HandleValidSubmit" FormName="VehicleEditForm">
+<EditForm @key="vehicle" Model="@vehicle" OnValidSubmit="HandleValidSubmit" OnFieldChanged="HandleFieldChanged" FormName="EditVehicleForm">
         <DataAnnotationsValidator />
         <ValidationSummary />
 
@@ -36,9 +38,16 @@ else
     </div>
 
     <div class="mb-3">
-        <label>Transmission:</label>
-        <InputText class="form-control" @bind-Value="vehicle.Transmission" />
-    </div>
+    <label>Transmission:</label>
+    <InputSelect class="form-control" @bind-Value="vehicle.Transmission">
+        <option value="">Select Transmission</option>
+        <option value="Automatic">Automatic</option>
+        <option value="Manual">Manual</option>
+    </InputSelect>
+</div>
+
+
+<p><strong>Live Transmission (bound):</strong> @vehicle.Transmission (@vehicle.GetHashCode())</p>
 
     <div class="mb-3">
         <label>Capacity:</label>
@@ -66,18 +75,89 @@ else
 }
 
 @code {
+
+
+private bool _initialized = false;
+
+    private void HandleFieldChanged(object? sender, FieldChangedEventArgs e)
+    {
+        var fieldIdentifier = e.FieldIdentifier;
+        var model = fieldIdentifier.Model;
+        var propertyName = fieldIdentifier.FieldName;
+        var propertyInfo = model?.GetType().GetProperty(propertyName);
+        var value = propertyInfo?.GetValue(model, null);
+
+        Console.WriteLine($"✏️ Field '{propertyName}' changed. New value: {value} | Model Hash: {model?.GetHashCode()} | vehicle Hash: {vehicle?.GetHashCode()}");
+    }
+
+
     [Parameter] public int Id { get; set; }
     private Vehicle? vehicle;
+    private Vehicle? _currentVehicle;
+    private int _loadedVehicleId = -1;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
+{
+
+    Console.WriteLine("🔧 Component initialized");
+    if (_initialized)
     {
-        vehicle = await Db.Vehicle.FindAsync(Id);
+        Console.WriteLine("⏭ OnParametersSetAsync skipped: already initialized");
+        return;
     }
+
+    Console.WriteLine($"📍 vehicle before assignment: {vehicle?.GetHashCode()}");
+
+    Console.WriteLine($"🔄 OnParametersSetAsync: Id = {Id}");
+
+    var fetched = await Db.Vehicle.FindAsync(Id);
+    if (fetched != null)
+    {
+        _currentVehicle = fetched;
+        _loadedVehicleId = Id;
+
+        Console.WriteLine($"🧲 Cached vehicle (Transmission): {_currentVehicle.Transmission}");
+
+        if (string.IsNullOrWhiteSpace(_currentVehicle.Transmission))
+        {
+            _currentVehicle.Transmission = "Automatic";
+        }
+
+        if (vehicle is null)
+        {
+            vehicle = new Vehicle
+            {
+                VehicleId = _currentVehicle.VehicleId,
+                Make = _currentVehicle.Make,
+                Model = _currentVehicle.Model,
+                Color = _currentVehicle.Color,
+                VehicleType = _currentVehicle.VehicleType,
+                Transmission = string.IsNullOrWhiteSpace(_currentVehicle.Transmission) ? "Automatic" : _currentVehicle.Transmission,
+                Capacity = _currentVehicle.Capacity,
+                Year = _currentVehicle.Year,
+                DailyRate = _currentVehicle.DailyRate,
+                Status = _currentVehicle.Status,
+                Mileage = _currentVehicle.Mileage,
+                FuelType = _currentVehicle.FuelType,
+                ImageFileName = _currentVehicle.ImageFileName
+            };
+        }
+
+        Console.WriteLine($"✅ vehicle after assignment: {vehicle.GetHashCode()}");
+
+        _initialized = true;
+    }
+}
 
     private async Task HandleValidSubmit()
     {
-        Db.Vehicle.Update(vehicle!);
-        await Db.SaveChangesAsync();
-        Nav.NavigateTo("/admin/vehicles");
+        if (vehicle is not null)
+        {
+            Console.WriteLine($"🚗 Transmission: {vehicle.Transmission} | Object Hash: {vehicle.GetHashCode()}");
+
+            Db.Vehicle.Update(vehicle);
+            await Db.SaveChangesAsync();
+            Nav.NavigateTo("/admin/vehicles");
+        }
     }
 }

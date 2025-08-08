@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using CSE325_team.Components;
 using CSE325_team.Components.Account;
 using CSE325_team.Data;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuth
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
+
 Console.WriteLine("🔍 Using connection string:");
 Console.WriteLine(connectionString);
 var dataSource = new Microsoft.Data.Sqlite.SqliteConnectionStringBuilder(connectionString).DataSource;
@@ -28,8 +30,20 @@ Console.WriteLine("📁 Absolute path to database file:");
 Console.WriteLine(Path.GetFullPath(dataSource));
 
 
+var loggerFactory = LoggerFactory.Create(logging =>
+{
+    logging.AddConsole(); // Log to console
+    logging.SetMinimumLevel(LogLevel.Information); // or Debug for more detail
+});
+
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlite(connectionString)
+    .UseSqlite(connectionString)
+        .UseLoggerFactory(loggerFactory)
+        .EnableSensitiveDataLogging()
+        .EnableDetailedErrors());
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // if (builder.Environment.IsDevelopment())

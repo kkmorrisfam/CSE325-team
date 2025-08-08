@@ -39,7 +39,5 @@ namespace CSE325_team.Models
         public string Status { get; set; } = string.Empty;
 
         public string ImageFileName { get; set; } = "default.png";
-
-        public int Seats { get; set; } = 4;
     }
 }
