@@ -3,11 +3,13 @@
 @using System.ComponentModel.DataAnnotations
 @using Microsoft.AspNetCore.Identity
 @using CSE325_team.Data
+@using Microsoft.EntityFrameworkCore
 
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> SignInManager
 @inject IdentityUserAccessor UserAccessor
 @inject IdentityRedirectManager RedirectManager
+@inject ApplicationDbContext DbContext
 
 <PageTitle>Profile</PageTitle>
 
@@ -19,6 +21,7 @@
         <EditForm Model="Input" FormName="profile" OnValidSubmit="OnValidSubmitAsync" method="post">
             <DataAnnotationsValidator />
             <ValidationSummary class="text-danger" role="alert" />
+            
             <div class="form-floating mb-3">
                 <input type="text" value="@username" class="form-control" placeholder="Please choose your username." disabled />
                 <label for="username" class="form-label">Username</label>
@@ -28,15 +31,20 @@
                 <label for="phone-number" class="form-label">Phone number</label>
                 <ValidationMessage For="() => Input.PhoneNumber" class="text-danger" />
             </div>
+
+
+
             <button type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
         </EditForm>
     </div>
 </div>
 
 @code {
-    private ApplicationUser user = default!;
+    private ApplicationUser _currentUser = default!;
+    private Models.Contact? _currentContact;
     private string? username;
     private string? phoneNumber;
+    private bool _initialized = false;
 
     [CascadingParameter]
     private HttpContext HttpContext { get; set; } = default!;
@@ -46,15 +54,41 @@
 
     protected override async Task OnInitializedAsync()
     {
-        user = await UserAccessor.GetRequiredUserAsync(HttpContext);
-        username = await UserManager.GetUserNameAsync(user);
-        phoneNumber = await UserManager.GetPhoneNumberAsync(user);
+        // Prevent re-initialization if already loaded
+        if (_initialized) return;
 
-        Input.PhoneNumber ??= phoneNumber;
+        // this is what the scaffolding provided
+        _currentUser = await UserAccessor.GetRequiredUserAsync(HttpContext);
+        username = await UserManager.GetUserNameAsync(_currentUser);
+        phoneNumber = await UserManager.GetPhoneNumberAsync(_currentUser);
+
+        //Input.PhoneNumber ??= phoneNumber;
+
+        // get contact information attached to user
+        _currentContact = await DbContext.Contact.FirstOrDefaultAsync(c=>c.ApplicationUserId == _currentUser.Id);
+
+        // initialize fields with values from user and contact tables only if Input is empty
+        // if (string.IsNullOrEmpty(Input.FirstName)&& string.IsNullOrEmpty(Input.LastName))
+        if (Input is null) 
+        {
+            Input = new InputModel{
+                FirstName = _currentUser?.FirstName,
+                LastName = _currentUser?.LastName,
+                PhoneNumber = _currentUser?.PhoneNumber,
+                AltPhoneNumber = _currentContact?.AltPhoneNumber,
+                StreetLine1 = _currentContact?.StreetLine1,
+                StreetLine2 = _currentContact?.StreetLine2,
+                City = _currentContact?.City,
+                State = _currentContact?.State,
+                PostalCode = _currentContact?.PostalCode
+            };
+        }
+        _initialized = true;
     }
 
     private async Task OnValidSubmitAsync()
     {
+        // came with scaffolding, adds error handling from Identity
         if (Input.PhoneNumber != phoneNumber)
         {
             var setPhoneResult = await UserManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
@@ -63,15 +97,54 @@
                 RedirectManager.RedirectToCurrentPageWithStatus("Error: Failed to set phone number.", HttpContext);
             }
         }
+        
+        // get or create a contact for user
+        if (_currentUser is null)
+        {
 
-        await SignInManager.RefreshSignInAsync(user);
+        }
+
+        //update user database fields with data in Input fields
+
+
+
+        await SignInManager.RefreshSignInAsync(_currentUser);
         RedirectManager.RedirectToCurrentPageWithStatus("Your profile has been updated", HttpContext);
     }
 
+    // Create InputModel class to take data from User and Contact models
+    // username is not included because it is not editable here.
     private sealed class InputModel
     {
+    
+        [Display(Name = "First Name")]
+        public string? FirstName {get;set;}
+        
+        [Display(Name = "Last Name")]
+        public string? LastName {get;set;}        
+        
         [Phone]
         [Display(Name = "Phone number")]
         public string? PhoneNumber { get; set; }
+
+        [Phone]
+        [Display(Name = "Alternate Phone number")]
+        public string? AltPhoneNumber { get; set; }
+
+        [Display(Name = "Street address")]
+        public string? StreetLine1 {get;set;}        
+
+        [Display(Name = "Street address line 2")]
+        public string? StreetLine2 {get;set;}
+
+        [Display(Name = "City")]
+        public string? City {get;set;}
+
+        [Display(Name = "State")]
+        public string? State {get;set;}
+
+        [Display(Name = "Postal Zip Code")]
+        public string? PostalCode {get;set;}
+
     }
 }
