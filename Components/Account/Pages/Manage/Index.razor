@@ -68,26 +68,30 @@
         _currentContact = await DbContext.Contact.FirstOrDefaultAsync(c=>c.ApplicationUserId == _currentUser.Id);
 
         // initialize fields with values from user and contact tables only if Input is empty
-        // if (string.IsNullOrEmpty(Input.FirstName)&& string.IsNullOrEmpty(Input.LastName))
-        if (Input is null) 
+        if (Input is null)
         {
-            Input = new InputModel{
-                FirstName = _currentUser?.FirstName,
-                LastName = _currentUser?.LastName,
-                PhoneNumber = _currentUser?.PhoneNumber,
-                AltPhoneNumber = _currentContact?.AltPhoneNumber,
-                StreetLine1 = _currentContact?.StreetLine1,
-                StreetLine2 = _currentContact?.StreetLine2,
-                City = _currentContact?.City,
-                State = _currentContact?.State,
-                PostalCode = _currentContact?.PostalCode
-            };
+            Input = new InputModel();
         }
+
+        // if field is null, fill form; on re-post, any fields
+        // that user typed remains as-is; any still empty fields
+        // get database values if they exist
+        Input.FirstName ??= _currentUser?.FirstName;
+        Input.LastName ??= _currentUser?.LastName;
+        Input.PhoneNumber ??= _currentUser?.PhoneNumber;
+        Input.AltPhoneNumber ??= _currentContact?.AltPhoneNumber;
+        Input.StreetLine1 ??= _currentContact?.StreetLine1;
+        Input.StreetLine2 ??= _currentContact?.StreetLine2;
+        Input.City ??= _currentContact?.City;
+        Input.State ??= _currentContact?.State;
+        Input.PostalCode ??= _currentContact?.PostalCode;
+
         _initialized = true;
     }
 
     private async Task OnValidSubmitAsync()
     {
+        //if(_currentUser is null) return;
         // came with scaffolding, adds error handling from Identity
         if (Input.PhoneNumber != phoneNumber)
         {
@@ -99,7 +103,7 @@
         }
         
         // get or create a contact for user
-        if (_currentUser is null)
+        if (_currentContact is null)
         {
 
         }
