@@ -1,4 +1,6 @@
 @page "/admin/vehicles/edit/{Id:int}"
+@rendermode InteractiveServer
+
 @attribute [Authorize(Roles = "Admin")]
 @inject ApplicationDbContext Db
 @inject NavigationManager Nav
@@ -11,7 +13,7 @@
 }
 else
 {
-    <EditForm Model="vehicle" OnValidSubmit="HandleValidSubmit">
+    <EditForm Model="vehicle" OnValidSubmit="HandleValidSubmit" FormName="EditVehicle">
         <DataAnnotationsValidator />
         <ValidationSummary />
 
@@ -35,6 +37,27 @@ else
             <label>Daily Rate:</label>
             <InputNumber class="form-control" @bind-Value="vehicle.DailyRate" />
         </div>
+        <div class="mb-3">
+            <label>Color</label>
+            <InputText class="form-control" @bind-Value="vehicle.Color" />
+        </div>
+        <div class="mb-3">
+            <label>Vehicle Type</label>
+            <InputText class="form-control" @bind-Value="vehicle.VehicleType" />
+        </div>
+        <div class="mb-3">
+            <label>Transmission:</label>
+            <InputText class="form-control" @bind-Value="vehicle.Transmission" />
+        </div>
+        <div class="mb-3">
+            <label>Status:</label>
+            <InputText class="form-control" @bind-Value="vehicle.Status" />
+        </div>
+        <div class="mb-3">
+            <label>Capacity:</label>
+            <InputNumber class="form-control" @bind-Value="vehicle.Capacity" />
+        </div>
+
 
         <button class="btn btn-success" type="submit">Save</button>
         <NavLink class="btn btn-secondary" href="/admin/vehicles">Cancel</NavLink>
@@ -43,17 +66,40 @@ else
 
 @code {
     [Parameter] public int Id { get; set; }
-    private Vehicle? vehicle;
+
+    //private Vehicle? vehicle;
+    [SupplyParameterFromForm]
+    private Vehicle? vehicle {get;set;} 
+    private bool _initialized = false;
+    private Models.Vehicle? _currentVehicle;
 
     protected override async Task OnInitializedAsync()
     {
-        vehicle = await Db.Vehicle.FindAsync(Id);
+        //Prevent re-initialization if already loaded.
+        if (_initialized) return;
+
+        //Get vehicle where Id matches parameter
+        _currentVehicle = await Db.Vehicle.FindAsync(Id);
+
+        // initialize vehicle only if empty
+        if (vehicle == null){
+            vehicle = _currentVehicle;
+        }
+
+        //set initialized state, so it doesn't re-fetch data
+        _initialized = true;
     }
 
     private async Task HandleValidSubmit()
     {
+        // User cached vehicle instead of fetching again.
+        if (_currentVehicle is null) return;
+
         Db.Vehicle.Update(vehicle!);
         await Db.SaveChangesAsync();
         Nav.NavigateTo("/admin/vehicles");
     }
+
+
+
 }
