@@ -15,5 +15,21 @@ namespace CSE325_team.Data
         public DbSet<Booking> Booking { get; set; }
         public DbSet<Payment> Payment { get; set; }
         public DbSet<User> User { get; set; } 
+        // This must be *inside* the class body
+
+        public DbSet<Contact> Contact { get; set; }
+
+         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // configure one-to-many: ApplicationUser → Contact
+            modelBuilder.Entity<Contact>()
+                .HasOne(c => c.ApplicationUser)
+                .WithMany(u => u.Contacts)
+                .HasForeignKey(c => c.ApplicationUserId);
+        }
+
+
     }
 }

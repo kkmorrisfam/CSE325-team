@@ -101,11 +101,17 @@ else
         if (!string.IsNullOrWhiteSpace(searchQuery))
         {
             query = query.Where(v =>
-                v.Make.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-                v.Model.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-                v.Color.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-                v.VehicleType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ||
-                (v.Year.HasValue && v.Year.Value.ToString().Contains(searchQuery))
+                (v.Make != null && v.Make.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.Model != null && v.Model.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.Color != null && v.Color.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.VehicleType != null && v.VehicleType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.Transmission != null && v.Transmission.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.FuelType != null && v.FuelType.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.Status != null && v.Status.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
+                (v.Year.HasValue && v.Year.Value.ToString().Contains(searchQuery)) ||
+                v.Capacity.ToString().Contains(searchQuery) ||
+                (v.Mileage.HasValue && v.Mileage.Value.ToString().Contains(searchQuery)) ||
+                v.DailyRate.ToString("0.00").Contains(searchQuery)
             );
         }
 
