@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using CSE325_team.Components;
 using CSE325_team.Components.Account;
 using CSE325_team.Data;
+using CSE325_team.Services;
+// Add the correct namespace for BookingState if it exists in your project
+// Example: using CSE325_team.State; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,7 +47,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.S
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-
+builder.Services.AddScoped<BookingState>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
