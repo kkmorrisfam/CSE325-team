@@ -5,6 +5,7 @@
 @using CSE325_team.Data
 @using Microsoft.EntityFrameworkCore
 
+
 @inject UserManager<ApplicationUser> UserManager
 @inject SignInManager<ApplicationUser> SignInManager
 @inject IdentityUserAccessor UserAccessor
@@ -27,44 +28,44 @@
                 <label for="username" class="form-label">Username</label>
             </div>
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.FirstName" class="form-control" placeholder="Please enter your first name" />
+                <InputText type="text" @bind-Value="Input.FirstName" class="form-control" placeholder="Please enter your first name" />
                 <label for="first-name" class="form-label" >First Name</label>
             </div>
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.LastName" class="form-control" placeholder="Please enter your last name" />
+                <InputText type="text" @bind-Value="Input.LastName" class="form-control" placeholder="Please enter your last name" />
                 <label for="last-name" class="form-label" >Last Name</label>
             </div>
             
             <div class="form-floating mb-3">
-                <InputText @bind-Value="@Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
+                <InputText @bind-Value="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
                 <label for="phone-number" class="form-label">Phone number</label>
                 <ValidationMessage For="() => Input.PhoneNumber" class="text-danger" />
             </div>
             <div class="form-floating mb-3">
-                <InputText @bind-Value="@Input.AltPhoneNumber" class="form-control" placeholder="Please enter alternate phone number." />
+                <InputText @bind-Value="Input.AltPhoneNumber" class="form-control" placeholder="Please enter alternate phone number." />
                 <label for="alt-phone-number" class="form-label">Alternate Phone number</label>
                 <ValidationMessage For="() => Input.AltPhoneNumber" class="text-danger" />
             </div>
             
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.StreetLine1" class="form-control" placeholder="Please enter your street address" />
+                <InputText type="text" @bind-Value="Input.StreetLine1" class="form-control" placeholder="Please enter your street address" />
                 <label for="street-line-1" class="form-label" >Street addresss line 1</label>
             </div>
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.StreetLine2" class="form-control" placeholder="Street address line 2" />
+                <InputText type="text" @bind-Value="Input.StreetLine2" class="form-control" placeholder="Street address line 2" />
                 <label for="street-line-2" class="form-label" >Street line 2</label>
             </div>
 
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.City" class="form-control" placeholder="Please enter your city" />
+                <InputText type="text" @bind-Value="Input.City" class="form-control" placeholder="Please enter your city" />
                 <label for="city" class="form-label" >City</label>
             </div>
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.State" class="form-control" placeholder="Please enter your state" />
+                <InputText type="text" @bind-Value="Input.State" class="form-control" placeholder="Please enter your state" />
                 <label for="state" class="form-label" >State</label>
             </div>
             <div class="form-floating mb-3" >
-                <input type="text" value="@Input.PostalCode" class="form-control" placeholder="Please enter your zip code/postal code" />
+                <InputText type="text" @bind-Value="Input.PostalCode" class="form-control" placeholder="Please enter your zip code/postal code" />
                 <label for="postal-code" class="form-label" >Postal Code</label>
             </div>
 
