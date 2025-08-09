@@ -170,7 +170,7 @@
 
         //update user database fields with data in Input fields
         //add data from input fileds into database
-        _currentContact.AltPhoneNumber = Input.City;
+        _currentContact.AltPhoneNumber = Input.AltPhoneNumber;
         _currentContact.StreetLine1 = Input.StreetLine1;
         _currentContact.StreetLine2 = Input.StreetLine2;        
         _currentContact.City = Input.City;
@@ -195,11 +195,13 @@
         [Display(Name = "Last Name")]
         public string? LastName {get;set;}        
         
-        [Phone]
+        [RegularExpression(@"^$|^(\+?\d{1,2}[-\s]?|\d{3}[-\s]?)\d{3}[-\s]?\d{4}$",
+        ErrorMessage = "Phone number is not valid.")]
         [Display(Name = "Phone number")]
         public string? PhoneNumber { get; set; }
 
-        [Phone]
+        [RegularExpression(@"^$|^(\+?\d{1,2}[-\s]?|\d{3}[-\s]?)\d{3}[-\s]?\d{4}$",
+        ErrorMessage = "Phone number is not valid.")]
         [Display(Name = "Alternate Phone number")]
         public string? AltPhoneNumber { get; set; }
 
