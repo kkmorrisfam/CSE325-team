@@ -23,8 +23,8 @@ public class ApplicationUser : IdentityUser
     // Navigation property: one user → many bookings
     // this should help with showing all of a client's bookings
     [InverseProperty("User")]
-    public ICollection<Booking> Bookings { get; set; }
-    public ICollection<Contact> Contacts { get; set; }
+    public ICollection<Booking>? Bookings { get; set; }
+    public ICollection<Contact>? Contacts { get; set; }
 
 }
 // **************FYI******
