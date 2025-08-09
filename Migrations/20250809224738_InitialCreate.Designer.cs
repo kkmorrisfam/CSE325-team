@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250807042618_InitWithIdentity")]
-    partial class InitWithIdentity
+    [Migration("20250809224738_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,6 +119,45 @@ namespace CSE325_team.Migrations
                     b.HasIndex("VehicleId");
 
                     b.ToTable("Booking");
+                });
+
+            modelBuilder.Entity("CSE325_team.Models.Contact", b =>
+                {
+                    b.Property<int>("ContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("AltPhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("State")
+                        .HasMaxLength(30)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StreetLine1")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StreetLine2")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ContactId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("CSE325_team.Models.Payment", b =>
@@ -368,6 +407,17 @@ namespace CSE325_team.Migrations
                     b.Navigation("Vehicle");
                 });
 
+            modelBuilder.Entity("CSE325_team.Models.Contact", b =>
+                {
+                    b.HasOne("CSE325_team.Data.ApplicationUser", "ApplicationUser")
+                        .WithMany("Contacts")
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("CSE325_team.Models.Payment", b =>
                 {
                     b.HasOne("CSE325_team.Models.Booking", "Booking")
@@ -439,6 +489,8 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Data.ApplicationUser", b =>
                 {
                     b.Navigation("Bookings");
+
+                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }

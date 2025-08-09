@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CSE325_team.Migrations
 {
     /// <inheritdoc />
-    public partial class InitWithIdentity : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -183,6 +183,31 @@ namespace CSE325_team.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contact",
+                columns: table => new
+                {
+                    ContactId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    AltPhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    StreetLine1 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    StreetLine2 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    City = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    State = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),
+                    PostalCode = table.Column<string>(type: "TEXT", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contact", x => x.ContactId);
+                    table.ForeignKey(
+                        name: "FK_Contact_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Booking",
                 columns: table => new
                 {
@@ -290,6 +315,11 @@ namespace CSE325_team.Migrations
                 column: "VehicleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contact_ApplicationUserId",
+                table: "Contact",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Payment_BookingId",
                 table: "Payment",
                 column: "BookingId");
@@ -317,6 +347,9 @@ namespace CSE325_team.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Contact");
 
             migrationBuilder.DropTable(
                 name: "Payment");

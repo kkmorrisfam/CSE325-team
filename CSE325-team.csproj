@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-     <Content Include="Data\app.db">
+  <Content Include="Data\app.db" Condition="Exists('Data\app.db')">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
