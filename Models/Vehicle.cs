@@ -14,33 +14,31 @@ namespace CSE325_team.Models
 
         // Manufacturer or brand (e.g., Toyota, Ford)
         [Required]
-        public required string Make { get; set; }
+        public required string Make { get; set; } = string.Empty;
 
         // Model (e.g., Camry, Mustang)
         [Required]
-        public required string Model { get; set; }
+        public required string Model { get; set; } = string.Empty;
 
 
         // Year of manufacture
         public int? Year { get; set; }
-
-        // Unique license plate number
-
+       
         // Exterior color
         [Required]
-        public required string Color { get; set; }
+        public required string Color { get; set; } = string.Empty;
 
         [Required]
-        public required string VehicleType { get; set; }
+        public required string VehicleType { get; set; } = string.Empty;
 
         [Required]
-        public required string Transmission { get; set; }
+        public required string Transmission { get; set; } = string.Empty;
 
 
         // Daily rental rate
-        [Column(TypeName = "decimal(10,2)")]
-        [Range(0.0, double.MaxValue)]
+        [Range(typeof(decimal), "0", "79228162514264337593543950335", ErrorMessage = "Daily rate must be non-negative")]
         public decimal DailyRate { get; set; }
+
 
         public string? ImageFileName { get; set; }
 
@@ -56,12 +54,12 @@ namespace CSE325_team.Models
         // Vehicle status (available, rented, reserved, maintenance)
         [Required]
         [RegularExpression("available|rented|reserved|maintenance", ErrorMessage = "Invalid status")]
-        public required string Status { get; set; }
+        public required string Status { get; set; } = "available";
 
 
         // Seating or cargo capacity
         [Range(1, int.MaxValue)]
-        public int Capacity { get; set; }
+        public int Capacity { get; set; } = 1;
 
 
         public Vehicle()

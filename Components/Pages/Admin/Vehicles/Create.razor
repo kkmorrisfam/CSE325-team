@@ -1,53 +1,88 @@
 @page "/admin/vehicles/create"
+@using CSE325_team.Models
 @attribute [Authorize(Roles = "Admin")]
 @inject ApplicationDbContext Db
 @inject NavigationManager Nav
 
 <h3>Add New Vehicle</h3>
 
-<EditForm Model="vehicle" OnValidSubmit="HandleValidSubmit">
+<EditForm Model="@vehicle" OnValidSubmit="HandleValidSubmit" FormName="CreateVehicle">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div class="mb-3">
         <label>Make:</label>
         <InputText class="form-control" @bind-Value="vehicle.Make" />
+        <ValidationMessage For="@(() => vehicle.Make)" />
     </div>
 
     <div class="mb-3">
         <label>Model:</label>
         <InputText class="form-control" @bind-Value="vehicle.Model" />
+        <ValidationMessage For="@(() => vehicle.Model)" />
     </div>
 
     <div class="mb-3">
         <label>Year:</label>
-        <InputNumber class="form-control" @bind-Value="vehicle.Year" />
+        <InputNumber class="form-control" @bind-Value="vehicle.Year" TValue="int?" />
+        <ValidationMessage For="@(() => vehicle.Year)" />
     </div>
 
     <div class="mb-3">
-        <label>Daily Rate ($):</label>
-        <InputNumber class="form-control" @bind-Value="vehicle.DailyRate" />
+        <label>Daily Rate:</label>
+        <InputNumber class="form-control" @bind-Value="vehicle.DailyRate" TValue="decimal" />
+        <ValidationMessage For="@(() => vehicle.DailyRate)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Color:</label>
+        <InputText class="form-control" @bind-Value="vehicle.Color" />
+        <ValidationMessage For="@(() => vehicle.Color)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Vehicle Type:</label>
+        <InputText class="form-control" @bind-Value="vehicle.VehicleType" />
+        <ValidationMessage For="@(() => vehicle.VehicleType)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Transmission:</label>
+        <InputText class="form-control" @bind-Value="vehicle.Transmission" />
+        <ValidationMessage For="@(() => vehicle.Transmission)" />
     </div>
 
     <div class="mb-3">
         <label>Status:</label>
-        <InputText class="form-control" @bind-Value="vehicle.Status" />
+        <InputSelect class="form-control" @bind-Value="vehicle.Status">
+            <option value="available">available</option>
+            <option value="rented">rented</option>
+            <option value="reserved">reserved</option>
+            <option value="maintenance">maintenance</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => vehicle.Status)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Capacity:</label>
+        <InputNumber class="form-control" @bind-Value="vehicle.Capacity" TValue="int" />
+        <ValidationMessage For="@(() => vehicle.Capacity)" />
     </div>
 
     <button class="btn btn-success" type="submit">Save</button>
-    <NavLink class="btn btn-secondary" href="/admin/vehicles">Cancel</NavLink>
-
+    <NavLink class="btn btn-secondary ms-2" href="/admin/vehicles">Cancel</NavLink>
 </EditForm>
 
 @code {
     private Vehicle vehicle = new()
     {
-    Make = string.Empty,
-    Model = string.Empty,
-    Color = string.Empty,
-    VehicleType = string.Empty,
-    Transmission = string.Empty,
-    Status = "available"
+        Make = string.Empty,
+        Model = string.Empty,
+        Color = string.Empty,
+        VehicleType = string.Empty,
+        Transmission = string.Empty,
+        Status = "available",
+        Capacity = 1
     };
 
     private async Task HandleValidSubmit()
