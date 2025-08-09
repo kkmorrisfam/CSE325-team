@@ -26,12 +26,47 @@
                 <input type="text" value="@username" class="form-control" placeholder="Please choose your username." disabled />
                 <label for="username" class="form-label">Username</label>
             </div>
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.FirstName" class="form-control" placeholder="Please enter your first name" />
+                <label for="first-name" class="form-label" >First Name</label>
+            </div>
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.LastName" class="form-control" placeholder="Please enter your last name" />
+                <label for="last-name" class="form-label" >Last Name</label>
+            </div>
+            
             <div class="form-floating mb-3">
-                <InputText @bind-Value="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
+                <InputText @bind-Value="@Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
                 <label for="phone-number" class="form-label">Phone number</label>
                 <ValidationMessage For="() => Input.PhoneNumber" class="text-danger" />
             </div>
+            <div class="form-floating mb-3">
+                <InputText @bind-Value="@Input.AltPhoneNumber" class="form-control" placeholder="Please enter alternate phone number." />
+                <label for="alt-phone-number" class="form-label">Alternate Phone number</label>
+                <ValidationMessage For="() => Input.AltPhoneNumber" class="text-danger" />
+            </div>
+            
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.StreetLine1" class="form-control" placeholder="Please enter your street address" />
+                <label for="street-line-1" class="form-label" >Street addresss line 1</label>
+            </div>
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.StreetLine2" class="form-control" placeholder="Street address line 2" />
+                <label for="street-line-2" class="form-label" >Street line 2</label>
+            </div>
 
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.City" class="form-control" placeholder="Please enter your city" />
+                <label for="city" class="form-label" >City</label>
+            </div>
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.State" class="form-control" placeholder="Please enter your state" />
+                <label for="state" class="form-label" >State</label>
+            </div>
+            <div class="form-floating mb-3" >
+                <input type="text" value="@Input.PostalCode" class="form-control" placeholder="Please enter your zip code/postal code" />
+                <label for="postal-code" class="form-label" >Postal Code</label>
+            </div>
 
 
             <button type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
@@ -64,14 +99,17 @@
 
         //Input.PhoneNumber ??= phoneNumber;
 
-        // get contact information attached to user
+        //check for null user before continuing
+        if (_currentUser is null) return;
+
+        //get current contact information
         _currentContact = await DbContext.Contact.FirstOrDefaultAsync(c=>c.ApplicationUserId == _currentUser.Id);
 
         // initialize fields with values from user and contact tables only if Input is empty
-        if (Input is null)
+        @* if (Input is null)
         {
             Input = new InputModel();
-        }
+        } *@
 
         // if field is null, fill form; on re-post, any fields
         // that user typed remains as-is; any still empty fields
@@ -93,26 +131,55 @@
     {
         //if(_currentUser is null) return;
         // came with scaffolding, adds error handling from Identity
-        if (Input.PhoneNumber != phoneNumber)
+        @* if (Input.PhoneNumber != phoneNumber)
         {
-            var setPhoneResult = await UserManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
+            var setPhoneResult = await UserManager.SetPhoneNumberAsync(_currentUser, Input.PhoneNumber);
             if (!setPhoneResult.Succeeded)
             {
                 RedirectManager.RedirectToCurrentPageWithStatus("Error: Failed to set phone number.", HttpContext);
             }
-        }
+        } *@
         
+        //update user database fields with data in Input fields
+        _currentUser.FirstName = Input.FirstName;
+        _currentUser.LastName = Input.LastName;
+        _currentUser.PhoneNumber = Input.PhoneNumber;
+
+        //send  user to database for update
+        var result = await UserManager.UpdateAsync(_currentUser);
+        if(!result.Succeeded)
+        {
+            foreach (var error in result.Errors)
+            {
+                Console.WriteLine($"User Update error: {error.Description}");
+            }
+            return;
+        }
+
         // get or create a contact for user
         if (_currentContact is null)
         {
-
+            _currentContact = new Models.Contact{ApplicationUserId = _currentUser.Id};
+            DbContext.Contact.Add(_currentContact);
+        } 
+        else
+        {
+            DbContext.Entry(_currentContact).State = EntityState.Modified;
         }
 
         //update user database fields with data in Input fields
+        //add data from input fileds into database
+        _currentContact.AltPhoneNumber = Input.City;
+        _currentContact.StreetLine1 = Input.StreetLine1;
+        _currentContact.StreetLine2 = Input.StreetLine2;        
+        _currentContact.City = Input.City;
+        _currentContact.State = Input.State;
+        _currentContact.PostalCode = Input.PostalCode;
 
 
-
-        await SignInManager.RefreshSignInAsync(_currentUser);
+        //save data to database
+        //await SignInManager.RefreshSignInAsync(_currentUser);
+        await DbContext.SaveChangesAsync();
         RedirectManager.RedirectToCurrentPageWithStatus("Your profile has been updated", HttpContext);
     }
 
