@@ -1,4 +1,5 @@
 @page "/booking-summary"
+@rendermode InteractiveServer
 @inject CSE325_team.Data.ApplicationDbContext DbContext
 @using Microsoft.EntityFrameworkCore
 @inject NavigationManager Navigation
@@ -70,12 +71,14 @@ else
             DropOffDate = BookingState.DropOffDate,
             TotalPrice = BookingState.TotalPrice,
             // Replace with real user ID if authenticated
-            UserId = "demoUser",
+            //UserId = "demoUser",
+            UserId = "1ea3f187-39e7-4100-9162-43714e92388b" // Sarah's UserId 
         };
 
         DbContext.Booking.Add(booking);
         await DbContext.SaveChangesAsync();
 
-        Navigation.NavigateTo("/booking-success");
+        //Navigation.NavigateTo("/booking-success");
+        Navigation.NavigateTo("/");
     }
 }

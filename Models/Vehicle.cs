@@ -44,8 +44,8 @@ namespace CSE325_team.Models
         public int? Mileage { get; set; }
 
         [Required]
-        [RegularExpression("available|rented|reserved|maintenance", ErrorMessage = "Invalid status")]
-        public string Status { get; set; } = "available";
+        [RegularExpression("Available|Rented|Reserved|Maintenance", ErrorMessage = "Invalid status")]
+        public string Status { get; set; } = "Available";
 
         [Range(1, int.MaxValue)]
         public int Capacity { get; set; }

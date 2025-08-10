@@ -1,6 +1,10 @@
 ﻿@page "/auth"
 
 @using Microsoft.AspNetCore.Authorization
+@using CSE325_team.Data
+@using Microsoft.AspNetCore.Identity
+@inject AuthenticationStateProvider AuthStateProvider
+@inject UserManager<ApplicationUser> UserManager
 
 @attribute [Authorize]
 
@@ -9,5 +13,49 @@
 <h1>You are authenticated</h1>
 
 <AuthorizeView>
-    Hello @context.User.Identity?.Name!
+    <Authorized>
+       @if (firstName!=null)
+        {
+            <p>Hello, @firstName!</p>        
+        }
+        else
+        {
+            <p>Hello @context.User.Identity?.Name!</p>
+        }     
+    </Authorized>
 </AuthorizeView>
+<AuthorizeView Roles="Admin, Agent">
+    <Authorized>
+        @if (firstName !=null && userRole != null)
+        {
+            <p>You have @userRole privileges.</p>
+        }
+    </Authorized>
+
+</AuthorizeView>
+
+
+@code {
+    private string? firstName;
+    private string? userRole;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var appUser = await UserManager.GetUserAsync(user);
+            if(appUser!=null)
+            {
+                firstName = appUser.FirstName;
+
+                var roles = await UserManager.GetRolesAsync(appUser);
+                userRole = roles.FirstOrDefault();
+            }
+        }
+    }
+
+
+}
