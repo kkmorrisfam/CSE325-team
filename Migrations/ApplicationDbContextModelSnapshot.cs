@@ -216,31 +216,26 @@ namespace CSE325_team.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("DailyRate")
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FuelType")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImageFileName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LicensePlate")
-                        .HasMaxLength(20)
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Make")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Mileage")
+                    b.Property<int>("Mileage")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("Seats")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -399,7 +394,7 @@ namespace CSE325_team.Migrations
                         .IsRequired();
 
                     b.HasOne("CSE325_team.Models.Vehicle", "Vehicle")
-                        .WithMany("Bookings")
+                        .WithMany()
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -498,11 +493,6 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Models.Booking", b =>
                 {
                     b.Navigation("Payments");
-                });
-
-            modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }

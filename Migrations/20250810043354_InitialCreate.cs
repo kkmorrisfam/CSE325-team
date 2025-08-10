@@ -64,14 +64,12 @@ namespace CSE325_team.Migrations
                     Color = table.Column<string>(type: "TEXT", nullable: false),
                     VehicleType = table.Column<string>(type: "TEXT", nullable: false),
                     Transmission = table.Column<string>(type: "TEXT", nullable: false),
-                    DailyRate = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
-                    ImageFileName = table.Column<string>(type: "TEXT", nullable: true),
-                    FuelType = table.Column<string>(type: "TEXT", nullable: true),
-                    Seats = table.Column<int>(type: "INTEGER", nullable: true),
-                    LicensePlate = table.Column<string>(type: "TEXT", maxLength: 20, nullable: true),
-                    Mileage = table.Column<int>(type: "INTEGER", nullable: true),
+                    FuelType = table.Column<string>(type: "TEXT", nullable: false),
+                    DailyRate = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Capacity = table.Column<int>(type: "INTEGER", nullable: false),
+                    Mileage = table.Column<int>(type: "INTEGER", nullable: false),
                     Status = table.Column<string>(type: "TEXT", nullable: false),
-                    Capacity = table.Column<int>(type: "INTEGER", nullable: false)
+                    ImageFileName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -185,16 +183,41 @@ namespace CSE325_team.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contact",
+                columns: table => new
+                {
+                    ContactId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    AltPhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    StreetLine1 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    StreetLine2 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    City = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    State = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),
+                    PostalCode = table.Column<string>(type: "TEXT", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contact", x => x.ContactId);
+                    table.ForeignKey(
+                        name: "FK_Contact_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Booking",
                 columns: table => new
                 {
                     BookingId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    StartDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     VehicleId = table.Column<int>(type: "INTEGER", nullable: false),
-                    UserId = table.Column<string>(type: "TEXT", nullable: false)
+                    PickupDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DropOffDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -292,6 +315,11 @@ namespace CSE325_team.Migrations
                 column: "VehicleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contact_ApplicationUserId",
+                table: "Contact",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Payment_BookingId",
                 table: "Payment",
                 column: "BookingId");
@@ -319,6 +347,9 @@ namespace CSE325_team.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Contact");
 
             migrationBuilder.DropTable(
                 name: "Payment");
