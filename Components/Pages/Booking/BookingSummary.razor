@@ -7,6 +7,27 @@
 
 @using CSE325_team.Models
 
+@*
+    BookingSummary.razor
+
+    This component displays a summary of the user's booking before final confirmation.
+    - Shows booking details such as vehicle, daily rate, number of days, subtotal, tax, and total price.
+    - Displays pick-up and drop-off dates, customer name, and payment method.
+    - If booking data is missing, prompts the user to start a new booking.
+    - Provides a "Confirm & Book" button to finalize and save the booking.
+    - Handles errors during booking confirmation and displays an error message if needed.
+
+    Key Methods:
+    - ConfirmAndSave: Validates booking data, creates a new booking record in the database, and navigates to the booking success page upon success. Handles and displays errors if the operation fails.
+
+    Parameters/Dependencies:
+    - BookingState: Holds the current booking information.
+    - DbContext: Used to persist the booking to the database.
+    - Navigation: Used to redirect the user after successful booking.
+
+    Usage:
+    Place this component at the end of the booking workflow to allow users to review and confirm their booking.
+*@
 <PageTitle>Booking Summary</PageTitle>
 
 <h2 class="booking-title">Booking Confirmation</h2>

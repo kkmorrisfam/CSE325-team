@@ -7,9 +7,33 @@
 @using CSE325_team.Models
 @using System.ComponentModel.DataAnnotations
 
+@*
+    BookingForm.razor
 
+    This component provides a vehicle booking form for users to select a vehicle, specify rental dates, choose a payment method, and enter their name. It displays a summary of the booking, including vehicle details, rental duration, subtotal, tax, and total price.
 
+    Features:
+    - Fetches available vehicles from the database on initialization.
+    - Allows users to select a vehicle and view its details (type, color, transmission, daily rate, and image).
+    - Validates form fields using data annotations and custom validation for date ranges.
+    - Calculates rental days, subtotal, tax (18%), and total price dynamically.
+    - Disables the submit button until a vehicle is selected and dates are valid.
+    - On successful submission, updates the booking state and navigates to the booking summary page.
 
+    Main Properties and Methods:
+    - vehicles: List of available vehicles loaded from the database.
+    - selectedVehicle: The vehicle currently selected by the user.
+    - formModel: Holds the form data, including vehicle ID, dates, payment method, and customer name.
+    - OnVehicleSelected: Handles vehicle selection and updates the form model.
+    - TotalDays, Subtotal, Tax, Total: Calculated properties for booking summary.
+    - HandleInValidSubmit: Logs invalid form submissions.
+    - ShowSummary: Processes valid submissions, updates booking state, and navigates to the summary page.
+    - BookingFormModel: Form model class with validation attributes and custom date validation.
+
+    Usage:
+    - Place this component on a page to allow users to book a vehicle.
+    - Ensure DbContext, BookingState, and Navigation dependencies are available via dependency injection.
+*@
 <PageTitle>Book a Vehicle</PageTitle>
 
 <h2 class="booking-title">Book Your Vehicle</h2>
