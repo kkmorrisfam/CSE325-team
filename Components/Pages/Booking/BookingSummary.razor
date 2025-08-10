@@ -55,11 +55,19 @@ else
             </div>
             <button class="btn btn-confirm" @onclick="ConfirmAndSave">Confirm & Book</button>
         </div>
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <div class="alert alert-danger">@ErrorMessage</div>
+}
     </div>
 }
 
 @code {
-    private async Task ConfirmAndSave()
+    private string ErrorMessage;
+
+private async Task ConfirmAndSave()
+{
+    try
     {
         var days = (BookingState.DropOffDate - BookingState.PickupDate).Days;
         if (days <= 0) days = 1;
@@ -70,15 +78,17 @@ else
             PickupDate = BookingState.PickupDate,
             DropOffDate = BookingState.DropOffDate,
             TotalPrice = BookingState.TotalPrice,
-            // Replace with real user ID if authenticated
-            //UserId = "demoUser",
-            UserId = "1ea3f187-39e7-4100-9162-43714e92388b" // Sarah's UserId 
+            UserId = "168d3e0a-a571-4155-a109-1c07fb947659"
         };
 
         DbContext.Booking.Add(booking);
         await DbContext.SaveChangesAsync();
 
-        //Navigation.NavigateTo("/booking-success");
-        Navigation.NavigateTo("/");
+        Navigation.NavigateTo("/booking-success");
     }
+    catch (Exception ex)
+    {
+        ErrorMessage = ex.ToString();
+    }
+}
 }
