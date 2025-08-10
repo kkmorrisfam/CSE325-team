@@ -1,0 +1,58 @@
+@page "/admin/vehicles/details/{Id:int}"
+@attribute [Authorize(Roles = "Admin")]
+@inject ApplicationDbContext Db
+@inject NavigationManager Nav
+
+<h3>Vehicle Details (Admin)</h3>
+
+@if (vehicle == null)
+{
+    <p><em>Vehicle not found.</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">Make</dt>
+        <dd class="col-sm-9">@vehicle.Make</dd>
+
+        <dt class="col-sm-3">Model</dt>
+        <dd class="col-sm-9">@vehicle.Model</dd>
+
+        <dt class="col-sm-3">Year</dt>
+        <dd class="col-sm-9">@vehicle.Year</dd>
+
+        <dt class="col-sm-3">Color</dt>
+        <dd class="col-sm-9">@vehicle.Color</dd>
+
+        <dt class="col-sm-3">Type</dt>
+        <dd class="col-sm-9">@vehicle.VehicleType</dd>
+
+        <dt class="col-sm-3">Fuel Type</dt>
+        <dd class="col-sm-9">@vehicle.FuelType</dd>
+
+        <dt class="col-sm-3">Price</dt>
+        <dd class="col-sm-9">@vehicle.DailyRate</dd>
+
+        <dt class="col-sm-3">Seats</dt>
+        <dd class="col-sm-9">@vehicle.Capacity</dd>
+
+        <dt class="col-sm-3">Milage</dt>
+        <dd class="col-sm-9">@vehicle.Mileage</dd>
+
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">@vehicle.Status</dd>
+    </dl>
+
+    <NavLink class="btn btn-secondary" href="/admin/vehicles">Cancel</NavLink>
+
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Vehicle? vehicle;
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicle = await Db.Vehicle.FindAsync(Id);
+    }
+}
