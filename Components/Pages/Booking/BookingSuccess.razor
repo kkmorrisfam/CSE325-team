@@ -1,0 +1,66 @@
+@page "/booking-success"
+
+<div class="thankyou-wrapper">
+    <div class="thankyou-check">
+        <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+            <circle cx="34" cy="34" r="34" fill="#e6f9e7"/>
+            <path d="M20 36.5L30 46L48 28" stroke="#47C363" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h2 class="thankyou-title">Thank you for your booking!</h2>
+    <p class="thankyou-message">
+        Your reservation has been received and confirmed.<br/>
+        We appreciate your trust. You will receive an email with the details shortly.
+    </p>
+    <a href="/" class="thankyou-home btn btn-primary">Back to Home</a>
+</div>
+
+<style>
+.thankyou-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(11,35,100,0.10);
+    padding: 2.5rem 2rem;
+    max-width: 460px;
+    margin: 3rem auto;
+}
+.thankyou-check {
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thankyou-title {
+    color: #1b6ec2;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.thankyou-message {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.07rem;
+}
+.thankyou-home.btn {
+    background: #1b6ec2;
+    color: #fff;
+    padding: 0.7rem 2.1rem;
+    font-size: 1.07rem;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.18s;
+    box-shadow: 0 2px 8px rgba(27,110,194,0.12);
+}
+.thankyou-home.btn:hover, .thankyou-home.btn:focus {
+    background: #0b2364;
+    color: #fff;
+    text-decoration: none;
+}
+</style>

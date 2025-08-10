@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250809224738_InitialCreate")]
+    [Migration("20250810043354_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -96,10 +96,10 @@ namespace CSE325_team.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime>("DropOffDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime>("PickupDate")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("TotalPrice")
@@ -421,7 +421,7 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Models.Payment", b =>
                 {
                     b.HasOne("CSE325_team.Models.Booking", "Booking")
-                        .WithMany()
+                        .WithMany("Payments")
                         .HasForeignKey("BookingId");
 
                     b.HasOne("CSE325_team.Data.ApplicationUser", "User")
@@ -491,6 +491,11 @@ namespace CSE325_team.Migrations
                     b.Navigation("Bookings");
 
                     b.Navigation("Contacts");
+                });
+
+            modelBuilder.Entity("CSE325_team.Models.Booking", b =>
+                {
+                    b.Navigation("Payments");
                 });
 #pragma warning restore 612, 618
         }

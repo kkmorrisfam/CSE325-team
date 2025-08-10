@@ -394,7 +394,7 @@ namespace CSE325_team.Migrations
                         .IsRequired();
 
                     b.HasOne("CSE325_team.Models.Vehicle", "Vehicle")
-                        .WithMany("Bookings")
+                        .WithMany()
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -493,11 +493,6 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Models.Booking", b =>
                 {
                     b.Navigation("Payments");
-                });
-
-            modelBuilder.Entity("CSE325_team.Models.Vehicle", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }
