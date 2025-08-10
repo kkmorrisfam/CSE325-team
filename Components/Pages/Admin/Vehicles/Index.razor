@@ -1,0 +1,62 @@
+@using CSE325_team.Data
+@using CSE325_team.Models
+@using Microsoft.EntityFrameworkCore
+
+@page "/admin/vehicles"
+@attribute [Authorize(Roles = "Admin")]
+@inject NavigationManager Navigation
+@inject ApplicationDbContext Db
+
+<h3>Vehicle Inventory</h3>
+
+<p>
+    <NavLink class="btn btn-primary" href="/admin/vehicles/create">Add Vehicle</NavLink>
+</p>
+
+@if (vehicles is null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!vehicles.Any())
+{
+    <p>No vehicles found.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in vehicles)
+            {
+                <tr>
+                    <td>@v.Make</td>
+                    <td>@v.Model</td>
+                    <td>@v.Year</td>
+                    <td>@v.Status</td>
+                    <td>
+                        <a class="btn btn-sm btn-info" href="@($"/admin/vehicles/details/{v.VehicleId}")">Details</a>
+                        <a class="btn btn-sm btn-warning" href="@($"/admin/vehicles/edit/{v.VehicleId}")">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="@($"/admin/vehicles/delete/{v.VehicleId}")">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Vehicle>? vehicles;
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicles = await Db.Vehicle.OrderBy(v => v.Make).ToListAsync();
+    }
+}
