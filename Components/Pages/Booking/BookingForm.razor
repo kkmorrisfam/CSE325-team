@@ -1,0 +1,215 @@
+@page "/booking"
+@rendermode InteractiveServer
+@inject CSE325_team.Data.ApplicationDbContext DbContext
+@inject NavigationManager Navigation
+@inject CSE325_team.Services.BookingState BookingState
+@using Microsoft.EntityFrameworkCore
+@using CSE325_team.Models
+@using System.ComponentModel.DataAnnotations
+
+
+
+
+<PageTitle>Book a Vehicle</PageTitle>
+
+<h2 class="booking-title">Book Your Vehicle</h2>
+<div class="booking-form-wrapper">
+    <EditForm Model="@formModel" OnValidSubmit="ShowSummary" OnInvalidSubmit="HandleInValidSubmit" FormName="booking-form">  
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-body">
+            <div class="form-group">
+                <label for="vehicleSelect">Vehicle</label>
+                <select class="form-control" id="vehicleSelect" @onchange="OnVehicleSelected" required>
+                    <option value="" disabled selected>Select a vehicle...</option>
+                    @foreach (var v in vehicles)
+                    {
+                        <option value="@v.VehicleId">@($"{v.Make} {v.Model} ({v.Year})")</option>
+                    }
+                </select>
+            </div>
+            @if (selectedVehicle != null)
+            {
+                <div class="vehicle-details">
+                    <div>
+                        <strong>Type:</strong> @selectedVehicle.VehicleType <br />
+                        <strong>Color:</strong> @selectedVehicle.Color <br />
+                        <strong>Transmission:</strong> @selectedVehicle.Transmission <br />
+                        <strong>Daily Rate:</strong> <span class="price">@selectedVehicle.DailyRate.ToString("C")</span>
+                    </div>
+                    @if (!string.IsNullOrEmpty(selectedVehicle.ImageFileName))
+                    {
+                        <img src="images/vehicles/@selectedVehicle.ImageFileName" class="vehicle-image" alt="Vehicle image" />
+                    }
+                </div>
+            }
+            <div class="form-group">
+                <label for="pickupDate">Pick-up Date</label>
+                <InputDate id="pickupDate" class="form-control" @bind-Value="formModel.PickupDate" required />
+            </div>
+            <div class="form-group">
+                <label for="dropOffDate">Drop-off Date</label>
+                <InputDate id="dropOffDate" class="form-control" @bind-Value="formModel.DropOffDate" required />
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select class="form-control" id="paymentMethod" @bind="formModel.PaymentMethod" required>
+                    <option value="" disabled selected>Select a method...</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Cash">Cash</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="customerName">Full Name</label>
+                <InputText id="customerName" class="form-control" @bind-Value="formModel.CustomerName" required />
+            </div>
+        </div>
+
+        <div class="booking-summary">
+            @if (selectedVehicle != null)
+            {
+                <table>
+                    <tr>
+                        <td>Vehicle</td>
+                        <td>@($"{selectedVehicle.Make} {selectedVehicle.Model} ({selectedVehicle.Year})")</td>
+                    </tr>
+                    <tr>
+                        <td>Daily Rate</td>
+                        <td>@selectedVehicle.DailyRate.ToString("C")</td>
+                    </tr>
+                    <tr>
+                        <td>Days</td>
+                        <td>@TotalDays</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>@Subtotal.ToString("C")</td>
+                    </tr>
+                    <tr>
+                        <td>Tax (18%)</td>
+                        <td>@Tax.ToString("C")</td>
+                    </tr>
+                    <tr class="summary-total">
+                        <td><strong>Total</strong></td>
+                        <td><strong>@Total.ToString("C")</strong></td>
+                    </tr>
+                </table>
+            }
+            <button class="btn btn-confirm" type="submit" disabled="@(selectedVehicle == null || !IsValidDates)">Continue</button>
+            @* <button class="btn btn-confirm" type="submit">Continue</button> *@
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    private List<Vehicle> vehicles = new();
+    private Vehicle? selectedVehicle;
+   
+    private BookingFormModel formModel = new()
+    {
+        PickupDate = DateTime.Now,
+        DropOffDate = DateTime.Now.AddDays(1)
+    };
+    private const decimal TaxRate = 0.18M;
+    private bool IsValidDates => formModel.PickupDate < formModel.DropOffDate;
+
+    private bool _initialized = false;
+    protected override async Task OnInitializedAsync()
+    {
+        if (_initialized) return;
+        try
+        {
+            vehicles = await DbContext.Vehicle.OrderBy(v => v.Make).ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading vehicles: {ex.Message}");
+        }
+
+        _initialized = true;
+
+    }
+
+    private void OnVehicleSelected(ChangeEventArgs e)
+    {
+        //Console.WriteLine("**************OnVehicleSelected");
+        var id = Convert.ToInt32(e.Value);
+        selectedVehicle = vehicles.FirstOrDefault(v => v.VehicleId == id);
+        formModel.VehicleId = id;
+    }
+
+    private int TotalDays =>
+        (IsValidDates && selectedVehicle != null)
+            ? Math.Max(1, (formModel.DropOffDate - formModel.PickupDate).Days)
+            : 0;
+
+    private decimal Subtotal =>
+        selectedVehicle == null ? 0 : selectedVehicle.DailyRate * TotalDays;
+
+    private decimal Tax => Math.Round(Subtotal * TaxRate, 2);
+
+    private decimal Total => Subtotal + Tax;
+
+    private void HandleInValidSubmit(EditContext context)
+    {
+        Console.WriteLine($"Form submitted. IsValid={context.Validate()}");
+        Console.WriteLine($"VehicleId={formModel.VehicleId}, PickupDate={formModel.PickupDate}, DropOffDate={formModel.DropOffDate}, PaymentMethod={formModel.PaymentMethod}, CustomerName={formModel.CustomerName}");
+    }
+
+    private void ShowSummary()    
+    {
+        //Console.WriteLine("ShowSummary() to set BookingState");
+        if (selectedVehicle == null || !IsValidDates) 
+        {
+            Console.WriteLine($"Invalid submission: selectedVehicle={selectedVehicle}, IsValidDates={IsValidDates}");
+            return;
+        }
+
+        try 
+        {
+            BookingState.VehicleId = formModel.VehicleId;
+            BookingState.VehicleDisplay = $"{selectedVehicle.Make} {selectedVehicle.Model} ({selectedVehicle.Year})";
+            BookingState.DailyRate = selectedVehicle.DailyRate;
+            BookingState.PickupDate = formModel.PickupDate;
+            BookingState.DropOffDate = formModel.DropOffDate;
+            BookingState.PaymentMethod = formModel.PaymentMethod;
+            BookingState.CustomerName = formModel.CustomerName;
+            BookingState.Subtotal = Subtotal;
+            BookingState.Tax = Tax;
+            BookingState.TotalPrice = Total;
+
+            //Console.WriteLine("Navigating to booking-summary");
+            Navigation.NavigateTo("/booking-summary");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in ShowSummary: {ex.Message}");
+        }
+    }
+
+    public class BookingFormModel
+    {
+        [Required(ErrorMessage = "Please select a vehicle.")]
+        public int VehicleId { get; set; }
+
+        [Required(ErrorMessage = "Please select a pickup date.")]        
+        public DateTime PickupDate { get; set; } = DateTime.Now;
+
+        [Required(ErrorMessage = "Please select a drop-off date.")]
+        [CustomValidation(typeof(BookingFormModel), nameof(ValidateDates))]
+        public DateTime DropOffDate { get; set; } = DateTime.Now.AddDays(1);
+        [Required(ErrorMessage = "Please select a payment method.")]
+        public string PaymentMethod { get; set; } = "";
+        [Required(ErrorMessage = "Please enter your full name.")]
+        public string CustomerName { get; set; } = "";
+
+        public static ValidationResult? ValidateDates(DateTime dropOffDate, ValidationContext context)
+        {
+            var instance = (BookingFormModel)context.ObjectInstance;
+            return instance.PickupDate < dropOffDate
+                ? ValidationResult.Success
+                : new ValidationResult("Drop-off date must be after pickup date.");
+        }
+    }
+}

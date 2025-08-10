@@ -213,11 +213,11 @@ namespace CSE325_team.Migrations
                 {
                     BookingId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    StartDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     VehicleId = table.Column<int>(type: "INTEGER", nullable: false),
-                    UserId = table.Column<string>(type: "TEXT", nullable: false)
+                    PickupDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DropOffDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
                 {
