@@ -3,54 +3,42 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSE325_team.Models
 {
-    /// <summary>
-    /// Represents a vehicle available for rent.
-    /// </summary>
     public class Vehicle
     {
         [Key]
         public int VehicleId { get; set; }
 
-        [Required]
-        public string Make { get; set; } = "";
+        [Required(ErrorMessage = "Make is required")]
+        public string Make { get; set; } = string.Empty;
 
-        [Required]
-        public string Model { get; set; } = "";
+        [Required(ErrorMessage = "Model is required")]
+        public string Model { get; set; } = string.Empty;
 
         public int? Year { get; set; }
 
-        [Required]
-        public string Color { get; set; } = "";
+        [Required(ErrorMessage = "Color is required")]
+        public string Color { get; set; } = string.Empty;
 
-        [Required]
-        public string VehicleType { get; set; } = "";
+        [Required(ErrorMessage = "Vehicle Type is required")]
+        public string VehicleType { get; set; } = string.Empty;
 
-        [Required]
-        public string Transmission { get; set; } = "";
+        [Required(ErrorMessage = "Transmission is required")]
+        public string Transmission { get; set; } = string.Empty;
 
-        [Column(TypeName = "decimal(10,2)")]
-        [Range(0.0, double.MaxValue)]
+        public string FuelType { get; set; } = string.Empty;
+
+        [Range(0.01, 1000, ErrorMessage = "Daily Rate must be positive")]
         public decimal DailyRate { get; set; }
 
-        public string? ImageFileName { get; set; }
-
-        public string? FuelType { get; set; }
-
-        public int? Seats { get; set; }
-
-        [MaxLength(20)]
-        public string? LicensePlate { get; set; }
-
-        public int? Mileage { get; set; }
-
-        [Required]
-        [RegularExpression("Available|Rented|Reserved|Maintenance", ErrorMessage = "Invalid status")]
-        public string Status { get; set; } = "Available";
-
-        [Range(1, int.MaxValue)]
+        [Range(1, 20, ErrorMessage = "Capacity is required")]
         public int Capacity { get; set; }
 
-        // Navigation: Bookings for this vehicle
-        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        public int Mileage { get; set; }
+
+        [Required(ErrorMessage = "Status is required")]
+        public string Status { get; set; } = string.Empty;
+
+        public string ImageFileName { get; set; } = "default.png";
+
     }
 }

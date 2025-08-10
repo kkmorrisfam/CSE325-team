@@ -9,8 +9,9 @@
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
   </PropertyGroup>
 
-  <ItemGroup>
-     <Content Include="Data\app.db">
+  <!-- creates app.db if it has been deleted -->
+  <ItemGroup>  
+  <Content Include="Data\app.db" Condition="Exists('Data\app.db')">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>

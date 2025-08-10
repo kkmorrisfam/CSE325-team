@@ -23,6 +23,14 @@ builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+Console.WriteLine("🔍 Using connection string:");
+Console.WriteLine(connectionString);
+var dataSource = new Microsoft.Data.Sqlite.SqliteConnectionStringBuilder(connectionString).DataSource;
+Console.WriteLine("📁 Absolute path to database file:");
+Console.WriteLine(Path.GetFullPath(dataSource));
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -46,6 +54,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.S
     // .AddSignInManager() //can remove when using AddIdentity
     .AddDefaultTokenProviders();
 
+builder.Services.AddAuthorization(); // Needed for [Authorize] and role policies
+
+
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 builder.Services.AddScoped<BookingState>();
 var app = builder.Build();
@@ -65,6 +76,10 @@ else
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseAuthentication();    // Required for auth
+app.UseAuthorization();     // Required for role policies
+
 app.UseAntiforgery();
 
 // Initialize the database
@@ -91,5 +106,7 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+
+builder.Logging.AddConsole();
 
 app.Run();

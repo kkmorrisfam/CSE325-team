@@ -110,7 +110,7 @@ else
                 (v.Status != null && v.Status.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
                 (v.Year.HasValue && v.Year.Value.ToString().Contains(searchQuery)) ||
                 v.Capacity.ToString().Contains(searchQuery) ||
-                (v.Mileage.HasValue && v.Mileage.Value.ToString().Contains(searchQuery)) ||
+                v.Mileage.ToString().Contains(searchQuery) ||
                 v.DailyRate.ToString("0.00").Contains(searchQuery)
             );
         }

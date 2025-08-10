@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSE325_team.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250730021149_InitialCreate")]
+    [Migration("20250809224738_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -19,6 +19,7 @@ namespace CSE325_team.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
+
             modelBuilder.Entity("CSE325_team.Data.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -120,6 +121,45 @@ namespace CSE325_team.Migrations
                     b.ToTable("Booking");
                 });
 
+            modelBuilder.Entity("CSE325_team.Models.Contact", b =>
+                {
+                    b.Property<int>("ContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("AltPhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("State")
+                        .HasMaxLength(30)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StreetLine1")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StreetLine2")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ContactId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Contact");
+                });
+
             modelBuilder.Entity("CSE325_team.Models.Payment", b =>
                 {
                     b.Property<int>("PaymentId")
@@ -179,31 +219,26 @@ namespace CSE325_team.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("DailyRate")
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FuelType")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImageFileName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LicensePlate")
-                        .HasMaxLength(20)
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Make")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Mileage")
+                    b.Property<int>("Mileage")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("Seats")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -356,7 +391,7 @@ namespace CSE325_team.Migrations
             modelBuilder.Entity("CSE325_team.Models.Booking", b =>
                 {
                     b.HasOne("CSE325_team.Data.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("Bookings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -370,6 +405,17 @@ namespace CSE325_team.Migrations
                     b.Navigation("User");
 
                     b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("CSE325_team.Models.Contact", b =>
+                {
+                    b.HasOne("CSE325_team.Data.ApplicationUser", "ApplicationUser")
+                        .WithMany("Contacts")
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("CSE325_team.Models.Payment", b =>
@@ -438,6 +484,13 @@ namespace CSE325_team.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CSE325_team.Data.ApplicationUser", b =>
+                {
+                    b.Navigation("Bookings");
+
+                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }
