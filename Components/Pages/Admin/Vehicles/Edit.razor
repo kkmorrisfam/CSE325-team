@@ -1,6 +1,10 @@
 @using Microsoft.AspNetCore.Authorization
 @using CSE325_team.Data
 
+
+@rendermode InteractiveServer
+
+
 @page "/admin/vehicles/edit/{Id:int}"
 @attribute [Authorize(Roles = "Admin")]
 @inject ApplicationDbContext Db

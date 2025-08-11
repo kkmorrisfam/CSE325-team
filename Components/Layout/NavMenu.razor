@@ -38,10 +38,18 @@
             </NavLink>
         </div>
 
+        <AuthorizeView Roles="Admin">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="admin/vehicles">
+                    <span class="bi bi-car-front-fill" aria-hidden="true"></span> Manage Vehicles
+                </NavLink>
+            </div>
+        </AuthorizeView>
+
         <AuthorizeView>
             <Authorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="Account/Manage">
+                    <NavLink class="nav-link" href="Account/Manage" Match="NavLinkMatch.Prefix">
                         <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span> @context.User.Identity?.Name
                     </NavLink>
                 </div>
@@ -57,12 +65,12 @@
             </Authorized>
             <NotAuthorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="Account/Register">
+                    <NavLink class="nav-link" href="Account/Register" Match="NavLinkMatch.Prefix">
                         <span class="bi bi-person-nav-menu" aria-hidden="true"></span> Register
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="Account/Login">
+                    <NavLink class="nav-link" href="Account/Login" Match="NavLinkMatch.Prefix">
                         <span class="bi bi-person-badge-nav-menu" aria-hidden="true"></span> Login
                     </NavLink>
                 </div>

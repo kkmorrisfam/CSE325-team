@@ -23,6 +23,12 @@
         <button class='@GetButtonClass("Truck")' @onclick='() => FilterByCategory("Truck")'>🛻 Truck</button>
         <button class='@GetButtonClass("Motorcycle")' @onclick='() => FilterByCategory("Motorcycle")'>🏍 Motorcycle</button>
         <button class='@GetButtonClass("Luxury")' @onclick='() => FilterByCategory("Luxury")'>💎 Luxury</button>
+        @if (!string.IsNullOrWhiteSpace(selectedCategory) || !string.IsNullOrWhiteSpace(searchQuery))
+        {
+            <button class="btn btn-outline-danger btn-sm ms-2" @onclick="ClearFilters">
+                ❌ Clear Filter
+            </button>
+        }
     </div>
 </div>
 
@@ -110,7 +116,7 @@ else
                 (v.Status != null && v.Status.Contains(searchQuery, StringComparison.OrdinalIgnoreCase)) ||
                 (v.Year.HasValue && v.Year.Value.ToString().Contains(searchQuery)) ||
                 v.Capacity.ToString().Contains(searchQuery) ||
-                (v.Mileage.HasValue && v.Mileage.Value.ToString().Contains(searchQuery)) ||
+                v.Mileage.ToString().Contains(searchQuery) ||
                 v.DailyRate.ToString("0.00").Contains(searchQuery)
             );
         }
@@ -121,5 +127,12 @@ else
     private string GetButtonClass(string category)
     {
         return selectedCategory == category ? "btn btn-dark" : "btn btn-outline-dark";
+    }
+
+    private void ClearFilters()
+    {
+        selectedCategory = null;
+        searchQuery = string.Empty;
+        filteredVehicles = vehicles;
     }
 }
