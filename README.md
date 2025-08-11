@@ -16,9 +16,8 @@ It features a vehicle checkout system including CRUD management, role-based acce
 
 ## Project Links
 - **Repository:** [CSE325-team](https://github.com/kkmorrisfam/CSE325-team)
-- **Deployed Site:** _TBD_
+- **Deployed Site:** [https://bookmeteam2-bggfhadrcxa7btc2.westus-01.azurewebsites.net/](https://bookmeteam2-bggfhadrcxa7btc2.westus-01.azurewebsites.net/)
 - **Project Board:** [https://github.com/users/kkmorrisfam/projects/4](https://github.com/users/kkmorrisfam/projects/4)
-- **Demo Video:** _TBD_
 
 ---
 
