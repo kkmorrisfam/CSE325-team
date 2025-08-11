@@ -164,7 +164,7 @@ h1:focus {
 }
 
 section.featured-inventory {
-  padding: 0 !important;
+  padding: 3rem 0;
 }
 
 .featured-inventory .card-img-top {
