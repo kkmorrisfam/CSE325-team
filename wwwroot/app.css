@@ -163,6 +163,20 @@ h1:focus {
     max-height: 600px;
 }
 
+section.featured-inventory {
+  padding: 3rem 0;
+}
+
+.featured-inventory .card-img-top {
+  height: 220px;
+  object-fit: contain;
+}
+
+.btn-brand { background:#0B2364; color:#fff; border:none; }
+.btn-brand:hover { background:#0a1f58; color:#fff; }
+.badge { font-size: .9rem; }
+
+
 
 @media (max-width: 768px) {
     .hero-text {
