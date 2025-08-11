@@ -23,6 +23,12 @@
         <button class='@GetButtonClass("Truck")' @onclick='() => FilterByCategory("Truck")'>🛻 Truck</button>
         <button class='@GetButtonClass("Motorcycle")' @onclick='() => FilterByCategory("Motorcycle")'>🏍 Motorcycle</button>
         <button class='@GetButtonClass("Luxury")' @onclick='() => FilterByCategory("Luxury")'>💎 Luxury</button>
+        @if (!string.IsNullOrWhiteSpace(selectedCategory) || !string.IsNullOrWhiteSpace(searchQuery))
+        {
+            <button class="btn btn-outline-danger btn-sm ms-2" @onclick="ClearFilters">
+                ❌ Clear Filter
+            </button>
+        }
     </div>
 </div>
 
@@ -47,7 +53,7 @@ else
                     </div>
                     <div class="card-footer bg-transparent border-0">
                         <div class="d-flex justify-content-between">
-                            <NavLink class="btn btn-primary btn-sm" href="/bookings/form">Book Now</NavLink>
+                            <NavLink class="btn btn-primary btn-sm" href="/bookings">Book Now</NavLink>
                             <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{vehicle.VehicleId}")">Details</NavLink>
                         </div>
                     </div>
@@ -121,5 +127,12 @@ else
     private string GetButtonClass(string category)
     {
         return selectedCategory == category ? "btn btn-dark" : "btn btn-outline-dark";
+    }
+
+    private void ClearFilters()
+    {
+        selectedCategory = null;
+        searchQuery = string.Empty;
+        filteredVehicles = vehicles;
     }
 }

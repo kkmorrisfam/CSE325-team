@@ -18,7 +18,7 @@
 </div>
 
 <!-- Getting Started Steps -->
-<section class="how-it-works">
+@* <section class="how-it-works">
     <h2>Getting Started is Easy</h2>
     <div class="steps">
         <div class="step">
@@ -42,32 +42,39 @@
             <p>Pick up your car and hit the road. That’s it.</p>
         </div>
     </div>
-</section>
+</section> *@
 
 <!-- Featured Inventory -->
-<section class="featured-inventory py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Featured Vehicles</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            @foreach (var vehicle in featuredVehicles)
-            {
-                <div class="col">
-                    <div class="card h-100 text-center">
-                        <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleId}")">
-                            <img src="images/vehicles/@vehicle.ImageFileName" class="card-img-top" alt="@vehicle.Model" />
-                        </NavLink>
-                        <div class="card-body">
-                            <h5 class="card-title">@vehicle.Make @vehicle.Model</h5>
-                            <p class="card-text">@($"{vehicle.Color}, {vehicle.VehicleType}, ${vehicle.DailyRate}/day")</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 text-end">
-                            <NavLink class="btn btn-outline-primary btn-sm" href="@($"/vehicle/{vehicle.VehicleId}")">View Details</NavLink>
-                        </div>
-                    </div>
-                </div>
-            }
+<section class="featured-inventory">
+  <div class="container-fluid px-0">
+    <h2 class="text-center mb-4">Featured Vehicles</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      @foreach (var vehicle in featuredVehicles)
+      {
+        <div class="col">
+          <div class="card h-100 shadow rounded-3 border-0">
+            <NavLink class="text-decoration-none" href="@($"/vehicle/{vehicle.VehicleId}")">
+              <img src="images/vehicles/@vehicle.ImageFileName" 
+                   class="card-img-top feat-img" 
+                   alt="@vehicle.Model" />
+            </NavLink>
+            <div class="card-body">
+              <h5 class="card-title">@vehicle.Make @vehicle.Model</h5>
+              <p class="card-text">@vehicle.VehicleType • @vehicle.Color</p>
+              <p class="card-text fw-bold">$@vehicle.DailyRate/day</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between">
+                <NavLink class="btn btn-primary btn-sm" href="/bookings">Book Now</NavLink>
+                <NavLink class="btn btn-outline-secondary btn-sm" href="@($"/vehicle/{vehicle.VehicleId}")">Details</NavLink>
+              </div>
+            </div>
+          </div>
         </div>
+      }
     </div>
+  </div>
 </section>
 
 
