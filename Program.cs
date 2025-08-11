@@ -82,6 +82,8 @@ app.UseAuthorization();     // Required for role policies
 
 app.UseAntiforgery();
 
+app.UseStatusCodePagesWithRedirects("/404");
+
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using (var scope = scopeFactory.CreateScope())
