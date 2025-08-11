@@ -1,46 +1,75 @@
-@page "/booking"
-@rendermode InteractiveServer
-@inject CSE325_team.Data.ApplicationDbContext DbContext
-@inject NavigationManager Navigation
-@inject CSE325_team.Services.BookingState BookingState
-@using Microsoft.EntityFrameworkCore
-@using CSE325_team.Models
-@using System.ComponentModel.DataAnnotations
-
 @*
     BookingForm.razor
 
-    This component provides a vehicle booking form for users to select a vehicle, specify rental dates, choose a payment method, and enter their name. It displays a summary of the booking, including vehicle details, rental duration, subtotal, tax, and total price.
+    This component provides a vehicle booking form and displays the user's booking history with inline editing capabilities.
 
     Features:
-    - Fetches available vehicles from the database on initialization.
-    - Allows users to select a vehicle and view its details (type, color, transmission, daily rate, and image).
-    - Validates form fields using data annotations and custom validation for date ranges.
-    - Calculates rental days, subtotal, tax (18%), and total price dynamically.
-    - Disables the submit button until a vehicle is selected and dates are valid.
-    - On successful submission, updates the booking state and navigates to the booking summary page.
+    - Vehicle selection with details preview (type, color, transmission, daily rate, image).
+    - Date pickers for pick-up and drop-off dates with validation (drop-off must be after pick-up).
+    - Payment method and customer name input.
+    - Real-time booking summary calculation (subtotal, tax, total).
+    - Form submission navigates to a booking summary page using BookingState service.
+    - Displays user's booking history with options to edit or delete bookings inline.
+    - Inline editing supports vehicle, dates, and total price updates with validation.
+    - Success messages and error handling for booking updates and deletions.
+    - Uses dependency injection for DbContext, NavigationManager, JSRuntime, BookingState, and AuthenticationStateProvider.
+    - Loads vehicles and user bookings on initialization, only for authenticated users.
 
-    Main Properties and Methods:
+    Main Parameters/Fields:
     - vehicles: List of available vehicles loaded from the database.
-    - selectedVehicle: The vehicle currently selected by the user.
-    - formModel: Holds the form data, including vehicle ID, dates, payment method, and customer name.
-    - OnVehicleSelected: Handles vehicle selection and updates the form model.
-    - TotalDays, Subtotal, Tax, Total: Calculated properties for booking summary.
-    - HandleInValidSubmit: Logs invalid form submissions.
-    - ShowSummary: Processes valid submissions, updates booking state, and navigates to the summary page.
-    - BookingFormModel: Form model class with validation attributes and custom date validation.
+    - selectedVehicle: The vehicle currently selected in the form.
+    - formModel: Model for the booking form, includes validation.
+    - userBookings: List of bookings for the current user.
+    - editingBookingId: Tracks which booking is being edited inline.
+    - successMessage: Displays feedback after successful operations.
+    - currentUserId: The authenticated user's ID.
+
+    Methods:
+    - OnInitializedAsync: Loads vehicles and user bookings.
+    - LoadUserBookings: Loads bookings for the current user.
+    - OnVehicleSelected: Handles vehicle selection changes.
+    - ShowSummary: Stores booking details and navigates to summary.
+    - StartEdit, CancelEdit: Manage inline editing state.
+    - SaveBooking: Persists booking changes with validation.
+    - ConfirmDelete: Deletes a booking after confirmation.
+    - HandleInValidSubmit: Handles invalid form submissions.
+
+    Validation:
+    - Ensures drop-off date is after pick-up date.
+    - Requires all form fields to be filled.
+
+    UI:
+    - Responsive form and booking history table.
+    - Inline editing with save/cancel actions.
+    - Success toast notifications.
 
     Usage:
-    - Place this component on a page to allow users to book a vehicle.
-    - Ensure DbContext, BookingState, and Navigation dependencies are available via dependency injection.
+    - Place this component at the "/booking" route.
+    - Requires authentication to view and manage booking history.
 *@
+@page "/booking"
+@rendermode InteractiveServer
+
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.Authorization
+@using CSE325_team.Models
+
+@inject CSE325_team.Data.ApplicationDbContext DbContext
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject CSE325_team.Services.BookingState BookingState
+@inject AuthenticationStateProvider AuthStateProvider
+
 <PageTitle>Book a Vehicle</PageTitle>
 
 <h2 class="booking-title">Book Your Vehicle</h2>
+
 <div class="booking-form-wrapper">
-    <EditForm Model="@formModel" OnValidSubmit="ShowSummary" OnInvalidSubmit="HandleInValidSubmit" FormName="booking-form">  
+    <EditForm Model="@formModel" OnValidSubmit="ShowSummary" OnInvalidSubmit="HandleInValidSubmit" FormName="booking-form">
         <DataAnnotationsValidator />
         <ValidationSummary />
+
         <div class="form-body">
             <div class="form-group">
                 <label for="vehicleSelect">Vehicle</label>
@@ -51,7 +80,9 @@
                         <option value="@v.VehicleId">@($"{v.Make} {v.Model} ({v.Year})")</option>
                     }
                 </select>
+                <ValidationMessage For="@(() => formModel.VehicleId)" />
             </div>
+
             @if (selectedVehicle != null)
             {
                 <div class="vehicle-details">
@@ -67,14 +98,19 @@
                     }
                 </div>
             }
+
             <div class="form-group">
                 <label for="pickupDate">Pick-up Date</label>
                 <InputDate id="pickupDate" class="form-control" @bind-Value="formModel.PickupDate" required />
+                <ValidationMessage For="@(() => formModel.PickupDate)" />
             </div>
+
             <div class="form-group">
                 <label for="dropOffDate">Drop-off Date</label>
                 <InputDate id="dropOffDate" class="form-control" @bind-Value="formModel.DropOffDate" required />
+                <ValidationMessage For="@(() => formModel.DropOffDate)" />
             </div>
+
             <div class="form-group">
                 <label for="paymentMethod">Payment Method</label>
                 <select class="form-control" id="paymentMethod" @bind="formModel.PaymentMethod" required>
@@ -83,10 +119,13 @@
                     <option value="Debit">Debit</option>
                     <option value="Cash">Cash</option>
                 </select>
+                <ValidationMessage For="@(() => formModel.PaymentMethod)" />
             </div>
+
             <div class="form-group">
                 <label for="customerName">Full Name</label>
                 <InputText id="customerName" class="form-control" @bind-Value="formModel.CustomerName" required />
+                <ValidationMessage For="@(() => formModel.CustomerName)" />
             </div>
         </div>
 
@@ -121,44 +160,223 @@
                 </table>
             }
             <button class="btn btn-confirm" type="submit" disabled="@(selectedVehicle == null || !IsValidDates)">Continue</button>
-            @* <button class="btn btn-confirm" type="submit">Continue</button> *@
         </div>
     </EditForm>
 </div>
 
+<!-- Booking History Section with inline editing -->
+<div class="mt-5">
+    <h3 class="text-lg font-semibold mb-3">Booking History</h3>
+
+    @if (isLoadingHistory)
+    {
+        <p>Loading your reservations...</p>
+    }
+    else if (userBookings.Any())
+    {
+        <div class="overflow-x-auto shadow-md rounded-lg">
+            <table class="table-auto w-full text-left border-collapse">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="px-4 py-2">Vehicle</th>
+                        <th class="px-4 py-2">Pickup</th>
+                        <th class="px-4 py-2">Drop-off</th>
+                        <th class="px-4 py-2">Total</th>
+                        <th class="px-4 py-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var booking in userBookings)
+                    {
+                        var isEditing = editingBookingId == booking.BookingId;
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-2">
+                                @if (isEditing)
+                                {
+                                    <!-- vehicle select: bind value then recalc -->
+                                    <select class="form-select rounded border border-gray-300 px-2 py-1"
+                                            @bind="booking.VehicleId"
+                                            @bind:event="onchange"
+                                            @bind:after="async () => await OnEditVehicleChanged(booking)">
+                                        @foreach (var v in vehicles)
+                                        {
+                                            <option value="@v.VehicleId">@($"{v.Make} {v.Model} ({v.Year})")</option>
+                                        }
+                                    </select>
+                                }
+                                else
+                                {
+                                    @booking.Vehicle?.Make @booking.Vehicle?.Model
+                                }
+                            </td>
+
+                            <td class="px-4 py-2">
+                                @if (isEditing)
+                                {
+                                    <InputDate class="form-control rounded border border-gray-300 px-2 py-1"
+                                               @bind-Value="booking.PickupDate"
+                                               @onchange="async (e) => await OnEditDateChanged(booking)" />
+                                }
+                                else
+                                {
+                                    @booking.PickupDate.ToShortDateString()
+                                }
+                            </td>
+
+                            <td class="px-4 py-2">
+                                @if (isEditing)
+                                {
+                                    <InputDate class="form-control rounded border border-gray-300 px-2 py-1"
+                                               @bind-Value="booking.DropOffDate"
+                                               @onchange="async (e) => await OnEditDateChanged(booking)" />
+                                }
+                                else
+                                {
+                                    @booking.DropOffDate.ToShortDateString()
+                                }
+                            </td>
+
+                            <td class="px-4 py-2 font-semibold">
+                                @if (isEditing)
+                                {
+                                    <!-- read-only, recalculated price -->
+                                    @booking.TotalPrice.ToString("C")
+                                }
+                                else
+                                {
+                                    @booking.TotalPrice.ToString("C")
+                                }
+                            </td>
+
+                            <td class="px-4 py-2">
+                                @if (isEditing)
+                                {
+                                    <button class="btn btn-sm btn-success me-2" @onclick="() => SaveBooking(booking)">Save</button>
+                                    <button class="btn btn-sm btn-secondary" @onclick="CancelEdit">Cancel</button>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-sm btn-warning me-2" 
+        style="background-color: #0b2364; color: #fff; border: none;" @onclick="() => StartEdit(booking.BookingId)">Edit</button>
+                                    <button class="btn btn-sm btn-danger" @onclick="() => ConfirmDelete(booking.BookingId)">Delete</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="text-center text-gray-500 mt-5">
+            <i class="bi bi-calendar-x" style="font-size:2rem;"></i>
+            <p class="mt-2">No reservations found</p>
+        </div>
+    }
+</div>
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="toast toast-success fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow">
+        @successMessage
+    </div>
+}
+
 @code {
+    // ---------- Form state ----------
+    private BookingFormModel formModel = new BookingFormModel
+    {
+        PickupDate = DateTime.Today,
+        DropOffDate = DateTime.Today.AddDays(1)
+    };
+
     private List<Vehicle> vehicles = new();
     private Vehicle? selectedVehicle;
-   
-    private BookingFormModel formModel = new()
-    {
-        PickupDate = DateTime.Now,
-        DropOffDate = DateTime.Now.AddDays(1)
-    };
     private const decimal TaxRate = 0.18M;
     private bool IsValidDates => formModel.PickupDate < formModel.DropOffDate;
 
+    // ---------- Booking history ----------
+    private List<Booking> userBookings = new();
+    private bool isLoadingHistory = true;
+    private string? currentUserId;
+
+    // inline editing
+    private int? editingBookingId = null;
+    private string successMessage = "";
     private bool _initialized = false;
+
+    // ---------- Initialization ----------
     protected override async Task OnInitializedAsync()
     {
         if (_initialized) return;
+
         try
         {
+            // Load vehicles (all). If you prefer only available, adjust filter and ensure it includes current booked vehicles.
             vehicles = await DbContext.Vehicle.OrderBy(v => v.Make).ToListAsync();
+
+            // get authenticated user id (if any)
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+            if (user.Identity?.IsAuthenticated ?? false)
+            {
+                currentUserId = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                await LoadUserBookings();
+            }
+            else
+            {
+                // no authenticated user: show empty booking history
+                userBookings = new List<Booking>();
+                isLoadingHistory = false;
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error loading vehicles: {ex.Message}");
+            Console.WriteLine($"Error loading initial data: {ex.Message}");
+            isLoadingHistory = false;
         }
-
-        _initialized = true;
-
+        finally
+        {
+            _initialized = true;
+        }
     }
 
+    private async Task LoadUserBookings()
+    {
+        isLoadingHistory = true;
+        try
+        {
+            if (!string.IsNullOrEmpty(currentUserId))
+            {
+                userBookings = await DbContext.Booking
+                    .Include(b => b.Vehicle)
+                    .Where(b => b.UserId == currentUserId)
+                    .OrderByDescending(b => b.PickupDate)
+                    .ToListAsync();
+            }
+            else
+            {
+                userBookings = new List<Booking>();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading bookings: {ex.Message}");
+        }
+        finally
+        {
+            isLoadingHistory = false;
+        }
+    }
+
+    // ---------- Form helpers (main booking form) ----------
     private void OnVehicleSelected(ChangeEventArgs e)
     {
-        //Console.WriteLine("**************OnVehicleSelected");
-        var id = Convert.ToInt32(e.Value);
+        if (e?.Value == null) return;
+        if (!int.TryParse(e.Value.ToString(), out var id)) return;
+
         selectedVehicle = vehicles.FirstOrDefault(v => v.VehicleId == id);
         formModel.VehicleId = id;
     }
@@ -168,72 +386,202 @@
             ? Math.Max(1, (formModel.DropOffDate - formModel.PickupDate).Days)
             : 0;
 
-    private decimal Subtotal =>
-        selectedVehicle == null ? 0 : selectedVehicle.DailyRate * TotalDays;
-
+    private decimal Subtotal => selectedVehicle == null ? 0 : selectedVehicle.DailyRate * TotalDays;
     private decimal Tax => Math.Round(Subtotal * TaxRate, 2);
-
     private decimal Total => Subtotal + Tax;
 
     private void HandleInValidSubmit(EditContext context)
     {
         Console.WriteLine($"Form submitted. IsValid={context.Validate()}");
-        Console.WriteLine($"VehicleId={formModel.VehicleId}, PickupDate={formModel.PickupDate}, DropOffDate={formModel.DropOffDate}, PaymentMethod={formModel.PaymentMethod}, CustomerName={formModel.CustomerName}");
     }
 
-    private void ShowSummary()    
+    private void ShowSummary()
     {
-        //Console.WriteLine("ShowSummary() to set BookingState");
-        if (selectedVehicle == null || !IsValidDates) 
+        if (selectedVehicle == null || !IsValidDates || formModel.VehicleId == null) return;
+
+        BookingState.VehicleId = formModel.VehicleId.Value;
+        BookingState.VehicleDisplay = $"{selectedVehicle.Make} {selectedVehicle.Model} ({selectedVehicle.Year})";
+        BookingState.DailyRate = selectedVehicle.DailyRate;
+        BookingState.PickupDate = formModel.PickupDate;
+        BookingState.DropOffDate = formModel.DropOffDate;
+        BookingState.PaymentMethod = formModel.PaymentMethod;
+        BookingState.CustomerName = formModel.CustomerName;
+        BookingState.Subtotal = Subtotal;
+        BookingState.Tax = Tax;
+        BookingState.TotalPrice = Total;
+
+        Navigation.NavigateTo("/booking-summary");
+    }
+
+    // ---------- Inline editing ----------
+
+    private void StartEdit(int bookingId)
+    {
+        // switch to edit mode for this booking, cancelling any previous edit
+        editingBookingId = bookingId;
+        successMessage = "";
+    }
+
+    private void CancelEdit()
+    {
+        editingBookingId = null;
+        successMessage = "";
+        // reload to discard un-saved changes
+        _ = LoadUserBookings();
+    }
+
+    private async Task OnEditVehicleChanged(Booking booking)
+    {
+        // called after booking.VehicleId is updated via bind
+        // recalc price
+        var v = vehicles.FirstOrDefault(x => x.VehicleId == booking.VehicleId);
+        booking.TotalPrice = v != null ? v.DailyRate * CalculateDays(booking.PickupDate, booking.DropOffDate) : booking.TotalPrice;
+        StateHasChanged();
+    }
+
+    private async Task OnEditDateChanged(Booking booking)
+    {
+        // recalc price when dates change
+        var v = vehicles.FirstOrDefault(x => x.VehicleId == booking.VehicleId);
+        booking.TotalPrice = v != null ? v.DailyRate * CalculateDays(booking.PickupDate, booking.DropOffDate) : booking.TotalPrice;
+        StateHasChanged();
+    }
+
+    private int CalculateDays(DateTime from, DateTime to)
+    {
+        var days = (to - from).Days;
+        return days > 0 ? days : 1;
+    }
+
+    private async Task SaveBooking(Booking booking)
+    {
+        // ensure user owns booking (safety)
+        if (booking.UserId != currentUserId)
         {
-            Console.WriteLine($"Invalid submission: selectedVehicle={selectedVehicle}, IsValidDates={IsValidDates}");
+            await JS.InvokeVoidAsync("alert", "You are not authorized to edit this booking.");
             return;
         }
 
-        try 
+        if (booking.DropOffDate <= booking.PickupDate)
         {
-            BookingState.VehicleId = formModel.VehicleId;
-            BookingState.VehicleDisplay = $"{selectedVehicle.Make} {selectedVehicle.Model} ({selectedVehicle.Year})";
-            BookingState.DailyRate = selectedVehicle.DailyRate;
-            BookingState.PickupDate = formModel.PickupDate;
-            BookingState.DropOffDate = formModel.DropOffDate;
-            BookingState.PaymentMethod = formModel.PaymentMethod;
-            BookingState.CustomerName = formModel.CustomerName;
-            BookingState.Subtotal = Subtotal;
-            BookingState.Tax = Tax;
-            BookingState.TotalPrice = Total;
+            await JS.InvokeVoidAsync("alert", "Drop-off date must be after pick-up date.");
+            return;
+        }
 
-            //Console.WriteLine("Navigating to booking-summary");
-            Navigation.NavigateTo("/booking-summary");
+        try
+        {
+            // Recalculate to be safe (server-of-truth)
+            var vehicle = await DbContext.Vehicle.FirstOrDefaultAsync(v => v.VehicleId == booking.VehicleId);
+            var days = CalculateDays(booking.PickupDate, booking.DropOffDate);
+            var newPrice = vehicle != null ? vehicle.DailyRate * days : booking.TotalPrice;
+
+            // fetch tracked entity and update fields explicitly
+            var entity = await DbContext.Booking.FindAsync(booking.BookingId);
+            if (entity == null)
+            {
+                await JS.InvokeVoidAsync("alert", "Booking not found.");
+                return;
+            }
+
+            if (entity.UserId != currentUserId)
+            {
+                await JS.InvokeVoidAsync("alert", "You are not authorized to edit this booking.");
+                return;
+            }
+
+            entity.VehicleId = booking.VehicleId;
+            entity.PickupDate = booking.PickupDate;
+            entity.DropOffDate = booking.DropOffDate;
+            entity.TotalPrice = newPrice;
+
+            await DbContext.SaveChangesAsync();
+
+            editingBookingId = null;
+            await LoadUserBookings();
+
+            successMessage = "Booking updated successfully!";
+            StateHasChanged();
+
+            // auto-hide success message after 3s
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(3000);
+                successMessage = "";
+                StateHasChanged();
+            });
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in ShowSummary: {ex.Message}");
+            Console.WriteLine($"Error saving booking: {ex}");
+            await JS.InvokeVoidAsync("alert", $"Error updating booking: {ex.Message}");
         }
     }
 
+    private async Task ConfirmDelete(int bookingId)
+    {
+        // confirm
+        var confirmed = await JS.InvokeAsync<bool>("confirm", "Are you sure you want to delete this booking?");
+        if (!confirmed) return;
+
+        try
+        {
+            var entity = await DbContext.Booking.FindAsync(bookingId);
+            if (entity == null)
+            {
+                await JS.InvokeVoidAsync("alert", "Booking not found.");
+                return;
+            }
+            if (entity.UserId != currentUserId)
+            {
+                await JS.InvokeVoidAsync("alert", "You are not authorized to delete this booking.");
+                return;
+            }
+
+            DbContext.Booking.Remove(entity);
+            await DbContext.SaveChangesAsync();
+
+            await LoadUserBookings();
+            successMessage = "Booking deleted.";
+            StateHasChanged();
+
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(3000);
+                successMessage = "";
+                StateHasChanged();
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting booking: {ex}");
+            await JS.InvokeVoidAsync("alert", $"Error deleting booking: {ex.Message}");
+        }
+    }
+
+    // ---------- Form model ----------
     public class BookingFormModel
     {
+        // vehicle id is nullable to allow validation for "not selected"
         [Required(ErrorMessage = "Please select a vehicle.")]
-        public int VehicleId { get; set; }
+        public int? VehicleId { get; set; }
 
-        [Required(ErrorMessage = "Please select a pickup date.")]        
-        public DateTime PickupDate { get; set; } = DateTime.Now;
+        [Required(ErrorMessage = "Please select a pickup date.")]
+        public DateTime PickupDate { get; set; } = DateTime.Today;
 
         [Required(ErrorMessage = "Please select a drop-off date.")]
         [CustomValidation(typeof(BookingFormModel), nameof(ValidateDates))]
-        public DateTime DropOffDate { get; set; } = DateTime.Now.AddDays(1);
-        [Required(ErrorMessage = "Please select a payment method.")]
+        public DateTime DropOffDate { get; set; } = DateTime.Today.AddDays(1);
+
+        [Required(ErrorMessage = "Please choose a payment method.")]
         public string PaymentMethod { get; set; } = "";
+
         [Required(ErrorMessage = "Please enter your full name.")]
         public string CustomerName { get; set; } = "";
 
         public static ValidationResult? ValidateDates(DateTime dropOffDate, ValidationContext context)
         {
             var instance = (BookingFormModel)context.ObjectInstance;
-            return instance.PickupDate < dropOffDate
-                ? ValidationResult.Success
-                : new ValidationResult("Drop-off date must be after pickup date.");
+            return instance.PickupDate < dropOffDate ? ValidationResult.Success : new ValidationResult("Drop-off date must be after pickup date.");
         }
     }
 }

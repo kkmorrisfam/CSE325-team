@@ -133,3 +133,6 @@ fieldset:disabled .btn {
   pointer-events: auto !important;
   opacity: 1 !important;
 }
+button {
+  border: none;
+}
