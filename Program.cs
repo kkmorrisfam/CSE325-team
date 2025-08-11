@@ -46,6 +46,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //         options.UseSqlServer(connectionString)); // for Azure SQL
 // }
 
+// builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
+//     options.UseSqlite(connectionString));
+
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -59,6 +62,14 @@ builder.Services.AddAuthorization(); // Needed for [Authorize] and role policies
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 builder.Services.AddScoped<BookingState>();
+
+// This is temporary to find an error
+builder.Host.UseDefaultServiceProvider(options =>
+{
+    options.ValidateOnBuild = true;
+    options.ValidateScopes = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -81,6 +92,8 @@ app.UseAuthentication();    // Required for auth
 app.UseAuthorization();     // Required for role policies
 
 app.UseAntiforgery();
+
+app.UseStatusCodePagesWithRedirects("/404");
 
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
