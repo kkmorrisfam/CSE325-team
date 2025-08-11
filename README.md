@@ -1,4 +1,5 @@
-# CSE325 Team Project 
+# CSE325 Team Project
+
 
 # BookMe – A Car Rental Booking Platform
 
@@ -183,4 +184,4 @@ Run application: dotnet watch run
 
 
 ## Accessibility & Performance
- -	Lighthouse scores:
+

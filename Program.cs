@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using CSE325_team.Components;
 using CSE325_team.Components.Account;
 using CSE325_team.Data;
+using CSE325_team.Services;
+// Add the correct namespace for BookingState if it exists in your project
+// Example: using CSE325_team.State; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,14 @@ builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+Console.WriteLine("🔍 Using connection string:");
+Console.WriteLine(connectionString);
+var dataSource = new Microsoft.Data.Sqlite.SqliteConnectionStringBuilder(connectionString).DataSource;
+Console.WriteLine("📁 Absolute path to database file:");
+Console.WriteLine(Path.GetFullPath(dataSource));
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -35,6 +46,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //         options.UseSqlServer(connectionString)); // for Azure SQL
 // }
 
+// builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
+//     options.UseSqlite(connectionString));
+
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -43,7 +57,18 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.S
     // .AddSignInManager() //can remove when using AddIdentity
     .AddDefaultTokenProviders();
 
+builder.Services.AddAuthorization(); // Needed for [Authorize] and role policies
+
+
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+builder.Services.AddScoped<BookingState>();
+
+// This is temporary to find an error
+builder.Host.UseDefaultServiceProvider(options =>
+{
+    options.ValidateOnBuild = true;
+    options.ValidateScopes = true;
+});
 
 var app = builder.Build();
 
@@ -62,7 +87,13 @@ else
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseAuthentication();    // Required for auth
+app.UseAuthorization();     // Required for role policies
+
 app.UseAntiforgery();
+
+app.UseStatusCodePagesWithRedirects("/404");
 
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
@@ -88,5 +119,7 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+
+builder.Logging.AddConsole();
 
 app.Run();

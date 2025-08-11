@@ -1,5 +1,5 @@
 ﻿
-@page "/bookings"
+@page "/bookings-admin"
 @using CSE325_team.Models
 @inject HttpClient Http
 @using CSE325_team.Data
@@ -89,8 +89,8 @@ else
                     <td>@booking.Vehicle?.Color</td>
                     <td>@booking.Vehicle?.Capacity</td>
                     <td>@booking.Vehicle?.DailyRate.ToString("C")</td>
-                    <td>@booking.StartDate.ToShortDateString()</td>
-                    <td>@booking.EndDate.ToShortDateString()</td>
+                    <td>@booking.PickupDate.ToShortDateString()</td>
+                    <td>@booking.DropOffDate.ToShortDateString()</td>
                     <td>@booking.TotalPrice.ToString("C")</td>
                     <td>
                         <button class="btn btn-sm btn-warning me-2">Edit</button>
@@ -109,7 +109,7 @@ else
     private DateTime DropOffDate = DateTime.Today.AddDays(1);
     private List<Vehicle> AvailableVehicles = new();
     private Vehicle? SelectedVehicle;
-    private List<Booking> bookings = new();
+    private List<CSE325_team.Models.Booking> bookings = new();
 
     private bool IsVehicleSelected => SelectedVehicle != null;
     private int BookingDays => (DropOffDate - PickUpDate).Days <= 0 ? 1 : (DropOffDate - PickUpDate).Days;
@@ -134,16 +134,16 @@ else
             }
         };
 
-        bookings = new List<Booking>
+        bookings = new List<CSE325_team.Models.Booking>
         {
-            new Booking
+            new CSE325_team.Models.Booking
             {
                 BookingId = 1,
                 UserId = "Client01",
                 User = new ApplicationUser { Id = "Client01", Email = "client01@example.com" },
                 Vehicle = AvailableVehicles[0],
-                StartDate = DateTime.Today,
-                EndDate = DateTime.Today.AddDays(3),
+                DropOffDate = DateTime.Today,
+                PickupDate = DateTime.Today.AddDays(3),
                 TotalPrice = 135.00m
             }
         };

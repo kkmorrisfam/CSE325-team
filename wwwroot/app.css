@@ -153,6 +153,30 @@ h1:focus {
     color: #444;
 }
 
+.notfound-code {
+    font-size: 7rem;
+    font-weight: 800;
+}
+
+.notfound-image {
+    max-width: 80%;
+    max-height: 600px;
+}
+
+section.featured-inventory {
+  padding: 3rem 0;
+}
+
+.featured-inventory .card-img-top {
+  height: 220px;
+  object-fit: contain;
+}
+
+.btn-brand { background:#0B2364; color:#fff; border:none; }
+.btn-brand:hover { background:#0a1f58; color:#fff; }
+.badge { font-size: .9rem; }
+
+
 
 @media (max-width: 768px) {
     .hero-text {
@@ -175,5 +199,14 @@ h1:focus {
     .hero-text .btn {
         width: 100%;
         font-size: 1rem;
+    }
+
+    .notfound-code {
+        font-size: 5rem; /* Slightly smaller on mobile */
+    }
+
+    .notfound-image {
+        max-width: 90%;
+        max-height: 400px;
     }
 }

@@ -1,0 +1,113 @@
+@page "/booking-summary"
+@rendermode InteractiveServer
+@inject CSE325_team.Data.ApplicationDbContext DbContext
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using System.Security.Claims
+@inject NavigationManager Navigation
+@inject CSE325_team.Services.BookingState BookingState
+@inject UserManager<ApplicationUser> UserManager
+@inject AuthenticationStateProvider AuthStateProvider
+
+@using CSE325_team.Models
+@using Microsoft.AspNetCore.Components.Authorization
+
+<PageTitle>Booking Summary</PageTitle>
+
+<h2 class="booking-title">Booking Confirmation</h2>
+@if (string.IsNullOrEmpty(BookingState.CustomerName) || BookingState.VehicleId == 0)
+{
+    <div class="alert alert-warning">
+        No booking data found. Please <a href="/booking">start a new booking</a>.
+    </div>
+}
+else
+{
+    <div class="booking-form-wrapper">
+        <div class="booking-summary">
+            <h4>Booking Details</h4>
+            <table>
+                <tr>
+                    <td>Vehicle</td>
+                    <td>@BookingState.VehicleDisplay</td>
+                </tr>
+                <tr>
+                    <td>Daily Rate</td>
+                    <td>@BookingState.DailyRate.ToString("C")</td>
+                </tr>
+                <tr>
+                    <td>Days</td>
+                    <td>@((BookingState.DropOffDate - BookingState.PickupDate).Days)</td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>@BookingState.Subtotal.ToString("C")</td>
+                </tr>
+                <tr>
+                    <td>Tax (18%)</td>
+                    <td>@BookingState.Tax.ToString("C")</td>
+                </tr>
+                <tr class="summary-total">
+                    <td><strong>Total</strong></td>
+                    <td><strong>@BookingState.TotalPrice.ToString("C")</strong></td>
+                </tr>
+            </table>
+            <div class="summary-details">
+                <span><b>Pick-up:</b> @BookingState.PickupDate.ToShortDateString()</span>
+                <span><b>Drop-off:</b> @BookingState.DropOffDate.ToShortDateString()</span>
+                <span><b>Customer:</b> @BookingState.CustomerName</span>
+                <span><b>Payment:</b> @BookingState.PaymentMethod</span>
+            </div>
+            <button class="btn btn-confirm" @onclick="ConfirmAndSave">Confirm & Book</button>
+        </div>
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <div class="alert alert-danger">@ErrorMessage</div>
+}
+    </div>
+}
+
+@code {
+    private string ErrorMessage;
+
+private async Task ConfirmAndSave()
+{
+    try
+    {
+        // get the authenticated user.  If there is no logged in user, return.
+        var auth = await  AuthStateProvider.GetAuthenticationStateAsync();
+        var user = await UserManager.GetUserAsync(auth.User);
+                
+        if (user is null)
+        {
+            ErrorMessage = "You must be signed in to book.";
+            return;
+        }
+        
+        string userId = user.Id;            
+        
+        // Calculate the number of days needing to rent   
+        var days = (BookingState.DropOffDate - BookingState.PickupDate).Days;
+        if (days <= 0) days = 1;
+
+        //
+        var booking = new Booking
+        {
+            VehicleId = BookingState.VehicleId,
+            PickupDate = BookingState.PickupDate,
+            DropOffDate = BookingState.DropOffDate,
+            TotalPrice = BookingState.TotalPrice,
+            UserId = user.Id //Get the user id that is logged in.
+        };
+
+        DbContext.Booking.Add(booking);
+        await DbContext.SaveChangesAsync();
+
+        Navigation.NavigateTo("/booking-success");
+    }
+    catch (Exception ex)
+    {
+        ErrorMessage = ex.ToString();
+    }
+}
+}
