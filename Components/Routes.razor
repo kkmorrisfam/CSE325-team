@@ -1,11 +1,20 @@
 ﻿@using CSE325_team.Components.Account.Shared
-<Router AppAssembly="typeof(Program).Assembly">
+@using CSE325_team.Components.Layout
+@using CSE325_team.Components.Pages
+
+<Router AppAssembly="@typeof(Program).Assembly">
     <Found Context="routeData">
-        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
             <NotAuthorized>
                 <RedirectToLogin />
             </NotAuthorized>
         </AuthorizeRouteView>
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
+
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <CSE325_team.Components.Pages.NotFound />
+        </LayoutView>
+    </NotFound>
 </Router>
