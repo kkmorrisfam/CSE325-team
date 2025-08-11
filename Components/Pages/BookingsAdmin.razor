@@ -1,0 +1,159 @@
+﻿
+@page "/bookings-admin"
+@using CSE325_team.Models
+@inject HttpClient Http
+@using CSE325_team.Data
+
+<PageTitle>Current Reservation</PageTitle>
+
+<div class="container mt-4">
+    <h3>Create New Booking</h3>
+
+    <div class="row">
+        <!-- Left section: inputs -->
+        <div class="col-md-8">
+            <div class="mb-3">
+                <label for="vehicleSelect" class="form-label">Select a Vehicle</label>
+                <select id="vehicleSelect" class="form-select" @onchange="OnVehicleSelected">
+                    <option disabled selected value="">-- Choose a vehicle --</option>
+                    @foreach (var vehicle in AvailableVehicles)
+                    {
+                        <option value="@vehicle.VehicleId">@vehicle.Make @vehicle.Model (@vehicle.DailyRate.ToString("C"))</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="pickupDate" class="form-label">Pick-up Date</label>
+                <InputDate @bind-Value="PickUpDate" class="form-control" id="pickupDate" />
+            </div>
+
+            <div class="mb-3">
+                <label for="dropOffDate" class="form-label">Drop-off Date</label>
+                <InputDate @bind-Value="DropOffDate" class="form-control" id="dropOffDate" />
+            </div>
+        </div>
+
+        <!-- Right section: summary -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Summary</h5>
+                    <p><strong>Vehicle:</strong> @SelectedVehicle?.Make @SelectedVehicle?.Model</p>
+                    <p><strong>Days:</strong> @BookingDays day(s)</p>
+                    <p><strong>Price per Day:</strong> @SelectedVehicle?.DailyRate.ToString("C")</p>
+                    <p><strong>Total:</strong> <strong>@TotalPrice.ToString("C")</strong></p>
+                    <button class="btn btn-primary w-100" disabled="@(!IsVehicleSelected)">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h4 class="mt-4">Booking History</h4>
+
+@if (bookings == null)
+{
+    <p><em>Loading bookings...</em></p>
+}
+else if (bookings.Count == 0)
+{
+    <p>No bookings found.</p>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Client</th>
+                <th>Vehicle</th>
+                <th>Class</th>
+                <th>Color</th>
+                <th>Capacity</th>
+                <th>Price/Day</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in bookings)
+            {
+                <tr>
+                    <td>@booking.UserId</td>
+                    <td>@booking.Vehicle?.Make @booking.Vehicle?.Model</td>
+                    <td>@booking.Vehicle?.VehicleType</td>
+                    <td>@booking.Vehicle?.Color</td>
+                    <td>@booking.Vehicle?.Capacity</td>
+                    <td>@booking.Vehicle?.DailyRate.ToString("C")</td>
+                    <td>@booking.PickupDate.ToShortDateString()</td>
+                    <td>@booking.DropOffDate.ToShortDateString()</td>
+                    <td>@booking.TotalPrice.ToString("C")</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning me-2">Edit</button>
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+
+    private DateTime PickUpDate = DateTime.Today;
+    private DateTime DropOffDate = DateTime.Today.AddDays(1);
+    private List<Vehicle> AvailableVehicles = new();
+    private Vehicle? SelectedVehicle;
+    private List<CSE325_team.Models.Booking> bookings = new();
+
+    private bool IsVehicleSelected => SelectedVehicle != null;
+    private int BookingDays => (DropOffDate - PickUpDate).Days <= 0 ? 1 : (DropOffDate - PickUpDate).Days;
+    private decimal TotalPrice => SelectedVehicle == null ? 0 : BookingDays * SelectedVehicle.DailyRate;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulated vehicle list (replace with API call)
+        AvailableVehicles = new List<Vehicle>
+        {
+            new Vehicle
+            {
+                VehicleId = 1,
+                Make = "Nissan",
+                Model = "Versa",
+                Color = "Black",
+                Capacity = 5,
+                DailyRate = 45.00m,
+                Status = "available",
+                VehicleType = "Compact",
+                Transmission = "Automatic"
+            }
+        };
+
+        bookings = new List<CSE325_team.Models.Booking>
+        {
+            new CSE325_team.Models.Booking
+            {
+                BookingId = 1,
+                UserId = "Client01",
+                User = new ApplicationUser { Id = "Client01", Email = "client01@example.com" },
+                Vehicle = AvailableVehicles[0],
+                DropOffDate = DateTime.Today,
+                PickupDate = DateTime.Today.AddDays(3),
+                TotalPrice = 135.00m
+            }
+        };
+    }
+
+    private void OnVehicleSelected(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out int selectedVehicleId))
+        {
+            SelectedVehicle = AvailableVehicles.FirstOrDefault(v => v.VehicleId == selectedVehicleId);
+        }
+    }
+}

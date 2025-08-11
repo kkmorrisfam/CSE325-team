@@ -3,11 +3,16 @@
 @inject CSE325_team.Data.ApplicationDbContext DbContext
 @inject NavigationManager Navigation
 @inject CSE325_team.Services.BookingState BookingState
+@inject AuthenticationStateProvider AuthStateProvider
+@inject UserManager<ApplicationUser> UserManager
+
 @using Microsoft.EntityFrameworkCore
 @using CSE325_team.Models
 @using System.ComponentModel.DataAnnotations
-
-
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Configuration.UserSecrets
+@using CSE325_team.Data
 
 
 <PageTitle>Book a Vehicle</PageTitle>
@@ -121,10 +126,31 @@
         try
         {
             vehicles = await DbContext.Vehicle.OrderBy(v => v.Make).ToListAsync();
+
+            // Get authentication state
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            if (user.Identity?.IsAuthenticated ?? false)
+            {
+                //Fetch the full Application User object
+                var appUser = await UserManager.GetUserAsync(user);
+                if (appUser != null)
+                {
+                    //Pre-populate CustomerName with full name
+                    formModel.CustomerName = $"{appUser.FirstName} {appUser.LastName}";
+
+                    Console.WriteLine($"Authenticated user: ID={appUser.Id}");
+                }
+                else
+                {
+                    Console.WriteLine("Authenticated but no ApplicationUser found.");
+                }
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error loading vehicles: {ex.Message}");
+            Console.WriteLine($"Error loading database values: {ex.Message}");
         }
 
         _initialized = true;
@@ -157,7 +183,7 @@
         Console.WriteLine($"VehicleId={formModel.VehicleId}, PickupDate={formModel.PickupDate}, DropOffDate={formModel.DropOffDate}, PaymentMethod={formModel.PaymentMethod}, CustomerName={formModel.CustomerName}");
     }
 
-    private void ShowSummary()    
+    private async Task ShowSummary()    
     {
         //Console.WriteLine("ShowSummary() to set BookingState");
         if (selectedVehicle == null || !IsValidDates) 
@@ -168,6 +194,22 @@
 
         try 
         {
+            // Get authentication state
+            var auth = await AuthStateProvider.GetAuthenticationStateAsync();
+            var user = auth.User;
+
+            string userId = "demoUser"; // Fallback
+            if (user.Identity?.IsAuthenticated ?? false)
+            {
+                // Get the full ApplicationUser object
+                var appUser = await UserManager.GetUserAsync(user);
+                if (appUser != null)
+                {
+                    userId = appUser.Id; // Get the UserId
+                    Console.WriteLine($"Authenticated user in ShowSummary: ID={userId}, FullName={appUser.FirstName} {appUser.LastName}");
+                }
+            }
+
             BookingState.VehicleId = formModel.VehicleId;
             BookingState.VehicleDisplay = $"{selectedVehicle.Make} {selectedVehicle.Model} ({selectedVehicle.Year})";
             BookingState.DailyRate = selectedVehicle.DailyRate;
@@ -178,6 +220,7 @@
             BookingState.Subtotal = Subtotal;
             BookingState.Tax = Tax;
             BookingState.TotalPrice = Total;
+            @* BookingState.UserId = userId; *@
 
             //Console.WriteLine("Navigating to booking-summary");
             Navigation.NavigateTo("/booking-summary");
