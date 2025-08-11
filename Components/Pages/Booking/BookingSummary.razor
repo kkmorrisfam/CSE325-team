@@ -1,11 +1,16 @@
 @page "/booking-summary"
 @rendermode InteractiveServer
 @inject CSE325_team.Data.ApplicationDbContext DbContext
+@using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
+@using System.Security.Claims
 @inject NavigationManager Navigation
 @inject CSE325_team.Services.BookingState BookingState
+@inject UserManager<ApplicationUser> UserManager
+@inject AuthenticationStateProvider AuthStateProvider
 
 @using CSE325_team.Models
+@using Microsoft.AspNetCore.Components.Authorization
 
 <PageTitle>Booking Summary</PageTitle>
 
@@ -69,16 +74,30 @@ private async Task ConfirmAndSave()
 {
     try
     {
+        // get the authenticated user.  If there is no logged in user, return.
+        var auth = await  AuthStateProvider.GetAuthenticationStateAsync();
+        var user = await UserManager.GetUserAsync(auth.User);
+                
+        if (user is null)
+        {
+            ErrorMessage = "You must be signed in to book.";
+            return;
+        }
+        
+        string userId = user.Id;            
+        
+        // Calculate the number of days needing to rent   
         var days = (BookingState.DropOffDate - BookingState.PickupDate).Days;
         if (days <= 0) days = 1;
 
+        //
         var booking = new Booking
         {
             VehicleId = BookingState.VehicleId,
             PickupDate = BookingState.PickupDate,
             DropOffDate = BookingState.DropOffDate,
             TotalPrice = BookingState.TotalPrice,
-            UserId = "168d3e0a-a571-4155-a109-1c07fb947659"
+            UserId = user.Id //Get the user id that is logged in.
         };
 
         DbContext.Booking.Add(booking);
