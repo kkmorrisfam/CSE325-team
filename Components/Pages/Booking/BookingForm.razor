@@ -1,3 +1,4 @@
+
 @*
     BookingForm.razor
 
@@ -6,46 +7,37 @@
     Features:
     - Vehicle selection with details preview (type, color, transmission, daily rate, image).
     - Date pickers for pick-up and drop-off dates with validation (drop-off must be after pick-up).
-    - Payment method and customer name input.
-    - Real-time booking summary calculation (subtotal, tax, total).
-    - Form submission navigates to a booking summary page using BookingState service.
-    - Displays user's booking history with options to edit or delete bookings inline.
-    - Inline editing supports vehicle, dates, and total price updates with validation.
-    - Success messages and error handling for booking updates and deletions.
-    - Uses dependency injection for DbContext, NavigationManager, JSRuntime, BookingState, and AuthenticationStateProvider.
-    - Loads vehicles and user bookings on initialization, only for authenticated users.
+    - Payment method and customer name input fields.
+    - Real-time booking summary with subtotal, tax (18%), and total calculation.
+    - Form validation using data annotations and custom date validation.
+    - On valid submission, booking details are stored in a shared BookingState service and navigation proceeds to a summary page.
+    - Displays authenticated user's booking history in a table.
+    - Inline editing of bookings: allows changing vehicle and dates, with recalculation of total price including tax.
+    - Inline deletion of bookings with confirmation.
+    - Success messages shown after editing or deleting bookings.
+    - Uses dependency injection for database context, navigation, JS interop, booking state, and authentication state provider.
 
-    Main Parameters/Fields:
-    - vehicles: List of available vehicles loaded from the database.
-    - selectedVehicle: The vehicle currently selected in the form.
-    - formModel: Model for the booking form, includes validation.
-    - userBookings: List of bookings for the current user.
-    - editingBookingId: Tracks which booking is being edited inline.
-    - successMessage: Displays feedback after successful operations.
-    - currentUserId: The authenticated user's ID.
-
-    Methods:
-    - OnInitializedAsync: Loads vehicles and user bookings.
-    - LoadUserBookings: Loads bookings for the current user.
-    - OnVehicleSelected: Handles vehicle selection changes.
+    Key Methods:
+    - OnInitializedAsync: Loads available vehicles and user bookings if authenticated.
+    - LoadUserBookings: Fetches bookings for the current user from the database.
+    - ComputeDays, ComputeSubtotal, ComputeTax, ComputeTotal: Helper methods for pricing calculations.
+    - OnVehicleSelected: Updates selected vehicle and form model.
     - ShowSummary: Stores booking details and navigates to summary.
     - StartEdit, CancelEdit: Manage inline editing state.
-    - SaveBooking: Persists booking changes with validation.
+    - OnEditVehicleChanged, OnEditDateChanged: Recalculate booking total on edit.
+    - SaveBooking: Persists edited booking to the database.
     - ConfirmDelete: Deletes a booking after confirmation.
-    - HandleInValidSubmit: Handles invalid form submissions.
 
-    Validation:
-    - Ensures drop-off date is after pick-up date.
-    - Requires all form fields to be filled.
+    Models:
+    - BookingFormModel: Form model with validation attributes and custom date validation.
 
-    UI:
-    - Responsive form and booking history table.
-    - Inline editing with save/cancel actions.
-    - Success toast notifications.
-
-    Usage:
-    - Place this component at the "/booking" route.
-    - Requires authentication to view and manage booking history.
+    Dependencies:
+    - CSE325_team.Data.ApplicationDbContext
+    - CSE325_team.Models.Vehicle, Booking
+    - CSE325_team.Services.BookingState
+    - Microsoft.AspNetCore.Components.Authorization
+    - Microsoft.EntityFrameworkCore
+    - Microsoft.JSInterop
 
 *@
 @page "/booking"
