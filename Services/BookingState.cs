@@ -14,6 +14,20 @@ namespace CSE325_team.Services
         public decimal TotalPrice { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Tax { get; set; }
+
+        public void Reset()
+        {
+            VehicleId = 0;
+            VehicleDisplay = string.Empty;
+            DailyRate = 0;
+            PickupDate = DateTime.MinValue;
+            DropOffDate = DateTime.MinValue;
+            PaymentMethod = string.Empty;
+            CustomerName = string.Empty;
+            TotalPrice = 0;
+            Subtotal = 0;
+            Tax = 0;
+        }
         public string? UserId { get; set; }
     }
 }
