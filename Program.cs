@@ -46,12 +46,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //         options.UseSqlServer(connectionString)); // for Azure SQL
 // }
 
+// builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
+//     options.UseSqlite(connectionString));
+
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+// currently set Require Email Confirmation on new accounts to false. Not implementing that here.
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>()
-    // .AddSignInManager() //can remove when using AddIdentity
+    .AddSignInManager() //can remove when using AddIdentity
     .AddDefaultTokenProviders();
 
 builder.Services.AddAuthorization(); // Needed for [Authorize] and role policies
@@ -59,6 +63,14 @@ builder.Services.AddAuthorization(); // Needed for [Authorize] and role policies
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 builder.Services.AddScoped<BookingState>();
+
+// This is temporary to find an error
+builder.Host.UseDefaultServiceProvider(options =>
+{
+    options.ValidateOnBuild = true;
+    options.ValidateScopes = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -82,6 +94,8 @@ app.UseAuthorization();     // Required for role policies
 
 app.UseAntiforgery();
 
+app.UseStatusCodePagesWithRedirects("/404");
+
 // Initialize the database
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using (var scope = scopeFactory.CreateScope())
@@ -101,7 +115,7 @@ using (var scope = scopeFactory.CreateScope())
 
 app.MapControllers();
 
-app.MapRazorComponents<App>()
+app.MapRazorComponents<CSE325_team.Components.App>()
         .AddInteractiveServerRenderMode();
 
 // Add additional endpoints required by the Identity /Account Razor components.

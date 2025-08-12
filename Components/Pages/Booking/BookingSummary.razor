@@ -1,12 +1,15 @@
 @page "/booking-summary"
 @rendermode InteractiveServer
 @inject CSE325_team.Data.ApplicationDbContext DbContext
+@using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
+@using System.Security.Claims
 @inject NavigationManager Navigation
 @inject CSE325_team.Services.BookingState BookingState
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 @using CSE325_team.Models
+@using Microsoft.AspNetCore.Components.Authorization
 
 @*
     BookingSummary.razor
@@ -110,6 +113,7 @@ private async Task ConfirmAndSave()
         var days = (BookingState.DropOffDate - BookingState.PickupDate).Days;
         if (days <= 0) days = 1;
 
+        //
         var booking = new Booking
         {
             VehicleId = BookingState.VehicleId,
