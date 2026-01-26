@@ -7,6 +7,9 @@
 BookMe is a .NET Blazor web application that allows businesses to rent out vehicles on an hourly or daily basis.  
 It features a vehicle checkout system including CRUD management, role-based access control, and responsive design for both desktop and mobile users.
 
+![Landing Page](docs/bookme-landing.webp)
+
+![Inventory Page](docs/bookme-inventory.webp)
 
 ## 👥 Team Members
 - Mitchel Drennan
@@ -56,7 +59,7 @@ It features a vehicle checkout system including CRUD management, role-based acce
 .NET 8 SDK installed
 Git
 
-NOte: SQLite CLI is optional — only needed if you want to manually inspect the database outside of the application.
+Note: SQLite CLI is optional — only needed if you want to manually inspect the database outside of the application.
 
 #### Start
 git clone https://github.com/kkmorrisfam/CSE325-team.git
@@ -83,6 +86,7 @@ await SeedUser.InitializeAsync(services);          // 2a) Identity users/roles
 await SeedVehicle.InitializeAsync(db);             // 2b) Vehicles
 await SeedBooking.InitializeAsync(db);             // 2c) Bookings
 await SeedPayment.InitializeAsync(db);             // 2d) Payments
+```
 
 #### Force reseed/reset database
 ##### Option A: drop & recreate
